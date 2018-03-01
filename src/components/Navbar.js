@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
 import glamorous from "glamorous";
 
 class Navbar extends Component {
@@ -14,7 +15,6 @@ class Navbar extends Component {
   getLinkPosition = evt => {
     const rect = evt.target.getBoundingClientRect();
     this.setState({ activeLinkRect: rect });
-    console.log(this.state.activeLinkRect);
   };
   render() {
     const Header = glamorous.header({
@@ -22,9 +22,10 @@ class Navbar extends Component {
       display: "flex",
       alignItems: "center"
     });
-    const HeaderLink = glamorous.a({
+    const HeaderLink = glamorous(Link)({
       margin: "0 1rem",
-      cursor: "pointer"
+      cursor: "pointer",
+      textDecoration: "none"
     });
     const HeaderLinkUnderline = glamorous.div({
       background: "black",
@@ -38,6 +39,13 @@ class Navbar extends Component {
     return (
       <Header>
         <HeaderLink
+          css={{textTransform: "uppercase"}}
+          to="/work"
+        >
+          Ian
+        </HeaderLink>
+        <HeaderLink
+          to="/work"
           onClick={evt => this.getLinkPosition(evt)}
           ref={node => {
             this.workLinkRef = node;
@@ -46,6 +54,7 @@ class Navbar extends Component {
           Work
         </HeaderLink>
         <HeaderLink
+          to="/life"
           onClick={evt => this.getLinkPosition(evt)}
           ref={node => {
             this.lifeLinkRef = node;
