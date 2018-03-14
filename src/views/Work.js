@@ -29,6 +29,7 @@ class Work extends Component {
   render() {
     return (
       <glamorous.Div
+        className="transition-item"
         display="flex"
         flexFlow="row wrap"
         justifyContent="space-evenly"

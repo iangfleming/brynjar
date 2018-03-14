@@ -10,8 +10,8 @@
     "react-motion": "^0.5.2",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17",
-    "react-transition-group": "^2.2.1"
+    "react-router-page-transition": "^3.0.2",
+    "react-scripts": "1.0.17"
   },
   "scripts": {
     "start": "react-scripts start",
