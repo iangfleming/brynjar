@@ -22,6 +22,7 @@ class Navbar extends Component {
       display: "flex",
       alignItems: "center"
     });
+    // should actually be a navlink <3
     const HeaderLink = glamorous(Link)({
       margin: "0 1rem",
       cursor: "pointer",
@@ -40,7 +41,7 @@ class Navbar extends Component {
       <Header>
         <HeaderLink
           css={{textTransform: "uppercase"}}
-          to="/work"
+          to="/"
         >
           Ian
         </HeaderLink>

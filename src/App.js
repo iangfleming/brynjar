@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import PageTransition from "react-router-page-transition";
 import Navbar from "./components/Navbar";
+import Bio from "./views/Bio";
 import Work from "./views/Work";
 import Life from "./views/Life";
 
@@ -17,7 +18,8 @@ class App extends Component {
             render={({ location }) => (
               <PageTransition timeout={500}>
                 <Switch location={location}>
-                  <Route exact path="/work" component={Work} />
+                  <Route exact path="/" component={Bio} />
+                  <Route path="/work" component={Work} />
                   <Route path="/life" component={Life} />
                 </Switch>
               </PageTransition>

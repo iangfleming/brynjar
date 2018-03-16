@@ -16,23 +16,24 @@ const projects = [
 class Life extends Component {
   render() {
     return (
-      <glamorous.Div
-        className="transition-item"
-        display="flex"
-        flexFlow="row wrap"
-        justifyContent="space-evenly"
-        margin="1rem"
-      >
-        {projects.map((project, idx) => {
-          return (
-            <Card
-              key={idx}
-            >
-              {project.title}
-            </Card>
-          )
-        })}
-      </glamorous.Div>
+      <div className="transition-item life">
+        <glamorous.Div
+          display="flex"
+          flexFlow="row wrap"
+          justifyContent="space-evenly"
+          margin="1rem"
+        >
+          {projects.map((project, idx) => {
+            return (
+              <Card
+                key={idx}
+              >
+                {project.title}
+              </Card>
+            )
+          })}
+        </glamorous.Div>
+      </div>
     );
   }
 }
