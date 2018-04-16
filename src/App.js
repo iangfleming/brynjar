@@ -2,8 +2,8 @@
 /* eslint no-restricted-globals: ["off", "location"] */
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import PageTransition from "react-router-page-transition";
 import Navbar from "./components/Navbar";
+import Animate from "./components/Animate";
 import Bio from "./views/Bio";
 import Work from "./views/Work";
 import Life from "./views/Life";
@@ -14,17 +14,19 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navbar />
-          <Route
-            render={({ location }) => (
-              <PageTransition timeout={500}>
-                <Switch location={location}>
-                  <Route exact path="/" component={Bio} />
-                  <Route path="/work" component={Work} />
-                  <Route path="/life" component={Life} />
-                </Switch>
-              </PageTransition>
-            )}
-          />
+            <Switch>
+              <Route exact path="/" component={Bio} />
+              <Route path="/work" children={({ match, ...rest }) => (
+                <Animate match={match}>
+                  { match && <Work match={match} {...rest} /> }
+                </Animate>
+              )} />
+              <Route path="/life" children={({ match, ...rest }) => (
+                <Animate match={match}>
+                  { match && <Life match={match} {...rest} /> }
+                </Animate>
+              )} />
+            </Switch>
         </div>
       </BrowserRouter>
     );

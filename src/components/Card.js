@@ -3,15 +3,12 @@ import { withRouter } from "react-router";
 import glamorous from "glamorous";
 import camelToDash from "../utils/camelToDash";
 
-class CardWithoutRouter extends Component {
+class Card extends Component {
   state = {
     open: false
   }
   handleClick = () => {
     this.setState({ open: !this.state.open })
-    this.props.history.push({
-      pathname: `${this.props.match.url}/${camelToDash(this.props.projectName)}`
-    })
   }
   render() {
     const CardOuter = glamorous.div({
@@ -21,7 +18,7 @@ class CardWithoutRouter extends Component {
       margin: "1rem"
     }, 
     ({open}) => ({
-      transform: "scale(10)"
+      transform: open ? "scale(3)" : "scale(1)"
     })
   );
 
@@ -32,7 +29,7 @@ class CardWithoutRouter extends Component {
     return (
       <CardOuter
         open={this.state.open}
-        onClick={this.handleClick}
+        // onClick={this.handleClick}
       >
         <Title>{this.props.projectName}</Title>
         {this.props.children}
@@ -41,5 +38,4 @@ class CardWithoutRouter extends Component {
   }
 };
 
-const Card = withRouter(CardWithoutRouter);
 export default Card;

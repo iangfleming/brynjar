@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import glamorous from "glamorous";
 import camelToDash from "../utils/camelToDash";
 import Card from "../components/Card";
@@ -21,11 +21,11 @@ class Work extends Component {
             return (
               <div key={idx}>
                 <Card projectName={project.name}>
-                  <Route
-                    path={`${this.props.match.url}/${camelToDash(project.name)}`}
-                    component={project}
-                  />
+                  <Link to={`${this.props.match.url}/${camelToDash(project.name)}`}>
+                    liink
+                  </Link>
                 </Card>
+                <Route path={"/work/:projectName"} component={project} />
               </div>
             );
           })}
