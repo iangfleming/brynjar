@@ -17,6 +17,7 @@ class Navbar extends Component {
     this.setState({ activeLinkRect: rect });
   };
   render() {
+    console.log("hi I'm rendering")
     const Header = glamorous.header({
       height: "3rem",
       display: "flex",
