@@ -16,7 +16,7 @@ const projects = [
 class Life extends Component {
   render() {
     return (
-      <div className="transition-item life">
+      <div className="life">
         <glamorous.Div
           display="flex"
           flexFlow="row wrap"

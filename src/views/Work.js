@@ -11,7 +11,7 @@ class Work extends Component {
   render() {
     const projectsArray = Object.values(projects);
     return (
-      <div className="transition-item work">
+      <div className="work">
         <glamorous.Div
           display="flex"
           flexFlow="row wrap"

@@ -4,13 +4,14 @@ import { css } from "glamor";
 
 class Animate extends Component {
   state = {
-    open: false
+    animation: true
   };
-  componentDidMount() {
-    this.setState({ open: true });
-  }
-  componentWillUnmount() {
-    this.setState({ open: false });
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.match.url === this.props.match.url) {
+      this.setState({ animation: false })
+    } else {
+      this.setState({ animation: true })
+    }
   }
   render() {
     const animationStyles = props => {
@@ -22,16 +23,18 @@ class Animate extends Component {
         "0%": { transform: `translateX(100%)` },
         "100%": { transform: `translateX(0%)` }
       });
-      const slide = this.props.match.url.includes("life")
-        ? slideLeft
-        : slideRight;
-      return { animation: `${slide} 175ms` };
+      if(this.state.animation) {
+        const slide = this.props.match.url.includes("life")
+          ? slideLeft
+          : slideRight;
+        return { animation: `${slide} 175ms` };
+      }
     };
 
     const AnimationDiv = glamorous.div(animationStyles);
 
     return (
-      <AnimationDiv open={this.state.open}>{this.props.children}</AnimationDiv>
+      <AnimationDiv>{this.props.children}</AnimationDiv>
     );
   }
 }
