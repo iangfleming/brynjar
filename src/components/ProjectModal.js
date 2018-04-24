@@ -13,7 +13,13 @@ const ProjectModal = ({children}) => {
         background="white"
         zIndex="100"
       >
-        {children}
+        <glamorous.Div
+          overflow="scroll"
+          height="100%"
+          padding="1.5rem"
+        >
+          {children}
+        </glamorous.Div>
       </glamorous.Div>
   )
 }

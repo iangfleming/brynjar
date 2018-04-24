@@ -5,17 +5,17 @@ import glamorous from "glamorous";
 
 const ProjectCloseBtn = ({match}) => {
   const StyledLink = glamorous(Link)({
-    height: "1.5rem",
-    width: "1.5rem",
-    top: "1rem",
-    right: "1rem",
+    height: "1rem",
+    width: "1rem",
+    top: ".5rem",
+    right: ".5rem",
     position: "fixed",
     transition: "transform 60ms",
     ":hover": {
       transform: "rotate(-15deg)"
     },
     "> svg": {
-      fill: "blue"
+      fill: "black"
     }
   })
   const catagory = match.url.includes("work") ? "/work" : "/life";
