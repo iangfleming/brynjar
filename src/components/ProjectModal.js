@@ -7,11 +7,7 @@ const ProjectModal = ({children}) => {
         border="1px solid red"
         height="100vh"
         width="100vw"
-        position="fixed"
-        top="0"
-        left="0"
         background="white"
-        zIndex="100"
       >
         <glamorous.Div
           overflow="scroll"

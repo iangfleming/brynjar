@@ -1,4 +1,6 @@
 const Colors = {
+  background: "#FBFBFB",
+  text: "#271924",
   primary: "green",
   secondary: "blue",
   tertiary: "red",
