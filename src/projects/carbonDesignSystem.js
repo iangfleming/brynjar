@@ -3,6 +3,7 @@ import glamorous from "glamorous";
 import { Link } from "react-router-dom";
 import ProjectCloseBtn from "../components/ProjectCloseBtn";
 import ProjectModal from "../components/ProjectModal";
+import hacktime from "../images/carbon/hacktime-1.jpg";
 
 class carbonDesignSystem extends Component {
   render() {
@@ -23,6 +24,12 @@ class carbonDesignSystem extends Component {
           library, and a website with detailed documentation and usage
           guidelines.
         </p>
+        <glamorous.Img
+          src={hacktime}
+          alt=""
+          width="auto"
+          height="15rem"
+        />
         <h3>Need</h3>
         <p>
           At the time IBM Design consisted of several thousand designers. Which

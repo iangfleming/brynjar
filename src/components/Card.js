@@ -27,7 +27,7 @@ class Card extends Component {
           content: " ",
           position: "absolute",
           top: "0",
-          left: "0;",
+          left: "0",
           height: "150%",
           width: "150%",
           backgroundColor: Colors.background,
@@ -52,16 +52,20 @@ class Card extends Component {
     const Title = glamorous.h2({
       fontSize: "1rem",
       color: Colors.background,
-      fontWeight: "300"
+      fontWeight: "300",
     });
 
+    const StyledLink = glamorous(Link)({
+      textDecoration: "none"
+    })
+
     return (
-      <Link to={this.props.projectLink}>
+      <StyledLink to={this.props.projectLink}>
         <CardOuter open={this.state.open}>
           <Title>{this.props.projectName}</Title>
           {this.props.children}
         </CardOuter>
-      </Link>
+      </StyledLink>
     );
   }
 }

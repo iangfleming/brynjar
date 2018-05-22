@@ -18,6 +18,7 @@ const ProjectCloseBtn = ({match}) => {
       fill: "black"
     }
   })
+  // slightly hacky to fix in future
   const catagory = match.url.includes("work") ? "/work" : "/life";
   return (
     <StyledLink to={catagory}>

@@ -5,8 +5,12 @@ import glamorous from "glamorous";
 
 class Navbar extends Component {
   state = {
-    activeLinkRect: {}
+    activeLinkRect: {},
+    // transform: ""
   };
+  componentWillReceiveProps(nextProps) {
+    console.log(this.props, nextProps)
+  }
   componentDidMount() {
     const workLinkNode = ReactDOM.findDOMNode(this.workLinkRef);
     const workLinkRect = workLinkNode.getBoundingClientRect();
@@ -16,8 +20,13 @@ class Navbar extends Component {
     const rect = evt.target.getBoundingClientRect();
     this.setState({ activeLinkRect: rect });
   };
+  // handleMouseOver = evt => {
+  //   const evtRect = evt.target.getBoundingClientRect();
+  //   if (this.state.activeLinkRect.x != evtRect.x) {
+  //     this.setState({ transform: `translateX(${evtRect.x}px)` });
+  //   }
+  // };
   render() {
-    console.log("hi I'm rendering")
     const Header = glamorous.header({
       height: "3rem",
       display: "flex",
@@ -31,24 +40,22 @@ class Navbar extends Component {
     });
     const HeaderLinkUnderline = glamorous.div({
       background: "black",
-      position: "fixed",
+      position: "absolute",
       height: "2px",
       transition: "all 175ms cubic-bezier(0.5, 0, 0.1, 1)",
       width: this.state.activeLinkRect.width,
       left: this.state.activeLinkRect.left,
-      top: this.state.activeLinkRect.top + this.state.activeLinkRect.height
+      top: this.state.activeLinkRect.top + this.state.activeLinkRect.height,
     });
     return (
       <Header>
-        <HeaderLink
-          css={{textTransform: "uppercase"}}
-          to="/"
-        >
+        <HeaderLink css={{ textTransform: "uppercase" }} to="/">
           Ian
         </HeaderLink>
         <HeaderLink
           to="/work"
           onClick={evt => this.getLinkPosition(evt)}
+          // onMouseOver={evt => this.handleMouseOver(evt)}
           ref={node => {
             this.workLinkRef = node;
           }}
@@ -58,13 +65,14 @@ class Navbar extends Component {
         <HeaderLink
           to="/life"
           onClick={evt => this.getLinkPosition(evt)}
+          // onMouseOver={evt => this.handleMouseOver(evt)}
           ref={node => {
             this.lifeLinkRef = node;
           }}
         >
           Life
         </HeaderLink>
-        <HeaderLinkUnderline />
+        <HeaderLinkUnderline/>
       </Header>
     );
   }
