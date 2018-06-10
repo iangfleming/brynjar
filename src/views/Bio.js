@@ -16,17 +16,19 @@ class Bio extends Component {
         <glamorous.Div maxWidth="50%">
           <h2>Hey Y'all!</h2>
           <glamorous.P>
-            Thought experiments (Gedankenexperimenten) are “facts” in the sense
-            that they have a “real life” correlate in the form of electrochemical
-            activity in the brain. But it is quite obvious that they do not relate
-            to facts “out there”. They are not true statements. But do they lack
-            truth because they do not relate to facts? How are Truth and Fact
-            interrelated? One answer is that Truth pertains to the possibility
-            that an event will occur. If true – it must occur and if false – it
-            cannot occur. This is a binary world of extreme existential
-            conditions. Must all possible events occur? Of course not. If they do
-            not occur would they still be true? Must a statement have a real life
-            correlate to be true?
+            I am Ian Fleming, a designer and a developer. My passion is for the ideation and
+            problem solving of design. The development skills I have are a
+            result of needing to implement my own designs.
+          </glamorous.P>
+          <glamorous.P>
+            For as long as I can remember I've observed the inefficiencies and
+            missed opportunities in the world around me. The logical conclusion
+            was to learn how to help resolve them. This desire is key to my
+            personality. A big part of me.
+          </glamorous.P>
+          <glamorous.P>
+            Having me on your team means questioning all assumptions, dreaming
+            big, and building fast.
           </glamorous.P>
         </glamorous.Div>
         <glamorous.Img

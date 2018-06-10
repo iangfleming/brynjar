@@ -3,15 +3,18 @@ import glamorous from "glamorous";
 import { Link } from "react-router-dom";
 import ProjectCloseBtn from "../components/ProjectCloseBtn";
 import ProjectModal from "../components/ProjectModal";
-import hacktime from "../images/carbon/hacktime-1.jpg";
+import Sizes from "../vars/Sizes";
+import hacktime1 from "../images/carbon/hacktime-1.jpg";
+import hacktime2 from "../images/carbon/hacktime-2.jpg";
+import hacktime3 from "../images/carbon/hacktime-3.jpg";
 
 class carbonDesignSystem extends Component {
   render() {
     return (
       <ProjectModal>
         <ProjectCloseBtn />
-        <h1>Carbon Design System</h1>
-        <h4>A design ecosystem for IBM products</h4>
+        <glamorous.H1 fontSize={Sizes.head}>Carbon Design System</glamorous.H1>
+        <glamorous.H4 fontSize={Sizes.sub}>A design ecosystem for IBM products</glamorous.H4>
         <h3>Summary</h3>
         <p>
           We built and maintained a system for both designers and developers of
@@ -24,12 +27,28 @@ class carbonDesignSystem extends Component {
           library, and a website with detailed documentation and usage
           guidelines.
         </p>
-        <glamorous.Img
-          src={hacktime}
-          alt=""
-          width="auto"
-          height="15rem"
-        />
+        <glamorous.Div
+          width="100%"
+        >
+          <glamorous.Img
+            src={hacktime1}
+            alt=""
+            width="auto"
+            height="10rem"
+          />
+          <glamorous.Img
+            src={hacktime2}
+            alt=""
+            width="auto"
+            height="10rem"
+          />
+          <glamorous.Img
+            src={hacktime3}
+            alt=""
+            width="auto"
+            height="10rem"
+          />
+        </glamorous.Div>
         <h3>Need</h3>
         <p>
           At the time IBM Design consisted of several thousand designers. Which
