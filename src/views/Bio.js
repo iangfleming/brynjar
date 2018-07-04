@@ -27,7 +27,7 @@ class Bio extends Component {
             personality. A big part of me.
           </glamorous.P>
           <glamorous.P>
-            Having me on your team means questioning all assumptions, dreaming
+            Having me on your team means questioning assumptions, dreaming
             big, and building fast.
           </glamorous.P>
         </glamorous.Div>

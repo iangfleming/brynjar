@@ -17,10 +17,10 @@ class Card extends Component {
       {
         position: "relative",
         height: "10rem",
-        width: "10rem",
-        margin: "1rem",
+        width: "100vw",
         padding: "1rem",
         backgroundColor: Colors.text,
+        clipPath: "polygon(0 0, 100% 10%, 100% 100%, 0 90%)",
         overflow: "hidden",
         transition: "transform 175ms",
         ":after": {

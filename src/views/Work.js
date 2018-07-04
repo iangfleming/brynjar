@@ -13,7 +13,7 @@ class Work extends Component {
     const projectsArray = Object.values(projects);
     return (
       <div className="work">
-        <glamorous.Div display="flex" flexFlow="row wrap" margin="1rem">
+        <glamorous.Div display="flex" flexFlow="row wrap" margin="1rem 0">
           {projectsArray.map((Project, idx) => {
             const path = `${this.props.match.url}/${camelToDash(Project.name)}`;
             return (
