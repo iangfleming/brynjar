@@ -10,6 +10,9 @@ class phobioOps extends Component {
       <ProjectModal>
         <ProjectCloseBtn />
         <h1>ops</h1>
+        <p>
+          design and build complex react SPA
+        </p>
       </ProjectModal>
     )
   }

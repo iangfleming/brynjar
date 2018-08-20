@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import glamorous from "glamorous";
 import camelToDash from "../utils/camelToDash";
 import Colors from "../vars/Colors";
+import Sizes from "../vars/Sizes";
 
 class Card extends Component {
   state = {
@@ -41,7 +42,7 @@ class Card extends Component {
           }
         },
         ":active, :focus": {
-          transform: "scale(.95)"
+          transform: "scaleY(.95)"
         },
       },
       ({ open }) => ({
@@ -62,8 +63,10 @@ class Card extends Component {
     return (
       <StyledLink to={this.props.projectLink}>
         <CardOuter open={this.state.open}>
-          <Title>{this.props.projectName}</Title>
-          {this.props.children}
+          <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto">
+            <Title>{this.props.projectName}</Title>
+            {this.props.children}
+          </glamorous.Div>
         </CardOuter>
       </StyledLink>
     );
