@@ -9,6 +9,10 @@ import * as projects from "../projects";
 // import Goo from "./components/Goo";
 
 class Work extends Component {
+  componentDidMount() {
+    const a = Object.values(projects);
+    console.log(projects.carbonDesignSystem.name)
+  }
   render() {
     const projectsArray = Object.values(projects);
     return (
