@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router";
 import { Route, Link } from "react-router-dom";
 import glamorous from "glamorous";
 import camelToDash from "../utils/camelToDash";
@@ -9,9 +10,17 @@ import * as projects from "../projects";
 // import Goo from "./components/Goo";
 
 class Work extends Component {
-  componentDidMount() {
-    const a = Object.values(projects);
-    console.log(projects.carbonDesignSystem.name)
+  componentDidMount(){
+    document.addEventListener("keydown", this.escFunction, false);
+  }
+  componentWillUnmount(){
+    document.removeEventListener("keydown", this.escFunction, false);
+  }
+  escFunction = (event) => {
+    const re = /.*\/work\/.*/;
+    if(event.keyCode === 27 && re.exec(this.props.location.pathname)) {
+      this.props.history.push("/work");
+    }
   }
   render() {
     const projectsArray = Object.values(projects);
@@ -43,4 +52,4 @@ class Work extends Component {
   }
 }
 
-export default Work;
+export default withRouter(Work);
