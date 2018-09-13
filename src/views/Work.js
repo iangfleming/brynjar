@@ -24,6 +24,7 @@ class Work extends Component {
   }
   render() {
     const projectsArray = Object.values(projects);
+    console.log(projectsArray)
     return (
       <div className="work">
         <glamorous.Div display="flex" flexFlow="row wrap" margin="1rem 0">
