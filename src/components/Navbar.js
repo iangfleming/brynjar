@@ -28,9 +28,10 @@ class Navbar extends Component {
   // };
   render() {
     const Header = glamorous.header({
-      height: "5rem",
+      height: "6.5rem",
       display: "flex",
-      alignItems: "center"
+      alignItems: "center",
+      marginBottom: "-2rem"
     });
     // should actually be a navlink <3
     const HeaderLink = glamorous(Link)({
@@ -50,7 +51,7 @@ class Navbar extends Component {
     return (
       <Header>
         <HeaderLink css={{ textTransform: "uppercase" }} to="/">
-          <glamorous.Svg height="3rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251.76 121.51">
+          <glamorous.Svg height="5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251.76 121.51">
             <g data-name="Layer 2">
               <g data-name="Layer 1">
                 <path

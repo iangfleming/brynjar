@@ -5,6 +5,7 @@ import glamorous from "glamorous";
 import camelToDash from "../utils/camelToDash";
 import Colors from "../vars/Colors";
 import Sizes from "../vars/Sizes";
+import MediaQueries from "../vars/MediaQueries";
 
 class Card extends Component {
   state = {
@@ -17,13 +18,17 @@ class Card extends Component {
     const CardOuter = glamorous.div(
       {
         position: "relative",
-        height: "10rem",
+        height: "8rem",
         width: "100vw",
-        padding: "1rem",
-        backgroundColor: Colors.text,
-        clipPath: "polygon(0 0, 100% 10%, 100% 100%, 0 90%)",
+        padding: "3rem 2rem",
+        marginBottom: "-26px",
+        backgroundColor: this.props.projectColor,
+        clipPath: "polygon(0 10%, 100% 0, 100% 90%, 0% 100%)",
         overflow: "hidden",
         transition: "transform 175ms",
+        [MediaQueries.md]: {
+          height: "10rem",
+        },
         ":after": {
           content: " ",
           position: "absolute",
@@ -55,7 +60,9 @@ class Card extends Component {
       color: Colors.background,
       fontWeight: "300",
     });
-
+    const Desc = glamorous.p({
+      color: "white"
+    })
     const StyledLink = glamorous(Link)({
       textDecoration: "none"
     })
@@ -65,6 +72,7 @@ class Card extends Component {
         <CardOuter open={this.state.open}>
           <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto">
             <Title>{this.props.projectName}</Title>
+            <Desc>{this.props.projectDescription}</Desc>
             {this.props.children}
           </glamorous.Div>
         </CardOuter>
