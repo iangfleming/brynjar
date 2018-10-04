@@ -21,29 +21,34 @@ class carbonDesignSystem extends Component {
       textDecoration: "none",
       padding: "1px 4px",
       margin: "0 4px"
-    })
+    });
     const Row = glamorous.div({
       display: "flex",
       alignItems: "center",
       marginBottom: "1rem"
     });
-    const Quote = glamorous.div({
-      backgroundImage: `url(${blob})`,
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "center",
-      color: "white",
-      width: "15rem",
-      flexShrink: 0,
-      padding: "2.5rem",
-      marginLeft: "-4rem",
-      marginRight: "3rem"
+    const Quote = glamorous.div( props => {
+      return {
+        backgroundImage: `url(${props.image})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        color: "white",
+        width: "15rem",
+        flexShrink: 0,
+        padding: "2.5rem",
+        marginLeft: "-4rem",
+        marginRight: "3rem"
+      }
     });
     return (
       <ProjectModal>
         <ProjectCloseBtn />
         <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto">
           <glamorous.H1 fontSize={Sizes.head}>
-            Carbon Design System
+            <glamorous.Span color={Colors.red} marginRight="10px">
+              Carbon
+            </glamorous.Span>
+            Design System
           </glamorous.H1>
           <glamorous.H4 fontSize={Sizes.sub}>
             A design ecosystem for IBM products
@@ -63,22 +68,27 @@ class carbonDesignSystem extends Component {
             feedback from users.
           </p>
           <glamorous.Div width="100%">
-            <glamorous.Img src={hacktime1} alt="" width="auto" height="10rem" />
             <glamorous.Img src={hacktime2} alt="" width="auto" height="10rem" />
             <glamorous.Img src={hacktime3} alt="" width="auto" height="10rem" />
           </glamorous.Div>
           <h3>Need</h3>
-          <p>
-            IBM Design consists of several thousand designers. Which sounds like
-            a lot, but at a company of over 300,000 employees we were still
-            outnumbered. At that scale there should’ve been a design system in
-            place to help the designers communicate their work to the rest of
-            the company. However, previous attempts at building design systems
-            had never really taken off. They had primarily focused on static
-            design assets and left engineers with the difficult task of
-            translating them into code. We saw an opportunity for a better
-            solution.
-          </p>
+          <Row>
+            <p>
+              IBM Design consists of several thousand designers. Which sounds like
+              a lot, but at a company of over 300,000 employees we were still
+              outnumbered. At that scale there should’ve been a design system in
+              place to help the designers communicate their work to the rest of
+              the company. However, previous attempts at building design systems
+              had never really taken off. They had primarily focused on static
+              design assets and left engineers with the difficult task of
+              translating them into code. We saw an opportunity for a better
+              solution.
+            </p>
+            <Quote image={blob}>
+              <p>quote</p>
+              <p>by so and so</p>
+            </Quote>
+          </Row>
           <h3>Process</h3>
           <p>
             We began our research process by interviewing product teams who
@@ -86,6 +96,9 @@ class carbonDesignSystem extends Component {
             about their experience with the status quo, what worked, and what
             didn't.
           </p>
+          <glamorous.Div width="100%" textAlign="center">
+            <glamorous.Img src={hacktime1} alt="" width="100%" maxWidth="500px"/>
+          </glamorous.Div>
           <p>
             When building a component library of this scale, there are many
             pitfalls to avoid. With that in mind we studied libraries like
@@ -106,7 +119,7 @@ class carbonDesignSystem extends Component {
             guidelines.
           </p>
           <Row>
-            <Quote>
+            <Quote image={blob}>
               <p>
                 "In the Carbon design system, names and folder structure are
                 consistent across the three facets of the system.
@@ -120,9 +133,9 @@ class carbonDesignSystem extends Component {
                 developers, and others to be as smooth as possible.
               </p>
               <p>
-                Now, when a new team member starts at IBM they can get
-                started extremely quickly with Carbon by following guides on the
-                site, downloading a Sketch template, or simply running{" "}
+                Now, when a new team member starts at IBM they can get started
+                extremely quickly with Carbon by following guides on the site,
+                downloading a Sketch template, or simply running{" "}
                 <Code type="i">yarn add carbon-components</Code>
               </p>
             </div>

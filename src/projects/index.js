@@ -6,12 +6,18 @@ import Acorns from "./Acorns";
 import mobileFirst from "./mobileFirst";
 import phobioOps from "./phobioOps";
 
+import carbonPattern from "../images/carbon/carbon-pattern.svg";
+import hacktime1 from "../images/carbon/hacktime-1.jpg";
+import hacktime2 from "../images/carbon/hacktime-2.jpg";
+import hacktime3 from "../images/carbon/hacktime-3.jpg";
+
 const projects = {
   carbonDesignSystem: {
     slug: "carbon-design-system",
     name: "Carbon Design System",
     description: "lorem lorem stuf stuff",
-    color: Colors.teal,
+    color: Colors.red,
+    image: carbonPattern,
     component: carbonDesignSystem
   },
   phobioOps: {
@@ -19,6 +25,7 @@ const projects = {
     name: "Phobio Operations App",
     description: "lorem lorem stuf stuff",
     color: Colors.yellow,
+    image: hacktime2,
     component: phobioOps
   },
   acorns: {
@@ -26,6 +33,7 @@ const projects = {
     name: "Acorns",
     description: "Personal library of helpers",
     color: Colors.purple1,
+    image: hacktime3,
     component: Acorns
   },
   mobileFirst: {
@@ -33,6 +41,7 @@ const projects = {
     name: "IBM MobileFirst",
     description: "lorem lorem stuf stuff",
     color: Colors.red,
+    image: hacktime1,
     component: mobileFirst
   },
   IBMDesignCamp: {
@@ -40,6 +49,7 @@ const projects = {
     name: "IBM Design Camp",
     description: "lorem lorem stuf stuff",
     color: Colors.yellow,
+    image: hacktime1,
     component: IBMDesignCamp
   },
   CollegePlus: {
@@ -47,6 +57,7 @@ const projects = {
     name: "Redesigning the CollegePlus Home Page",
     description: "Design is more than making stuff pretty",
     color: Colors.purple1,
+    image: hacktime1,
     component: CollegePlus
   },
 }

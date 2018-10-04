@@ -20,9 +20,11 @@ class Card extends Component {
         position: "relative",
         height: "8rem",
         width: "100vw",
+        backgroundImage: `url(${this.props.projectImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
         padding: "3rem 2rem",
         marginBottom: "-26px",
-        backgroundColor: this.props.projectColor,
         clipPath: "polygon(0 10%, 100% 0, 100% 90%, 0% 100%)",
         overflow: "hidden",
         transition: "transform 175ms",
@@ -34,16 +36,16 @@ class Card extends Component {
           position: "absolute",
           top: "0",
           left: "0",
-          height: "150%",
-          width: "150%",
-          backgroundColor: Colors.background,
+          height: "100%",
+          width: "100%",
+          backgroundColor: this.props.projectColor,
           opacity: ".2",
-          transform: "rotate(-315deg) translateY(0%) translateX(-80%)",
           transition: "transform 175ms",
+          transform: "rotate(-20deg) translateY(125%)"
         },
         ":hover": {
           ":after": {
-            transform: "rotate(-315deg) translateY(0%) translateX(-60%)"
+            transform: "rotate(0deg) translateY(0%)"
           }
         },
         ":active, :focus": {

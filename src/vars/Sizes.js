@@ -1,5 +1,5 @@
 const Sizes = {
-  maxWidth: "1024px",
+  maxWidth: "960px",
   sub: "14px",
   base: "16px",
   super: "18px",

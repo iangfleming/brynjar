@@ -33,10 +33,11 @@ class Work extends Component {
             return (
               <div key={idx}>
                 <Card
-                  projectName={Project.name}
                   projectLink={path}
-                  projectColor={Project.color}
+                  projectName={Project.name}
                   projectDescription={Project.description}
+                  projectColor={Project.color}
+                  projectImage={Project.image}
                 />
                 <Route
                   path={path}

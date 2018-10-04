@@ -10,8 +10,7 @@ const ProjectModal = ({children}) => {
       >
         <glamorous.Div
           overflow="scroll"
-          height="90%"
-          padding="1.5rem"
+          height="100%"
         >
           {children}
         </glamorous.Div>

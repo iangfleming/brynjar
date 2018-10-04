@@ -11,7 +11,11 @@ class IBMDesignCamp extends Component {
       <ProjectModal>
         <ProjectCloseBtn />
         <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto">
-        <h1>design camp</h1>
+          <h1>design camp</h1>
+          <p>
+            
+          </p>
+          <p></p>
         </glamorous.Div>
       </ProjectModal>
     )
