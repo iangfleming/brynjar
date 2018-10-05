@@ -8,9 +8,6 @@ class Navbar extends Component {
     activeLinkRect: {}
     // transform: ""
   };
-  componentWillReceiveProps(nextProps) {
-    console.log(this.props, nextProps);
-  }
   componentDidMount() {
     const workLinkNode = ReactDOM.findDOMNode(this.workLinkRef);
     const workLinkRect = workLinkNode.getBoundingClientRect();

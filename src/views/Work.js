@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { Route, Link } from "react-router-dom";
+import { Keyframes, animated, config } from "react-spring";
 import glamorous from "glamorous";
 // import camelToDash from "../utils/camelToDash";
 // import camelToTitle from "../utils/camelToTitle";
@@ -24,34 +25,37 @@ class Work extends Component {
   }
   render() {
     const projectsArray = Object.values(projects);
-    console.log(projectsArray)
     return (
-      <div className="work">
-        <glamorous.Div display="flex" flexFlow="row wrap" margin="1rem 0">
-          {projectsArray.map((Project, idx) => {
-            const path = `${this.props.match.url}/${Project.slug}`;
-            return (
-              <div key={idx}>
-                <Card
-                  projectLink={path}
-                  projectName={Project.name}
-                  projectDescription={Project.description}
-                  projectColor={Project.color}
-                  projectImage={Project.image}
-                />
-                <Route
-                  path={path}
-                  children={({ match, path, ...rest }) => (
-                    <AnimateProject match={match}>
-                      {match && <Project.component match={match} {...rest} />}
-                    </AnimateProject>
-                  )}
-                />
-              </div>
-            );
-          })}
-        </glamorous.Div>
-      </div>
+        <div className="work">
+          <h1>Work</h1>
+          <p>
+          I’m a designer and developer. Here are some highlights from my career
+          </p>
+          {/* <glamorous.Div display="flex" flexFlow="row wrap" margin="1rem 0">
+            {projectsArray.map((Project, idx) => {
+              const path = `${this.props.match.url}/${Project.slug}`;
+              return (
+                <div key={idx}>
+                  <Card
+                    projectLink={path}
+                    projectName={Project.name}
+                    projectDescription={Project.description}
+                    projectColor={Project.color}
+                    projectImage={Project.image}
+                  />
+                  <Route
+                    path={path}
+                    children={({ match, path, ...rest }) => (
+                      <AnimateProject match={match}>
+                        {match && <Project.component match={match} {...rest} />}
+                      </AnimateProject>
+                    )}
+                  />
+                </div>
+              );
+            })}
+          </glamorous.Div> */}
+        </div>
     );
   }
 }
