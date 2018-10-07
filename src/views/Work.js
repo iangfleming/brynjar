@@ -27,10 +27,10 @@ class Work extends Component {
     const projectsArray = Object.values(projects);
     return (
         <div className="work">
-          <h1>Work</h1>
+          {/* <h1>Work</h1>
           <p>
           I’m a designer and developer. Here are some highlights from my career
-          </p>
+          </p> */}
           {/* <glamorous.Div display="flex" flexFlow="row wrap" margin="1rem 0">
             {projectsArray.map((Project, idx) => {
               const path = `${this.props.match.url}/${Project.slug}`;

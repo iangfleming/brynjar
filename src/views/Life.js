@@ -18,10 +18,10 @@ class Life extends Component {
   render() {
     return (
       <div className="life">
-          <h1>Life</h1>
+          {/* <h1>Life</h1>
           <p>
           Call it a blog or whatever you like. These are the public records of my experiences.
-          </p>
+          </p> */}
         {/* <glamorous.Div
           display="flex"
           flexFlow="row wrap"
