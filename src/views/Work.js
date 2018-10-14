@@ -25,38 +25,38 @@ class Work extends Component {
   }
   render() {
     const projectsArray = Object.values(projects);
-    return (
-        <div className="work">
-          {/* <h1>Work</h1>
-          <p>
-          I’m a designer and developer. Here are some highlights from my career
-          </p> */}
-          {/* <glamorous.Div display="flex" flexFlow="row wrap" margin="1rem 0">
-            {projectsArray.map((Project, idx) => {
-              const path = `${this.props.match.url}/${Project.slug}`;
-              return (
-                <div key={idx}>
-                  <Card
-                    projectLink={path}
-                    projectName={Project.name}
-                    projectDescription={Project.description}
-                    projectColor={Project.color}
-                    projectImage={Project.image}
-                  />
-                  <Route
-                    path={path}
-                    children={({ match, path, ...rest }) => (
-                      <AnimateProject match={match}>
-                        {match && <Project.component match={match} {...rest} />}
-                      </AnimateProject>
-                    )}
-                  />
-                </div>
-              );
-            })}
-          </glamorous.Div> */}
-        </div>
-    );
+    if (this.props.active) {
+      return (
+          <div className="work">
+            {/* <glamorous.Div display="flex" flexFlow="row wrap" margin="1rem 0">
+              {projectsArray.map((Project, idx) => {
+                const path = `${this.props.match.url}/${Project.slug}`;
+                return (
+                  <div key={idx}>
+                    <Card
+                      projectLink={path}
+                      projectName={Project.name}
+                      projectDescription={Project.description}
+                      projectColor={Project.color}
+                      projectImage={Project.image}
+                    />
+                    <Route
+                      path={path}
+                      children={({ match, path, ...rest }) => (
+                        <AnimateProject match={match}>
+                          {match && <Project.component match={match} {...rest} />}
+                        </AnimateProject>
+                      )}
+                    />
+                  </div>
+                );
+              })}
+            </glamorous.Div> */}
+          </div>
+      );
+    } else {
+      return null;
+    }
   }
 }
 
