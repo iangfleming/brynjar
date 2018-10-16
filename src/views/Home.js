@@ -138,7 +138,7 @@ class Home extends Component {
                 ...styles,
                 background: Colors.yellow,
                 height: "100vh",
-                cursor: "pointer",
+                cursor: work ? "auto" : "pointer",
               }}
               onClick={() => this.handlePanelClick("work")}
               onMouseOver={() => this.handleHover("left")}
@@ -177,7 +177,7 @@ class Home extends Component {
                 ...styles,
                 background: Colors.teal,
                 height: "100vh",
-                cursor: "pointer",
+                cursor: life ? "auto" : "pointer",
               }}
               onClick={() => this.handlePanelClick("life")}
               onMouseOver={() => this.handleHover("right")}
