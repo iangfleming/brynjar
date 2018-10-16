@@ -19,9 +19,8 @@ class Card extends Component {
       {
         position: "relative",
         height: "8rem",
-        width: "90vw",
+        width: "100vw",
         backgroundImage: `url(${this.props.projectImage})`,
-          backgroundColor: this.props.projectColor,
         backgroundSize: "cover",
         backgroundPosition: "center center",
         padding: "3rem 2rem",

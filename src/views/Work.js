@@ -37,7 +37,7 @@ class Work extends Component {
               native
             >
               {projectsArray.map((Project, idx) => ({ Y }) => {
-                const path = `${this.props.match.url}/${Project.slug}`;
+                const path = `/work/${Project.slug}`;
                 return (
                   <animated.div
                     key={idx}
@@ -52,16 +52,7 @@ class Work extends Component {
                       projectColor={Project.color}
                       projectImage={Project.image}
                     />
-                    <Route
-                      path={path}
-                      children={({ match, path, ...rest }) => (
-                        <AnimateProject match={match}>
-                          {match && (
-                            <Project.component match={match} {...rest} />
-                          )}
-                        </AnimateProject>
-                      )}
-                    />
+                    <Route path={path} component={Project.component}/>
                   </animated.div>
                 );
               })}
