@@ -1,14 +1,8 @@
 /* global location */
 /* eslint no-restricted-globals: ["off", "location"] */
 import React, { Component } from "react";
-import {
-  Spring,
-  Keyframes,
-  animated,
-  interpolate,
-  config
-} from "react-spring";
-import {withRouter } from "react-router-dom";
+import { Spring, Keyframes, animated, interpolate, config } from "react-spring";
+import { withRouter } from "react-router-dom";
 import Work from "./Work";
 import Life from "./Life";
 import glamorous from "glamorous";
@@ -45,10 +39,10 @@ class Home extends Component {
   };
   componentWillMount() {
     if (this.props.location.pathname.includes("work")) {
-      this.setState({panel: "work"})
+      this.setState({ panel: "work" });
     }
     if (this.props.location.pathname.includes("life")) {
-      this.setState({panel: "life"})
+      this.setState({ panel: "life" });
     }
   }
   handleHover = direction => {
@@ -62,19 +56,19 @@ class Home extends Component {
   handlePanelClick = panel => {
     if (this.state.panel === "home") {
       if (panel === "work") {
-        this.props.history.push("/work")
+        this.props.history.push("/work");
       }
       if (panel === "life") {
-        this.props.history.push("/life")
+        this.props.history.push("/life");
       }
       this.setState({ panel, lY: 0, rY: 0 });
     } else if (this.state.panel !== panel) {
-      this.props.history.push("/")
+      this.props.history.push("/");
       this.setState({ panel: "home", lY: 0, rY: 0 });
     }
   };
   render() {
-    const { panel } = this.state;
+    const { panel, workContentVisible, lifeContentVisible } = this.state;
     const home = this.state.panel === "home";
     const work = this.state.panel === "work";
     const life = this.state.panel === "life";
@@ -131,14 +125,21 @@ class Home extends Component {
             </animated.svg>
           )}
         </Spring>
-        <WorkPanel state={panel} config={panelSpringConfig} native>
+        <WorkPanel
+          state={panel}
+          config={panelSpringConfig}
+          native
+          onStart={() =>
+            home ? this.setState({ lifeContentVisible: true }) : null
+          }
+        >
           {styles => (
             <animated.div
               style={{
                 ...styles,
                 background: Colors.yellow,
                 height: "100vh",
-                cursor: work ? "auto" : "pointer",
+                cursor: work ? "auto" : "pointer"
               }}
               onClick={() => this.handlePanelClick("work")}
               onMouseOver={() => this.handleHover("left")}
@@ -146,16 +147,16 @@ class Home extends Component {
               <Spring
                 from={{ Y: 60, opacity: 1 }}
                 to={{ Y: work ? 0 : 60, opacity: work ? 0 : 1 }}
+                onRest={() => this.setState({ workContentVisible: false })}
                 native
               >
                 {styles => (
                   <animated.div
                     style={{
+                      display: workContentVisible ? "auto" : "none",
                       margin: "3rem",
                       opacity: life ? 0 : 1,
-                      transform: styles.Y.interpolate(
-                        Y => `translateY(${Y}vh)`
-                      )
+                      transform: styles.Y.interpolate(Y => `translateY(${Y}vh)`)
                     }}
                   >
                     <glamorous.H2>Work</glamorous.H2>
@@ -170,14 +171,21 @@ class Home extends Component {
             </animated.div>
           )}
         </WorkPanel>
-        <LifePanel state={panel} config={panelSpringConfig} native>
+        <LifePanel
+          state={panel}
+          config={panelSpringConfig}
+          onStart={() =>
+            home ? this.setState({ lifeContentVisible: true }) : null
+          }
+          native
+        >
           {styles => (
             <animated.div
               style={{
                 ...styles,
                 background: Colors.teal,
                 height: "100vh",
-                cursor: life ? "auto" : "pointer",
+                cursor: life ? "auto" : "pointer"
               }}
               onClick={() => this.handlePanelClick("life")}
               onMouseOver={() => this.handleHover("right")}
@@ -185,22 +193,22 @@ class Home extends Component {
               <Spring
                 from={{ Y: 60, opacity: 1 }}
                 to={{ Y: !home ? 0 : 60, opacity: !home ? 0 : 1 }}
+                onRest={() => this.setState({ lifeContentVisible: false })}
                 native
               >
                 {styles => (
                   <animated.div
                     style={{
+                      display: lifeContentVisible ? "auto" : "none",
                       margin: "3rem",
                       opacity: work ? 0 : 1,
-                      transform: styles.Y.interpolate(
-                        Y => `translateY(${Y}vh)`
-                      )
+                      transform: styles.Y.interpolate(Y => `translateY(${Y}vh)`)
                     }}
                   >
                     <h2>Life</h2>
                     <animated.p style={{ opacity: styles.opacity }}>
-                      Call it a blog or whatever you like. These are the
-                      public records of my experiences.
+                      Call it a blog or whatever you like. These are the public
+                      records of my experiences.
                     </animated.p>
                   </animated.div>
                 )}

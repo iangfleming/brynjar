@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import glamorous from "glamorous";
-import { Link } from "react-router-dom";
 import ProjectCloseBtn from "../components/ProjectCloseBtn";
 import ProjectModal from "../components/ProjectModal";
 import Code from "../components/Code";
@@ -43,7 +42,7 @@ class carbonDesignSystem extends Component {
     return (
       <ProjectModal>
         <ProjectCloseBtn />
-        <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto">
+        <glamorous.Div maxWidth="567px" margin="0 auto">
           <glamorous.H1 fontSize={Sizes.head}>
             <glamorous.Span color={Colors.red} marginRight="10px">
               Carbon
