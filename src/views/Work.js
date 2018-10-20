@@ -21,7 +21,6 @@ class Work extends Component {
   };
   render() {
     const projectsArray = Object.values(projects);
-    console.log(projectsArray);
     if (this.props.active) {
       return (
         <div className="work">
@@ -51,36 +50,6 @@ class Work extends Component {
                         projectImage={Project.image}
                       />
                     </animated.div>
-                    <Route
-                      path={path}
-                      children={({ match, path, ...rest }) => (
-                        <Transition
-                          from={{ opacity: 0, scale: .6 }}
-                          enter={{ opacity: 1, scale: 1 }}
-                          leave={{ opacity: 0, scale: .6 }}
-                          config={{tension: 250, friction: 20}}
-                          native
-                        >
-                          {match &&
-                            (({ opacity, scale }) => (
-                              <animated.div
-                                style={{
-                                  opacity: opacity,
-                                  transform: scale.interpolate(scale => `scale(${scale})`),
-                                  height: "100vh",
-                                  width: "100vw",
-                                  position: "fixed",
-                                  top: "0",
-                                  left: "0",
-                                  zIndex: "100"
-                                }}
-                              >
-                                <Project.component match={match} {...rest} />
-                              </animated.div>
-                            ))}
-                        </Transition>
-                      )}
-                    />
                   </React.Fragment>
                 );
               })}

@@ -49,7 +49,7 @@ class phobioOps extends Component {
       <ProjectModal>
         <ProjectCloseBtn />
         <Parallax pages={1.3}>
-          <ParallaxLayer offset={0} style={{height: "400px"}}>
+          <ParallaxLayer offset={0} style={{}}>
             <Hero>
               <glamorous.Div maxWidth={Sizes.maxWidth}>
                 <HeroTitle>Phobio Operations App</HeroTitle>
