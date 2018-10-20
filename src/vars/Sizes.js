@@ -1,5 +1,6 @@
 const Sizes = {
   maxWidth: "960px",
+  content: "567px",
   sub: "14px",
   base: "16px",
   super: "18px",

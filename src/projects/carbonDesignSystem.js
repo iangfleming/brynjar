@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import glamorous from "glamorous";
+import { Spring } from "react-spring";
 import ProjectCloseBtn from "../components/ProjectCloseBtn";
 import ProjectModal from "../components/ProjectModal";
 import Code from "../components/Code";
@@ -14,6 +15,9 @@ import blob from "../images/blob.svg";
 
 class carbonDesignSystem extends Component {
   render() {
+    const Downloads = props => {
+      return <glamorous.P color="white">{props.count}</glamorous.P>;
+    };
     const A = glamorous.a({
       color: "white",
       background: Colors.secondary,
@@ -26,7 +30,7 @@ class carbonDesignSystem extends Component {
       alignItems: "center",
       marginBottom: "1rem"
     });
-    const Quote = glamorous.div( props => {
+    const Quote = glamorous.div(props => {
       return {
         backgroundImage: `url(${props.image})`,
         backgroundRepeat: "no-repeat",
@@ -37,19 +41,35 @@ class carbonDesignSystem extends Component {
         padding: "2.5rem",
         marginLeft: "-4rem",
         marginRight: "3rem"
-      }
+      };
+    });
+    const SectionTitle = glamorous.h4({
+      fontSize: Sizes.subhead
+    });
+    const FullWidth = glamorous.div({
+      width: "100vw",
+      position: "relative",
+      left: "50%",
+      right: "50%",
+      marginLeft: "-50vw",
+      marginRight: "-50vw",
+      background: Colors.text
     });
     return (
       <ProjectModal>
         <ProjectCloseBtn />
         <glamorous.Div maxWidth="567px" margin="0 auto">
-          <glamorous.H1 fontSize={Sizes.head}>
+          <glamorous.H1 fontSize={Sizes.head} marginBottom=".5rem">
             <glamorous.Span color={Colors.red} marginRight="10px">
               Carbon
             </glamorous.Span>
             Design System
           </glamorous.H1>
-          <glamorous.H4 fontSize={Sizes.sub}>
+          <glamorous.H4
+            fontSize={Sizes.sub}
+            marginTop=".5rem"
+            marginBottom="2rem"
+          >
             A design ecosystem for IBM products
           </glamorous.H4>
           <p>
@@ -61,34 +81,64 @@ class carbonDesignSystem extends Component {
             developers and recognition in the form of awards and references in
             books and articles.
           </p>
+          <FullWidth>
+            <glamorous.Div maxWidth="700px" margin="0 auto">
+              <Spring
+                from={{ count: 0 }}
+                to={{ count: 31529 }}
+                config={{
+                  tension: 0,
+                  friction: 2,
+                  restSpeedThreshold: 1,
+                  restDisplacementThreshold: 1,
+                  overshootClamping: true
+                  
+                }}
+              >
+                {props => <Downloads count={props.count} />}
+              </Spring>
+            </glamorous.Div>
+          </FullWidth>
           <p>
             My role involved building components, researching patterns and how
             they were used in IBM products, and collecting and addressing
             feedback from users.
           </p>
-          <glamorous.Div width="100%">
-            <glamorous.Img src={hacktime2} alt="" width="auto" height="10rem" />
-            <glamorous.Img src={hacktime3} alt="" width="auto" height="10rem" />
-          </glamorous.Div>
-          <h3>Need</h3>
+          <FullWidth>
+            <glamorous.Div maxWidth="700px" margin="0 auto">
+              <glamorous.Img
+                src={hacktime2}
+                alt=""
+                width="auto"
+                height="10rem"
+              />
+              <glamorous.Img
+                src={hacktime3}
+                alt=""
+                width="auto"
+                height="10rem"
+              />
+            </glamorous.Div>
+          </FullWidth>
+          <SectionTitle>Need</SectionTitle>
           <Row>
             <p>
-              IBM Design consists of several thousand designers. Which sounds like
-              a lot, but at a company of over 300,000 employees we were still
-              outnumbered. At that scale there should’ve been a design system in
-              place to help the designers communicate their work to the rest of
-              the company. However, previous attempts at building design systems
-              had never really taken off. They had primarily focused on static
-              design assets and left engineers with the difficult task of
-              translating them into code. We saw an opportunity for a better
-              solution.
+              IBM Design consists of several thousand designers. Which sounds
+              like a lot, but at a company of over 300,000 employees we were
+              still outnumbered. At that scale there should’ve been a design
+              system in place to help the designers communicate their work to
+              the rest of the company. However, previous attempts at building
+              design systems had never really taken off. They had primarily
+              focused on static design assets and left engineers with the
+              difficult task of translating them into code. We saw an
+              opportunity for a better solution.
             </p>
             <Quote image={blob}>
               <p>quote</p>
               <p>by so and so</p>
             </Quote>
           </Row>
-          <h3>Process</h3>
+          <SectionTitle>Process</SectionTitle>
           <p>
             We began our research process by interviewing product teams who
             would be using our design system. From those interviews we learned
@@ -96,7 +146,12 @@ class carbonDesignSystem extends Component {
             didn't.
           </p>
           <glamorous.Div width="100%" textAlign="center">
-            <glamorous.Img src={hacktime1} alt="" width="100%" maxWidth="500px"/>
+            <glamorous.Img
+              src={hacktime1}
+              alt=""
+              width="100%"
+              maxWidth="500px"
+            />
           </glamorous.Div>
           <p>
             When building a component library of this scale, there are many
@@ -110,7 +165,7 @@ class carbonDesignSystem extends Component {
             where we synthesized our findings and planned how we would develop
             our design system
           </p>
-          <h3>Result</h3>
+          <SectionTitle>Result</SectionTitle>
           <p>
             The system we built includes a component library built using vanilla
             javascript and one for the React.js environment, design assets in a
@@ -163,7 +218,7 @@ class carbonDesignSystem extends Component {
             task, especially in such a large organization, but I learned so much
             and I'm proud of what we built.
           </p>
-          <h3>TLDR;</h3>
+          <SectionTitle>TLDR;</SectionTitle>
           <p>stuff</p>
         </glamorous.Div>
       </ProjectModal>
