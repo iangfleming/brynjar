@@ -14,7 +14,6 @@ class App extends Component {
           <Route exact path="/(|work|life)" component={Home}/>
           {projectsArray.map((Project, idx) => {
             const path = `/work/${Project.slug}`;
-            console.log("hi", Project)
             return (<Route exact path={path} component={Project.component}/>)
           })}
         </div>
