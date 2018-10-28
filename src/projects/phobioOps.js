@@ -3,7 +3,7 @@ import glamorous from "glamorous";
 import Plx from "react-plx";
 import Sizes from "../vars/Sizes";
 import MediaQueries from "../vars/MediaQueries";
-import ProjectCloseBtn from "../components/ProjectCloseBtn";
+import ProjectBackBtn from "../components/ProjectBackBtn";
 import { Hero, HeroTitle, HeroDesc, Content, SectionTitle, FullWidth } from "../components/ProjectLayout";
 import Colors from "../vars/Colors";
 
@@ -42,7 +42,7 @@ class phobioOps extends Component {
     ];
     return (
       <div>
-        <ProjectCloseBtn />
+        <ProjectBackBtn />
         <Hero bg={Colors.yellow}>
           <glamorous.Div maxWidth={Sizes.maxWidth}>
             <HeroTitle>Phobio Operations App</HeroTitle>

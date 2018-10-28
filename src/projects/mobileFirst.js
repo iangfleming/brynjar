@@ -2,16 +2,36 @@ import React, { Component } from "react";
 import glamorous from "glamorous";
 import { Link } from "react-router-dom";
 import Sizes from "../vars/Sizes";
-import ProjectCloseBtn from "../components/ProjectCloseBtn";
-import ProjectModal from "../components/ProjectModal";
+import ProjectBackBtn from "../components/ProjectBackBtn";
+import {
+  Hero,
+  HeroTitle,
+  HeroDesc,
+  Content,
+  SectionTitle,
+  BlockLink,
+  FullWidth
+} from "../components/ProjectLayout";
+import Colors from "../vars/Colors";
 
 class mobileFirst extends Component {
   render() {
     return (
-      <ProjectModal>
-        <ProjectCloseBtn />
-        <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto">
-          <h1>IBM MobileFirst</h1>
+      <div>
+        <ProjectBackBtn white/>
+        <Hero bg={Colors.purple2}>
+          <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto">
+            <HeroTitle white>IBM MobileFirst</HeroTitle>
+            <HeroDesc white>
+              Sometimes preventing the wrong product from being made is just as
+              imporant as building a product.
+            </HeroDesc>
+          </glamorous.Div>
+        </Hero>
+        <Content>
+          <SectionTitle>
+            The story of a failed project
+          </SectionTitle>
           <p>
             Sometimes preventing the wrong product from being made is just as
             important as building a product. Although it's weird having nothing
@@ -35,13 +55,19 @@ class mobileFirst extends Component {
             We interviewed developers, read everything we could about the
             domain, and dug deep into all our competitors products.
           </p>
+          <FullWidth bg={Colors.purple3} css={{padding: "2rem 0", textAlign: "center"}}>
+            <Content>
+              <glamorous.P fontSize={Sizes.head} fontFamily="Oswald">
+                We realized that the needs of our users were already being met by
+                other IBM products!
+              </glamorous.P>
+            </Content>
+          </FullWidth>
           <p>
-            We eventually realized that the needs of our users were{" "}
-            <strong>already</strong> being met by other{" "}
-            <strong>IBM products</strong>! As crazy as it may seem, in a company
-            as big as IBM there are so many products that it's really easy for
-            them to overlap.
+            As crazy as it may seem, in a company as big as IBM there are so
+            many products that it's really easy for them to overlap.
           </p>
+          <SectionTitle>Result</SectionTitle>
           <p>
             After this realization we designed a plan for our existing analytics
             tool to work with, instead of against, the other IBM analytics
@@ -54,8 +80,8 @@ class mobileFirst extends Component {
             company time and money and most importantly helped product teams
             that weren't talking to eachother connect.
           </p>
-        </glamorous.Div>
-      </ProjectModal>
+        </Content>
+      </div>
     );
   }
 }

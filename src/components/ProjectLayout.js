@@ -13,31 +13,34 @@ export const Hero = glamorous.div(({bg}) => ({
   textAlign: "center",
   zIndex: "-1"
 }));
-export const HeroTitle = glamorous.h1({
+export const HeroTitle = glamorous.h1(({white}) => ({
+  color: white ? "white" : "inherit",
+  borderBottom: white ? "2px solid white" : `2px solid ${Colors.text}`,
   fontFamily: "Oswald",
   fontWeight: 600,
   fontSize: Sizes.head,
-  borderBottom: `2px solid ${Colors.text}`,
   margin: "0",
   paddingBottom: "1rem",
   zIndex: "1",
   [MediaQueries.md]: {
     fontSize: Sizes.superhead,
   }
-});
-export const HeroDesc = glamorous.p({
+}));
+export const HeroDesc = glamorous.p(({white}) => ({
+  color: white ? "white" : "inherit",
   margin: "0",
   paddingTop: "1rem",
   maxWidth: Sizes.content,
   fontStyle: "italic"
-});
+}));
 export const Content = glamorous.div({
   maxWidth: Sizes.content,
   margin: "0 auto"
 })
 export const SectionTitle = glamorous.h3({
   fontFamily: "Oswald",
-  fontSize: Sizes.head
+  fontSize: Sizes.head,
+  textTransform: "uppercase"
 });
 export const FullWidth = glamorous.div(({bg}) => ({
   width: "100vw",

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import glamorous from "glamorous";
-import ProjectCloseBtn from "../components/ProjectCloseBtn";
+import ProjectBackBtn from "../components/ProjectBackBtn";
 import Code from "../components/Code";
 import Sizes from "../vars/Sizes";
 import {
@@ -18,7 +18,7 @@ class Acorns extends Component {
   render() {
     return (
       <div>
-        <ProjectCloseBtn />
+        <ProjectBackBtn />
         <Hero bg={Colors.paleGreen}>
           <glamorous.Div maxWidth={Sizes.maxWidth}>
             <HeroTitle>Acorns</HeroTitle>

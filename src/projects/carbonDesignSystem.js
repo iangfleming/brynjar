@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import glamorous from "glamorous";
 import { Spring } from "react-spring";
-import ProjectCloseBtn from "../components/ProjectCloseBtn";
+import ProjectBackBtn from "../components/ProjectBackBtn";
 import ProjectModal from "../components/ProjectModal";
 import {BlockLink} from "../components/ProjectLayout";
 import Code from "../components/Code";
@@ -51,7 +51,7 @@ class carbonDesignSystem extends Component {
     });
     return (
       <ProjectModal>
-        <ProjectCloseBtn />
+        <ProjectBackBtn />
         <glamorous.Div maxWidth="567px" margin="0 auto">
           <glamorous.H1 fontSize={Sizes.head} marginBottom=".5rem">
             <glamorous.Span color={Colors.red} marginRight="10px">

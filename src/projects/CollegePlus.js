@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import glamorous from "glamorous";
 import { Link } from "react-router-dom";
 import Sizes from "../vars/Sizes";
-import ProjectCloseBtn from "../components/ProjectCloseBtn";
+import ProjectBackBtn from "../components/ProjectBackBtn";
 import ProjectModal from '../components/ProjectModal';
 
 class CollegePlus extends Component {
   render() {
     return (
       <ProjectModal>
-        <ProjectCloseBtn />
+        <ProjectBackBtn />
         <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto">
           <h1 class='h4'>Redesigning the CollegePlus Home Page</h1>
           <h6 class='thin'>Or</h6>
