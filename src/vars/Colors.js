@@ -7,6 +7,7 @@ const ColorsHex = {
   yellow: "#F5D41F",
   teal: "#01B3BB",
   green: "#5FA45A",
+  paleGreen: "#B9CBB7",
   background: "#FBFBFB",
   gray1: "#696b76",
   gray2: "#c2c3c8",

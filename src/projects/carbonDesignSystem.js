@@ -3,6 +3,7 @@ import glamorous from "glamorous";
 import { Spring } from "react-spring";
 import ProjectCloseBtn from "../components/ProjectCloseBtn";
 import ProjectModal from "../components/ProjectModal";
+import {BlockLink} from "../components/ProjectLayout";
 import Code from "../components/Code";
 import Sizes from "../vars/Sizes";
 import Colors from "../vars/Colors";
@@ -18,13 +19,6 @@ class carbonDesignSystem extends Component {
     const Downloads = props => {
       return <glamorous.P color="white">{props.count}</glamorous.P>;
     };
-    const A = glamorous.a({
-      color: "white",
-      background: Colors.secondary,
-      textDecoration: "none",
-      padding: "1px 4px",
-      margin: "0 4px"
-    });
     const Row = glamorous.div({
       display: "flex",
       alignItems: "center",
@@ -207,9 +201,9 @@ class carbonDesignSystem extends Component {
             Currently the Carbon Components package is averaging 31,529
             downloads a *week* on NPM, it's frequently reference in the new
             Smashing Mag book “Design Systems", we won the
-            <A href="http://www.howdesign.com/in-house-design-awards-best-of-show-carbon-design-system/">
+            <BlockLink bg={Colors.secondary} href="http://www.howdesign.com/in-house-design-awards-best-of-show-carbon-design-system/">
               HOW In-House Design Award
-            </A>
+            </BlockLink>
             in 2017 and members of our team have spoken about Carbon at
             conferences all over the globe.
           </p>
