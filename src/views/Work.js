@@ -24,7 +24,7 @@ class Work extends Component {
     if (this.props.active) {
       return (
         <div className="work">
-          <glamorous.Div display="flex" flexFlow="row wrap" margin="1rem 0">
+          <glamorous.Div display="flex" flexFlow="row wrap" margin="1rem 0" overflow="hidden">
             <Trail
               from={{ Y: 100 }}
               to={{ Y: 0 }}

@@ -138,7 +138,7 @@ class Home extends Component {
               style={{
                 ...styles,
                 background: Colors.yellow,
-                height: "100vh",
+                minHeight: "100vh",
                 cursor: work ? "auto" : "pointer"
               }}
               onClick={() => this.handlePanelClick("work")}
@@ -153,7 +153,7 @@ class Home extends Component {
                 {styles => (
                   <animated.div
                     style={{
-                      display: workContentVisible ? "auto" : "none",
+                      // display: "none",
                       margin: "3rem",
                       opacity: life ? 0 : 1,
                       transform: styles.Y.interpolate(Y => `translateY(${Y}vh)`)
@@ -184,7 +184,7 @@ class Home extends Component {
               style={{
                 ...styles,
                 background: Colors.teal,
-                height: "100vh",
+                minHeight: "100vh",
                 cursor: life ? "auto" : "pointer"
               }}
               onClick={() => this.handlePanelClick("life")}
@@ -199,7 +199,7 @@ class Home extends Component {
                 {styles => (
                   <animated.div
                     style={{
-                      display: lifeContentVisible ? "auto" : "none",
+                      // display: "none",
                       margin: "3rem",
                       opacity: work ? 0 : 1,
                       transform: styles.Y.interpolate(Y => `translateY(${Y}vh)`)
