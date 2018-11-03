@@ -28,16 +28,17 @@ class Work extends Component {
             <Trail
               from={{ Y: 100 }}
               to={{ Y: 0 }}
-              keys={projectsArray.map(project => project.key)}
+              items={projectsArray}
               delay="500"
               native
             >
-              {projectsArray.map((Project, idx) => ({ Y }) => {
+              {(Project, i) => ({ Y }) => {
                 const path = `/work/${Project.slug}`;
+                console.log(i)
                 return (
                   <React.Fragment>
                     <animated.div
-                      key={idx}
+                      key={i}
                       style={{
                         transform: Y.interpolate(Y => `translateY(${Y}vh)`)
                       }}
@@ -52,7 +53,7 @@ class Work extends Component {
                     </animated.div>
                   </React.Fragment>
                 );
-              })}
+              }}
             </Trail>
           </glamorous.Div>
         </div>

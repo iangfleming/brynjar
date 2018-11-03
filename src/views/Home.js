@@ -28,8 +28,8 @@ const panelSpringConfig = {
   friction: 10
 };
 const logoSpringConfig = {
-  tension: 30,
-  friction: 2
+  tension: 35,
+  friction: 3
 };
 class Home extends Component {
   state = {
@@ -88,6 +88,7 @@ class Home extends Component {
                 height: "187px",
                 position: "fixed",
                 left: "50%",
+                top: "20%",
                 marginLeft: "-111px",
                 overflow: "visible"
               }}
@@ -161,8 +162,9 @@ class Home extends Component {
                   >
                     <glamorous.H2>Work</glamorous.H2>
                     <animated.p style={{ opacity: styles.opacity }}>
-                      I’m a designer and developer. Here are some highlights
-                      from my career
+                      I’m a designer and developer.
+                      <br />
+                      Here are some highlights from my career
                     </animated.p>
                   </animated.div>
                 )}
@@ -207,8 +209,9 @@ class Home extends Component {
                   >
                     <h2>Life</h2>
                     <animated.p style={{ opacity: styles.opacity }}>
-                      Call it a blog or whatever you like. These are the public
-                      records of my experiences.
+                      Call it a blog or whatever you like.
+                      <br />
+                      These are the public records of my experiences.
                     </animated.p>
                   </animated.div>
                 )}

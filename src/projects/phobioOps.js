@@ -4,8 +4,16 @@ import Plx from "react-plx";
 import Sizes from "../vars/Sizes";
 import MediaQueries from "../vars/MediaQueries";
 import ProjectBackBtn from "../components/ProjectBackBtn";
-import { Hero, HeroTitle, HeroDesc, Content, SectionTitle, FullWidth } from "../components/ProjectLayout";
+import {
+  Hero,
+  HeroTitle,
+  HeroDesc,
+  Content,
+  SectionTitle,
+  FullWidth
+} from "../components/ProjectLayout";
 import Colors from "../vars/Colors";
+import earlyWireframes from "../images/phobio/early-wireframes.png";
 
 class phobioOps extends Component {
   render() {
@@ -13,19 +21,20 @@ class phobioOps extends Component {
       position: "absolute",
       top: "-280px",
       right: "-50px"
-    })
+    });
     const UpperShape = glamorous.svg({
       height: "500px",
       [MediaQueries.md]: {
-        height: "500px",
+        height: "500px"
       }
     });
-    const LowerShape = glamorous.svg({
-    });
-    const easeOutElastic = (t) => {
+    const LowerShape = glamorous.svg({});
+    const easeOutElastic = t => {
       var p = 0.3;
-      return Math.pow(2,-10*t) * Math.sin((t-p/4)*(2*Math.PI)/p) + 1;
-  }
+      return (
+        Math.pow(2, -10 * t) * Math.sin(((t - p / 4) * (2 * Math.PI)) / p) + 1
+      );
+    };
     const plxConfig = [
       {
         start: 0,
@@ -51,9 +60,7 @@ class phobioOps extends Component {
               traded-in by customers upgrading their devices
             </HeroDesc>
           </glamorous.Div>
-          <UpperPlx
-            parallaxData={plxConfig}
-          >
+          <UpperPlx parallaxData={plxConfig}>
             <UpperShape
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 352 334"
@@ -71,7 +78,7 @@ class phobioOps extends Component {
             style={{
               position: "absolute",
               top: "250px",
-              left: "-50px",
+              left: "-50px"
             }}
           >
             <LowerShape
@@ -88,22 +95,21 @@ class phobioOps extends Component {
           </Plx>
         </Hero>
         <glamorous.Div width="100%" height="100%" background="white">
-          <Content css={{background: "white", paddingTop: "3rem"}}>
+          <Content css={{ background: "white", paddingTop: "3rem" }}>
             <SectionTitle>Need</SectionTitle>
             <p>
-              Phobio works with cell phone retailers to handle devices that are
-              traded-in by customers upgrading their devices. To the customer it
-              is presented a simple easy process but behind the scenes there is
-              quite an infrastructure to handle around a million devices a year.
+              To the customer it is presented a simple easy process but behind
+              the scenes there is quite an infrastructure to handle around a
+              million devices a year.
             </p>
             <p>
               This project in particular was to redesign the internal
               application that Phobio team members in the various warehouses
               around the country use to track and managed all these devices.
             </p>
-            <SectionTitle>Process</SectionTitle>
+            <SectionTitle>Design</SectionTitle>
             <p>
-              The previous interation of the these tools usuable but far from
+              The previous interation of these was tools usuable but far from
               ideal. It presented the users with every piece of information and
               every available option with very little hierachy. And the last
               thing you want to be doing in a fast pace warehouse enviroment is
@@ -116,12 +122,40 @@ class phobioOps extends Component {
               speed and accuracy while reducing stress and improving the
               experience for them.
             </p>
+            <p>
+              We identified two primary user journeys, receiving shipments and
+              inspecting devices. Because of their step-by-step nature the views
+              were incredibly minimal. Most of the steps only needed to present
+              a single choice to the user, i.e. "Is this shipment damaged?" or
+              "Scan the next device".
+            </p>
+            <glamorous.Figure width="100%" margin="0 auto 2.5rem auto">
+              <glamorous.Img
+                src={earlyWireframes}
+                alt=""
+                width="100%"
+                height="auto"
+              />
+              <glamorous.Figcaption
+                fontSize={Sizes.sub}
+                fontStyle="italic"
+                float="right"
+                marginTop="8px"
+              >
+                Some early wireframes of the user journeys
+              </glamorous.Figcaption>
+            </glamorous.Figure>
+            <p>
+              A combination of interviews, sketches, wireframes, and more
+              wireframes was my <em>modus operandi</em> and after a few rounds
+              it was time to...
+            </p>
             <SectionTitle>Build</SectionTitle>
             <p>
               The majority of the Phobio applications just use a simple MVC
               pattern with Django. However, because of the limited scope of this
               new app I decided it would be a good place to start modernizing
-              the tech stack.
+              the front-end stack.
             </p>
             <p>
               The Django backend stayed intact but I built the client-side using
@@ -131,7 +165,7 @@ class phobioOps extends Component {
             <p>
               I'd been involved in building several large React apps but his was
               the first time, outside of personal projects, I'd built one from
-              scratch! It was an excellent learning experience for me and a step
+              scratch. It was an excellent learning experience for me and a step
               in the right direction for Phobio's codebase.
             </p>
             <FullWidth>
@@ -142,6 +176,15 @@ class phobioOps extends Component {
               </glamorous.Div>
               <p />
             </FullWidth>
+            <p>
+              The redesigned app is in the finally stages of testing now but
+              response so far has been great!
+            </p>
+            <p>
+              Rather than fighting and hunting their way through the old app the
+              users are now presented only with information they need and the
+              next steps they must take.
+            </p>
           </Content>
         </glamorous.Div>
       </div>
