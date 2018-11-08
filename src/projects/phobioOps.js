@@ -14,6 +14,8 @@ import {
 } from "../components/ProjectLayout";
 import Colors from "../vars/Colors";
 import earlyWireframes from "../images/phobio/early-wireframes.png";
+import before from "../images/phobio/before.png";
+import after from "../images/phobio/after.png";
 
 class phobioOps extends Component {
   render() {
@@ -95,7 +97,7 @@ class phobioOps extends Component {
           </Plx>
         </Hero>
         <glamorous.Div width="100%" height="100%" background="white">
-          <Content css={{ background: "white", paddingTop: "3rem" }}>
+          <Content css={{ background: "white", paddingTop: "3rem", marginBottom: "3rem" }}>
             <SectionTitle>Need</SectionTitle>
             <p>
               To the customer it is presented a simple easy process but behind
@@ -169,10 +171,47 @@ class phobioOps extends Component {
               in the right direction for Phobio's codebase.
             </p>
             <FullWidth>
-              <glamorous.Div maxWidth={Sizes.content} margin="0 auto">
-                <SectionTitle css={{ color: "#fff", height: "500px" }}>
-                  Result
+              <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto" padding="3rem 1rem">
+                <SectionTitle css={{ color: "#fff"}}>
+                  Before
                 </SectionTitle>
+                <glamorous.Figure width="100%" margin="0 auto 2.5rem auto">
+                  <glamorous.Img
+                    src={before}
+                    alt=""
+                    width="100%"
+                    height="auto"
+                  />
+                  <glamorous.Figcaption
+                    fontSize={Sizes.sub}
+                    fontStyle="italic"
+                    float="right"
+                    marginTop="8px"
+                    color="white"
+                  >
+                    Dense information, low hierachy, and no clear path
+                  </glamorous.Figcaption>
+                </glamorous.Figure>
+                <SectionTitle css={{ color: "#fff"}}>
+                  After
+                </SectionTitle>
+                <glamorous.Figure width="100%" margin="0 auto 2.5rem auto">
+                  <glamorous.Img
+                    src={after}
+                    alt=""
+                    width="100%"
+                    height="auto"
+                  />
+                  <glamorous.Figcaption
+                    fontSize={Sizes.sub}
+                    fontStyle="italic"
+                    float="right"
+                    marginTop="8px"
+                    color="white"
+                  >
+                    Clear path for the user, strong hierachy, simple layout
+                  </glamorous.Figcaption>
+                </glamorous.Figure>
               </glamorous.Div>
               <p />
             </FullWidth>

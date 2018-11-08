@@ -7,6 +7,9 @@ import mobileFirst from "./mobileFirst";
 import phobioOps from "./phobioOps";
 
 import carbonPattern from "../images/carbon/carbon-pattern.svg";
+import warehousePattern from "../images/phobio/warehouse-pattern.svg";
+import ibmLogo from "../images/mobileFirst/ibm-logo.svg";
+import acornsPattern from "../images/acorns/acorns-pattern.svg";
 import hacktime1 from "../images/carbon/hacktime-1.jpg";
 import hacktime2 from "../images/carbon/hacktime-2.jpg";
 import hacktime3 from "../images/carbon/hacktime-3.jpg";
@@ -15,7 +18,7 @@ const projects = {
   carbonDesignSystem: {
     slug: "carbon-design-system",
     name: "Carbon Design System",
-    description: "lorem lorem stuf stuff",
+    description: "Award winning design system for IBM",
     color: Colors.red,
     image: carbonPattern,
     component: carbonDesignSystem
@@ -23,9 +26,9 @@ const projects = {
   phobioOps: {
     slug: "phobio-ops",
     name: "Phobio Operations App",
-    description: "lorem lorem stuf stuff",
+    description: "Using design and modern technology to improve the warehouse experience",
     color: Colors.yellow,
-    image: hacktime2,
+    image: warehousePattern,
     component: phobioOps
   },
   acorns: {
@@ -33,32 +36,32 @@ const projects = {
     name: "Acorns",
     description: "Personal library of helpers",
     color: Colors.purple1,
-    image: hacktime3,
+    image: acornsPattern,
     component: Acorns
   },
   mobileFirst: {
     slug: "mobilefirst",
     name: "IBM MobileFirst",
-    description: "lorem lorem stuf stuff",
+    description: "Not everything works out the way you plan it",
     color: Colors.red,
-    image: hacktime1,
+    image: ibmLogo,
     component: mobileFirst
   },
-  IBMDesignCamp: {
-    slug: "ibm-design-camp",
-    name: "IBM Design Camp",
-    description: "lorem lorem stuf stuff",
-    color: Colors.yellow,
-    image: hacktime1,
-    component: IBMDesignCamp
-  },
-  CollegePlus: {
-    slug: "collegeplus",
-    name: "Redesigning the CollegePlus Home Page",
-    description: "Design is more than making stuff pretty",
-    color: Colors.purple1,
-    image: hacktime1,
-    component: CollegePlus
-  },
+  // IBMDesignCamp: {
+  //   slug: "ibm-design-camp",
+  //   name: "IBM Design Camp",
+  //   description: "lorem lorem stuf stuff",
+  //   color: Colors.yellow,
+  //   image: hacktime1,
+  //   component: IBMDesignCamp
+  // },
+  // CollegePlus: {
+  //   slug: "collegeplus",
+  //   name: "Redesigning the CollegePlus Home Page",
+  //   description: "Design is more than making stuff pretty",
+  //   color: Colors.purple1,
+  //   image: hacktime1,
+  //   component: CollegePlus
+  // },
 }
 export default projects;

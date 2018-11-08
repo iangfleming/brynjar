@@ -19,7 +19,8 @@ class Life extends Component {
             margin="1rem 0"
             overflow="hidden"
           >
-            <Trail
+          <glamorous.P fontStyle="italic">Coming soon.</glamorous.P>
+            {/* <Trail
               from={{ Y: 100 }}
               to={{ Y: 0 }}
               keys={memoriesArray.map(project => project.key)}
@@ -48,7 +49,7 @@ class Life extends Component {
                   </React.Fragment>
                 );
               })}
-            </Trail>
+            </Trail> */}
           </glamorous.Div>
         </div>
       );

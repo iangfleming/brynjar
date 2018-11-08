@@ -77,8 +77,8 @@ class mobileFirst extends Component {
             It's a weird thing to talk about. We didn't end up building
             anything. But I would argue that the research and synthesis we did
             was far more valuable than just building another app. We saved the
-            company time and money and most importantly helped product teams
-            that weren't talking to eachother connect.
+            company time and money and most importantly helped product teams,
+            that weren't talking to each other, connect.
           </p>
         </Content>
       </div>

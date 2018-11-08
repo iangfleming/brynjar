@@ -165,6 +165,8 @@ class Home extends Component {
                       I’m a designer and developer.
                       <br />
                       Here are some highlights from my career
+                      <br />
+                      <em>Beta; still in development</em>
                     </animated.p>
                   </animated.div>
                 )}
@@ -212,6 +214,8 @@ class Home extends Component {
                       Call it a blog or whatever you like.
                       <br />
                       These are the public records of my experiences.
+                      <br />
+                      <em>Coming soon</em>
                     </animated.p>
                   </animated.div>
                 )}

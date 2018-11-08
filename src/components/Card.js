@@ -18,31 +18,31 @@ class Card extends Component {
     const CardOuter = glamorous.div(
       {
         position: "relative",
-        height: "8rem",
+        height: "10vmax",
         width: "95vw",
         backgroundImage: `url(${this.props.projectImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center center",
         padding: "3rem 2rem",
-        marginBottom: "-26px",
-        clipPath: "polygon(0 10%, 100% 0, 100% 90%, 0% 100%)",
+        // marginBottom: "-26px",
+        // clipPath: "polygon(0 10%, 100% 0, 100% 90%, 0% 100%)",
         overflow: "hidden",
         transition: "transform 175ms",
-        [MediaQueries.md]: {
-          height: "10rem",
-        },
-        ":after": {
-          content: " ",
-          position: "absolute",
-          top: "0",
-          left: "0",
-          height: "100%",
-          width: "100%",
-          backgroundColor: this.props.projectColor,
-          opacity: ".2",
-          transition: "transform 175ms",
-          transform: "rotate(-20deg) translateY(125%)"
-        },
+        // [MediaQueries.md]: {
+        //   height: "10rem",
+        // },
+        // ":after": {
+        //   content: " ",
+        //   position: "absolute",
+        //   top: "0",
+        //   left: "0",
+        //   height: "100%",
+        //   width: "100%",
+        //   backgroundColor: this.props.projectColor,
+        //   opacity: ".2",
+        //   transition: "transform 175ms",
+        //   transform: "rotate(-20deg) translateY(125%)"
+        // },
         ":hover": {
           ":after": {
             transform: "rotate(0deg) translateY(0%)"

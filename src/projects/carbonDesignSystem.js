@@ -52,7 +52,7 @@ class carbonDesignSystem extends Component {
     return (
       <ProjectModal>
         <ProjectBackBtn />
-        <glamorous.Div maxWidth="567px" margin="0 auto">
+        <glamorous.Div maxWidth="567px" margin="0 auto 4rem auto">
           <glamorous.H1 fontSize={Sizes.head} marginBottom=".5rem">
             <glamorous.Span color={Colors.red} marginRight="10px">
               Carbon
@@ -67,7 +67,7 @@ class carbonDesignSystem extends Component {
             A design ecosystem for IBM products
           </glamorous.H4>
           <p>
-            I was part of the team that built and maintained a system of
+            I was a founding member of the team that built and maintained a system of
             patterns and components for designers and developers of IBM
             products. Carbon design system was built so that products could be
             more easily maintained and end users would have a more consistent
@@ -75,7 +75,7 @@ class carbonDesignSystem extends Component {
             developers and recognition in the form of awards and references in
             books and articles.
           </p>
-          <FullWidth>
+          {/* <FullWidth>
             <glamorous.Div maxWidth="700px" margin="0 auto">
               <Spring
                 from={{ count: 0 }}
@@ -92,13 +92,13 @@ class carbonDesignSystem extends Component {
                 {props => <Downloads count={props.count} />}
               </Spring>
             </glamorous.Div>
-          </FullWidth>
+          </FullWidth> */}
           <p>
             My role involved building components, researching patterns and how
             they were used in IBM products, and collecting and addressing
             feedback from users.
           </p>
-          <FullWidth>
+          {/* <FullWidth>
             <glamorous.Div maxWidth="700px" margin="0 auto">
               <glamorous.Img
                 src={hacktime2}
@@ -113,7 +113,7 @@ class carbonDesignSystem extends Component {
                 height="10rem"
               />
             </glamorous.Div>
-          </FullWidth>
+          </FullWidth> */}
           <SectionTitle>Need</SectionTitle>
           <Row>
             <p>
@@ -127,10 +127,10 @@ class carbonDesignSystem extends Component {
               difficult task of translating them into code. We saw an
               opportunity for a better solution.
             </p>
-            <Quote image={blob}>
+            {/* <Quote image={blob}>
               <p>quote</p>
               <p>by so and so</p>
-            </Quote>
+            </Quote> */}
           </Row>
           <SectionTitle>Process</SectionTitle>
           <p>
@@ -167,13 +167,13 @@ class carbonDesignSystem extends Component {
             guidelines.
           </p>
           <Row>
-            <Quote image={blob}>
+            {/* <Quote image={blob}>
               <p>
                 "In the Carbon design system, names and folder structure are
                 consistent across the three facets of the system.
               </p>
               <p>Design Systems by Alla Kholmatova</p>
-            </Quote>
+            </Quote> */}
             <div>
               <p>
                 Consistency between parts of the system is one of it's most
@@ -188,17 +188,21 @@ class carbonDesignSystem extends Component {
               </p>
             </div>
           </Row>
-          <glamorous.Div width="100%">
-            <glamorous.Img src={carbonKit} alt="" width="auto" height="10rem" />
-            <glamorous.Img
-              src={carbonSite}
-              alt=""
-              width="auto"
-              height="10rem"
-            />
-          </glamorous.Div>
+          <FullWidth>
+            <glamorous.Div maxWidth="700px" margin="2rem auto" padding="2rem 0">
+              <glamorous.Img
+                src={carbonSite}
+                alt=""
+                width="100%"
+                height="auto"
+                display="block"
+                marginBottom="2rem"
+              />
+              <glamorous.Img src={carbonKit} alt="" width="100%" height="auto" display="block"/>
+            </glamorous.Div>
+          </FullWidth>
           <p>
-            Currently the Carbon Components package is averaging 31,529
+            Currently the Carbon Components package is averaging <strong>31,529 </strong>
             downloads a *week* on NPM, it's frequently reference in the new
             Smashing Mag book “Design Systems", we won the
             <BlockLink bg={Colors.secondary} href="http://www.howdesign.com/in-house-design-awards-best-of-show-carbon-design-system/">
@@ -212,8 +216,13 @@ class carbonDesignSystem extends Component {
             task, especially in such a large organization, but I learned so much
             and I'm proud of what we built.
           </p>
-          <SectionTitle>TLDR;</SectionTitle>
-          <p>stuff</p>
+          {/* <SectionTitle>TLDR;</SectionTitle>
+          <p>stuff</p> */}
+          <p>See more at
+          <BlockLink bg={Colors.orange} href="http://www.carbondesignsystem.com/">
+            Carbon Design System
+          </BlockLink>
+          </p>
         </glamorous.Div>
       </ProjectModal>
     );

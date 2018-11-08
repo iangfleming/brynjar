@@ -63,3 +63,7 @@ export const BlockLink = glamorous.a(({bg}) => ({
     transform: "scale(1.05)",
   }
 }));
+export const Row = glamorous.div(({bg}) => ({
+  display: "flex",
+  alignItems: "center"
+}));
