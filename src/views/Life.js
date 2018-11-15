@@ -19,28 +19,28 @@ class Life extends Component {
             margin="1rem 0"
             overflow="hidden"
           >
-          <glamorous.P fontStyle="italic">Coming soon.</glamorous.P>
-            {/* <Trail
+          {/* <glamorous.P fontStyle="italic">Coming soon.</glamorous.P> */}
+            <Trail
               from={{ Y: 100 }}
               to={{ Y: 0 }}
-              keys={memoriesArray.map(project => project.key)}
+              items={memoriesArray}
               delay="500"
               native
             >
-              {memoriesArray.map((Memory, idx) => ({ Y }) => {
-                // const path = `/work/${Memory.slug}`;
+              {(Memory, i) => ({ Y }) => {
+                const path = `/life/${Memory.slug}`;
                 return (
                   <React.Fragment>
                     <animated.div
-                      key={idx}
+                      key={i}
                       style={{
                         transform: Y.interpolate(Y => `translateY(${Y}vh)`)
                       }}
                     >
                       <Tile
-                        grow={Memory.grow}
-                        // MemoryLink={path}
-                        // MemoryName={Memory.name}
+                        // grow={Memory.grow}
+                        link={path}
+                        name={Memory.name}
                         // MemoryDescription={Memory.description}
                         // MemoryColor={Memory.color}
                         // MemoryImage={Memory.image}
@@ -48,8 +48,8 @@ class Life extends Component {
                     </animated.div>
                   </React.Fragment>
                 );
-              })}
-            </Trail> */}
+              }}
+            </Trail>
           </glamorous.Div>
         </div>
       );

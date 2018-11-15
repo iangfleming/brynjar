@@ -1,5 +1,6 @@
 import React from "react";
 import glamorous from "glamorous";
+import { Link } from "react-router-dom";
 import Sizes from "../vars/Sizes";
 import Colors from "../vars/Colors";
 
@@ -10,9 +11,18 @@ const Tile = (props) => {
     height: "20rem",
     border: "1px solid black",
   });
+  const Title = glamorous.h2({
+    color: "red"
+  });
+  const StyledLink = glamorous(Link)({
+    textDecoration: "none"
+  });
   return (
-    <TileOuter>
-    </TileOuter>
-  )
+    <StyledLink to={props.link}>
+      <TileOuter>
+        <Title>{props.name}</Title>
+      </TileOuter>
+    </StyledLink>
+  );
 };
 export default Tile;
