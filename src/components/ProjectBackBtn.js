@@ -11,8 +11,8 @@ const ProjectBackBtn = ({ match, white }) => {
     alignItems: "center",
     justifyContent: "center",
     fontFamily: "Oswald",
-    top: ".5rem",
-    right: ".5rem",
+    top: "1rem",
+    right: "1.5rem",
     position: "fixed",
     transition: "transform 60ms",
     ":hover": {

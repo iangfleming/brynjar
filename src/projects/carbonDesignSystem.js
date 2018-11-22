@@ -3,7 +3,7 @@ import glamorous from "glamorous";
 import { Spring } from "react-spring";
 import ProjectBackBtn from "../components/ProjectBackBtn";
 import ProjectModal from "../components/ProjectModal";
-import {BlockLink} from "../components/ProjectLayout";
+import {BlockLink, Content, FullWidth} from "../components/ProjectLayout";
 import Code from "../components/Code";
 import Sizes from "../vars/Sizes";
 import Colors from "../vars/Colors";
@@ -40,19 +40,10 @@ class carbonDesignSystem extends Component {
     const SectionTitle = glamorous.h4({
       fontSize: Sizes.subhead
     });
-    const FullWidth = glamorous.div({
-      width: "100vw",
-      position: "relative",
-      left: "50%",
-      right: "50%",
-      marginLeft: "-50vw",
-      marginRight: "-50vw",
-      background: Colors.text
-    });
     return (
       <ProjectModal>
         <ProjectBackBtn />
-        <glamorous.Div maxWidth="567px" margin="0 auto 4rem auto">
+        <Content>
           <glamorous.H1 fontSize={Sizes.head} marginBottom=".5rem">
             <glamorous.Span color={Colors.red} marginRight="10px">
               Carbon
@@ -75,14 +66,14 @@ class carbonDesignSystem extends Component {
             developers and recognition in the form of awards and references in
             books and articles.
           </p>
-          {/* <FullWidth>
+          <FullWidth>
             <glamorous.Div maxWidth="700px" margin="0 auto">
               <Spring
                 from={{ count: 0 }}
                 to={{ count: 31529 }}
                 config={{
-                  tension: 0,
-                  friction: 2,
+                  // tension: 0,
+                  // friction: 2,
                   restSpeedThreshold: 1,
                   restDisplacementThreshold: 1,
                   overshootClamping: true
@@ -92,7 +83,7 @@ class carbonDesignSystem extends Component {
                 {props => <Downloads count={props.count} />}
               </Spring>
             </glamorous.Div>
-          </FullWidth> */}
+          </FullWidth>
           <p>
             My role involved building components, researching patterns and how
             they were used in IBM products, and collecting and addressing
@@ -223,7 +214,7 @@ class carbonDesignSystem extends Component {
             Carbon Design System
           </BlockLink>
           </p>
-        </glamorous.Div>
+        </Content>
       </ProjectModal>
     );
   }

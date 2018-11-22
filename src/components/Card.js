@@ -18,18 +18,18 @@ class Card extends Component {
     const CardOuter = glamorous.div(
       {
         position: "relative",
-        height: "10vmax",
+        minHeight: "10vmax",
         width: "95vw",
         backgroundImage: `url(${this.props.projectImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center center",
         padding: "3rem 2rem",
-        // marginBottom: "-26px",
-        // clipPath: "polygon(0 10%, 100% 0, 100% 90%, 0% 100%)",
+        marginBottom: "-26px",
+        clipPath: "polygon(0 10%, 100% 0, 100% 90%, 0% 100%)",
         overflow: "hidden",
         transition: "transform 175ms",
         // [MediaQueries.md]: {
-        //   height: "10rem",
+        //   height: "10vmax",
         // },
         // ":after": {
         //   content: " ",
@@ -44,12 +44,10 @@ class Card extends Component {
         //   transform: "rotate(-20deg) translateY(125%)"
         // },
         ":hover": {
-          ":after": {
-            transform: "rotate(0deg) translateY(0%)"
-          }
+          transform: "scale(1.05)"
         },
         ":active, :focus": {
-          transform: "scaleY(.95)"
+          transform: "scale(1)"
         },
       },
       ({ open }) => ({
@@ -58,9 +56,9 @@ class Card extends Component {
     );
 
     const Title = glamorous.h2({
-      fontSize: "1rem",
-      color: Colors.background,
-      fontWeight: "300",
+      fontSize: Sizes.head,
+      color: "white",
+      fontWeight: "600",
     });
     const Desc = glamorous.p({
       color: "white"

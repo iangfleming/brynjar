@@ -24,7 +24,13 @@ class Work extends Component {
     if (this.props.active) {
       return (
         <div className="work">
-          <glamorous.Div display="flex" flexFlow="row wrap" margin="1rem 0" overflow="hidden">
+          <glamorous.Div
+            display="flex"
+            flexFlow="row wrap"
+            margin="1rem 0"
+            overflow="hidden"
+            paddingBottom="5rem"
+          >
             <Trail
               from={{ Y: 100 }}
               to={{ Y: 0 }}
@@ -34,7 +40,7 @@ class Work extends Component {
             >
               {(Project, i) => ({ Y }) => {
                 const path = `/work/${Project.slug}`;
-                console.log(i)
+                console.log(i);
                 return (
                   <React.Fragment>
                     <animated.div

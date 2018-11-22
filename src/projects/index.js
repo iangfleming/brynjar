@@ -18,7 +18,7 @@ const projects = {
   carbonDesignSystem: {
     slug: "carbon-design-system",
     name: "Carbon Design System",
-    description: "Award winning design system for IBM",
+    description: "An award winning design system for IBM",
     color: Colors.red,
     image: carbonPattern,
     component: carbonDesignSystem
@@ -42,7 +42,7 @@ const projects = {
   mobileFirst: {
     slug: "mobilefirst",
     name: "IBM MobileFirst",
-    description: "Not everything works out the way you plan it",
+    description: "Not everything goes according to plan",
     color: Colors.red,
     image: ibmLogo,
     component: mobileFirst

@@ -35,7 +35,8 @@ export const HeroDesc = glamorous.p(({white}) => ({
 }));
 export const Content = glamorous.div({
   maxWidth: Sizes.content,
-  margin: "0 auto"
+  margin: "0 auto",
+  padding: "0 2rem"
 })
 export const SectionTitle = glamorous.h3({
   fontFamily: "Oswald",

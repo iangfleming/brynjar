@@ -6,10 +6,11 @@ import Colors from "../vars/Colors";
 
 const Tile = (props) => {
   const TileOuter = glamorous.div({
-    flexGrow: props.grow,
-    // minWidth: "20vw",
+    // flexGrow: props.grow,
     height: "20rem",
-    border: "1px solid black",
+    // border: "1px solid black",
+    background: "#00DAE2",
+    boxShadow: `0 0 45px 0 ${Colors.teal} inset`,
   });
   const Title = glamorous.h2({
     color: "red"

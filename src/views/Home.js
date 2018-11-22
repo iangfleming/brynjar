@@ -5,14 +5,11 @@ import { Spring, Keyframes, animated, interpolate, config } from "react-spring";
 import { withRouter } from "react-router-dom";
 import Work from "./Work";
 import Life from "./Life";
+import Logo from "../components/Logo";
 import glamorous from "glamorous";
 import Colors from "../vars/Colors";
+import MediaQueries from "../vars/MediaQueries";
 
-const Logo = Keyframes.Spring({
-  home: { to: { x: 0, y: 10, scale: 1, angle: 0 } },
-  work: { to: { x: 355, y: -25, scale: 0.25, angle: 90 } },
-  life: { to: { x: -35, y: 15, scale: 0.25, angle: -90 } }
-});
 const WorkPanel = Keyframes.Spring({
   home: { to: { width: "50vw" } },
   work: { to: { width: "95vw" } },
@@ -27,16 +24,8 @@ const panelSpringConfig = {
   tension: 150,
   friction: 10
 };
-const logoSpringConfig = {
-  tension: 35,
-  friction: 3
-};
 class Home extends Component {
-  state = {
-    panel: "home",
-    lY: 0,
-    rY: 0
-  };
+  state = { panel: "home" };
   componentWillMount() {
     if (this.props.location.pathname.includes("work")) {
       this.setState({ panel: "work" });
@@ -47,10 +36,10 @@ class Home extends Component {
   }
   handleHover = direction => {
     if (direction === "left" && this.state.panel === "home") {
-      this.setState({ lY: 50, rY: 0 });
+      this.setState({ direction });
     }
     if (direction === "right" && this.state.panel === "home") {
-      this.setState({ lY: 0, rY: 50 });
+      this.setState({ direction });
     }
   };
   handlePanelClick = panel => {
@@ -61,77 +50,30 @@ class Home extends Component {
       if (panel === "life") {
         this.props.history.push("/life");
       }
-      this.setState({ panel, lY: 0, rY: 0 });
+      this.setState({ panel });
     } else if (this.state.panel !== panel) {
       this.props.history.push("/");
-      this.setState({ panel: "home", lY: 0, rY: 0 });
+      this.setState({ panel: "home" });
     }
   };
   render() {
-    const { panel, workContentVisible, lifeContentVisible } = this.state;
+    const {
+      panel,
+      workContentHidden,
+      lifeContentHidden
+    } = this.state;
     const home = this.state.panel === "home";
     const work = this.state.panel === "work";
     const life = this.state.panel === "life";
     return (
       <glamorous.Div display="flex" position="relative">
-        <Spring
-          from={{ opacity: 1 }}
-          to={{ opacity: this.state.panel !== "home" ? 0 : 1 }}
-          native
-        >
-          {styles => (
-            <animated.svg
-              style={{
-                ...styles,
-                float: "right",
-                width: "328px",
-                height: "187px",
-                position: "fixed",
-                left: "50%",
-                top: "20%",
-                marginLeft: "-111px",
-                overflow: "visible"
-              }}
-            >
-              <g fill="#271924" fill-rule="evenodd">
-                <Spring
-                  from={{ lY: 0, rY: 0 }}
-                  to={{ lY: this.state.lY, rY: this.state.rY }}
-                  config={logoSpringConfig}
-                  native
-                >
-                  {({ lY, rY }) => (
-                    <React.Fragment>
-                      <animated.path
-                        style={{
-                          transform: lY.interpolate(
-                            lY => `translateY(-${lY}px)`
-                          )
-                        }}
-                        d="M0 184V4c0-1 1-2 3-2h10c2 0 2 1 2 2v180c0 2 0 3-2 3H3c-2 0-3-1-3-3M112 0h-5c-2 0-3 1-3 3L39 182c-1 2 0 3 2 3h10c2 0 3-1 4-3l8-23 48-134h1"
-                      />
-                      <animated.g
-                        style={{
-                          transform: rY.interpolate(
-                            rY => `translateY(-${rY}px)`
-                          )
-                        }}
-                      >
-                        <path d="M110 25h1l51 146 5 12c0 1 1 2 3 2h11c2 0 2-1 2-2L118 3c0-2-1-3-3-3h-5M203 5c0-2 0-3 2-3h10c2 0 4 1 5 3l92 152h1V5c0-2 1-3 3-3h10c1 0 2 1 2 3v179c0 2-1 3-2 3h-11c-2 0-4-1-5-3L219 32h-1v152c0 2-1 3-3 3h-10c-2 0-2-1-2-3V5z" />
-                      </animated.g>
-                    </React.Fragment>
-                  )}
-                </Spring>
-              </g>
-            </animated.svg>
-          )}
-        </Spring>
+        <Logo panel={this.state.panel} direction={this.state.direction} />
         <WorkPanel
           state={panel}
           config={panelSpringConfig}
           native
           onStart={() =>
-            home ? this.setState({ lifeContentVisible: true }) : null
+            home ? this.setState({ workContentHidden: false }) : null
           }
         >
           {styles => (
@@ -148,20 +90,24 @@ class Home extends Component {
               <Spring
                 from={{ Y: 60, opacity: 1 }}
                 to={{ Y: work ? 0 : 60, opacity: work ? 0 : 1 }}
-                onRest={() => this.setState({ workContentVisible: false })}
+                onRest={() =>
+                  work ? this.setState({ lifeContentHidden: true }) : null
+                }
                 native
               >
                 {styles => (
                   <animated.div
                     style={{
-                      // display: "none",
+                      display: workContentHidden ? "none" : "block",
                       margin: "3rem",
                       opacity: life ? 0 : 1,
-                      transform: styles.Y.interpolate(Y => `translateY(${Y}vh)`)
+                      transform: styles.Y.interpolate(
+                        Y => `translateY(${Y}vmin)`
+                      )
                     }}
                   >
                     <glamorous.H2>Work</glamorous.H2>
-                    <animated.p style={{ opacity: styles.opacity }}>
+                    <animated.p>
                       I’m a designer and developer.
                       <br />
                       Here are some highlights from my career
@@ -179,7 +125,7 @@ class Home extends Component {
           state={panel}
           config={panelSpringConfig}
           onStart={() =>
-            home ? this.setState({ lifeContentVisible: true }) : null
+            home ? this.setState({ lifeContentHidden: false }) : null
           }
           native
         >
@@ -197,20 +143,24 @@ class Home extends Component {
               <Spring
                 from={{ Y: 60, opacity: 1 }}
                 to={{ Y: !home ? 0 : 60, opacity: !home ? 0 : 1 }}
-                onRest={() => this.setState({ lifeContentVisible: false })}
+                onRest={() =>
+                  life ? this.setState({ workContentHidden: true }) : null
+                }
                 native
               >
                 {styles => (
                   <animated.div
                     style={{
-                      // display: "none",
+                      display: lifeContentHidden ? "none" : "block",
                       margin: "3rem",
                       opacity: work ? 0 : 1,
-                      transform: styles.Y.interpolate(Y => `translateY(${Y}vh)`)
+                      transform: styles.Y.interpolate(
+                        Y => `translateY(${Y}vmin)`
+                      )
                     }}
                   >
                     <h2>Life</h2>
-                    <animated.p style={{ opacity: styles.opacity }}>
+                    <animated.p>
                       Call it a blog or whatever you like.
                       <br />
                       These are the public records of my experiences.

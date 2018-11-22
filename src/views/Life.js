@@ -15,7 +15,7 @@ class Life extends Component {
             display="flex"
             flexFlow="row wrap"
             alignItems="stretch"
-            justifyContent="space-around"
+            justifyContent="space-between"
             margin="1rem 0"
             overflow="hidden"
           >
@@ -34,7 +34,8 @@ class Life extends Component {
                     <animated.div
                       key={i}
                       style={{
-                        transform: Y.interpolate(Y => `translateY(${Y}vh)`)
+                        transform: Y.interpolate(Y => `translateY(${Y}vh)`),
+                        minWidth: "32%"
                       }}
                     >
                       <Tile
