@@ -3,7 +3,7 @@ import glamorous from "glamorous";
 import { Spring } from "react-spring";
 import ProjectBackBtn from "../components/ProjectBackBtn";
 import ProjectModal from "../components/ProjectModal";
-import {BlockLink, Content, FullWidth} from "../components/ProjectLayout";
+import { SectionTitle, BlockLink, Content, FullWidth, Divider } from "../components/ProjectLayout";
 import Code from "../components/Code";
 import Sizes from "../vars/Sizes";
 import Colors from "../vars/Colors";
@@ -12,13 +12,20 @@ import hacktime2 from "../images/carbon/hacktime-2.jpg";
 import hacktime3 from "../images/carbon/hacktime-3.jpg";
 import carbonKit from "../images/carbon/carbon-kit.png";
 import carbonSite from "../images/carbon/carbon-site.png";
+import carbonPattern from "../images/carbon/carbon-pattern.svg";
+import smashingLogo from "../images/carbon/smashing-logo.svg";
+import howLogo from "../images/carbon/how-logo.png";
 import blob from "../images/blob.svg";
+import { glMatrix } from "gl-matrix";
 
 class carbonDesignSystem extends Component {
   render() {
-    const Downloads = props => {
-      return <glamorous.P color="white">{props.count}</glamorous.P>;
-    };
+    const Header = glamorous.header({
+      height: "88vh",
+      width: "100vw",
+      background: `url(${carbonPattern})`,
+      textAlign: "center",
+    });
     const Row = glamorous.div({
       display: "flex",
       alignItems: "center",
@@ -37,19 +44,20 @@ class carbonDesignSystem extends Component {
         marginRight: "3rem"
       };
     });
-    const SectionTitle = glamorous.h4({
-      fontSize: Sizes.subhead
-    });
+    const RecBadge = glamorous.img({
+      height: "4rem",
+      width: "auto",
+      marginBottom: "2rem",
+    })
     return (
       <ProjectModal>
         <ProjectBackBtn />
-        <Content>
-          <glamorous.H1 fontSize={Sizes.head} marginBottom=".5rem">
-            <glamorous.Span color={Colors.red} marginRight="10px">
-              Carbon
-            </glamorous.Span>
-            Design System
+        <Header>
+          <glamorous.H1 color="white" fontSize={Sizes.head} paddingTop="40vh">
+            Carbon Design System
           </glamorous.H1>
+        </Header>
+        <Content>
           <glamorous.H4
             fontSize={Sizes.sub}
             marginTop=".5rem"
@@ -58,53 +66,19 @@ class carbonDesignSystem extends Component {
             A design ecosystem for IBM products
           </glamorous.H4>
           <p>
-            I was a founding member of the team that built and maintained a system of
-            patterns and components for designers and developers of IBM
-            products. Carbon design system was built so that products could be
-            more easily maintained and end users would have a more consistent
+            I was a founding member of the team that built and maintained a
+            system of patterns and components for designers and developers of
+            IBM products. Carbon design system was built so that products could
+            be more easily maintained and end users would have a more consistent
             experience. It has received widespread adoption from thousands of
             developers and recognition in the form of awards and references in
             books and articles.
           </p>
-          <FullWidth>
-            <glamorous.Div maxWidth="700px" margin="0 auto">
-              <Spring
-                from={{ count: 0 }}
-                to={{ count: 31529 }}
-                config={{
-                  // tension: 0,
-                  // friction: 2,
-                  restSpeedThreshold: 1,
-                  restDisplacementThreshold: 1,
-                  overshootClamping: true
-                  
-                }}
-              >
-                {props => <Downloads count={props.count} />}
-              </Spring>
-            </glamorous.Div>
-          </FullWidth>
           <p>
             My role involved building components, researching patterns and how
             they were used in IBM products, and collecting and addressing
             feedback from users.
           </p>
-          {/* <FullWidth>
-            <glamorous.Div maxWidth="700px" margin="0 auto">
-              <glamorous.Img
-                src={hacktime2}
-                alt=""
-                width="auto"
-                height="10rem"
-              />
-              <glamorous.Img
-                src={hacktime3}
-                alt=""
-                width="auto"
-                height="10rem"
-              />
-            </glamorous.Div>
-          </FullWidth> */}
           <SectionTitle>Need</SectionTitle>
           <Row>
             <p>
@@ -118,10 +92,6 @@ class carbonDesignSystem extends Component {
               difficult task of translating them into code. We saw an
               opportunity for a better solution.
             </p>
-            {/* <Quote image={blob}>
-              <p>quote</p>
-              <p>by so and so</p>
-            </Quote> */}
           </Row>
           <SectionTitle>Process</SectionTitle>
           <p>
@@ -189,14 +159,52 @@ class carbonDesignSystem extends Component {
                 display="block"
                 marginBottom="2rem"
               />
-              <glamorous.Img src={carbonKit} alt="" width="100%" height="auto" display="block"/>
+              <glamorous.Img
+                src={carbonKit}
+                alt=""
+                width="100%"
+                height="auto"
+                display="block"
+              />
+            </glamorous.Div>
+          </FullWidth>
+          <FullWidth bg="white" css={{textAlign: "center"}}>
+            <glamorous.Div maxWidth="960px" padding="0 2rem" margin="0 auto">
+              <SectionTitle>Recognition</SectionTitle>
+              <Divider />
+              <glamorous.Div display="flex" justifyContent="space-around" flexFlow="row wrap" marginTop="3rem">
+                <figure>
+                  <RecBadge src={howLogo} />
+                  <glamorous.Figcaption maxWidth="200px">Winner of the In-House Design Award 2017</glamorous.Figcaption>
+                </figure>
+                <figure>
+                  <RecBadge src={smashingLogo} />
+                  <glamorous.Figcaption maxWidth="200px">Featured in the book “Design Systems” by Alla Kholmatova</glamorous.Figcaption>
+                </figure>
+              </glamorous.Div>
+            </glamorous.Div>
+          </FullWidth>
+          <FullWidth bg="white" css={{textAlign: "center", marginTop: "4rem"}}>
+            <glamorous.Div maxWidth="960px" padding="0 2rem" margin="0 auto">
+              <SectionTitle>Usage</SectionTitle>
+              <Divider />
+              <glamorous.Div display="flex" justifyContent="space-around" alignItems="center"flexFlow="row wrap" marginTop="3rem">
+                <glamorous.P maxWidth="200px">Number of installs of the
+                <BlockLink bg={Colors.text} href="https://www.npmjs.com/package/carbon-components">carbon-components</BlockLink>
+                package on npm</glamorous.P>
+                <glamorous.P fontSize="144px" fontFamily="Oswald" margin="0">31,529</glamorous.P>
+              </glamorous.Div>
             </glamorous.Div>
           </FullWidth>
           <p>
-            Currently the Carbon Components package is averaging <strong>31,529 </strong>
+            Currently the Carbon Components package is averaging{" "}
+            <strong>31,529 </strong>
             downloads a *week* on NPM, it's frequently reference in the new
             Smashing Mag book “Design Systems", we won the
-            <BlockLink bg={Colors.secondary} href="http://www.howdesign.com/in-house-design-awards-best-of-show-carbon-design-system/">
+            <BlockLink
+              bg={Colors.secondary}
+              href="http://www.howdesign.com/in-house-design-awards-best-of-show-carbon-design-system/"
+            >
               HOW In-House Design Award
             </BlockLink>
             in 2017 and members of our team have spoken about Carbon at
@@ -209,10 +217,14 @@ class carbonDesignSystem extends Component {
           </p>
           {/* <SectionTitle>TLDR;</SectionTitle>
           <p>stuff</p> */}
-          <p>See more at
-          <BlockLink bg={Colors.orange} href="http://www.carbondesignsystem.com/">
-            Carbon Design System
-          </BlockLink>
+          <p>
+            See more at
+            <BlockLink
+              bg={Colors.orange}
+              href="http://www.carbondesignsystem.com/"
+            >
+              Carbon Design System
+            </BlockLink>
           </p>
         </Content>
       </ProjectModal>

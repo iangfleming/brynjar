@@ -60,11 +60,22 @@ export const BlockLink = glamorous.a(({bg}) => ({
   margin: "0 4px",
   display: "inline-block",
   transition: "transform 75ms",
-  [":hover"]: {
+  ":hover, :focus": {
     transform: "scale(1.05)",
+  },
+  ":active": {
+    transform: "scale(1)",
   }
 }));
 export const Row = glamorous.div(({bg}) => ({
   display: "flex",
   alignItems: "center"
+}));
+export const Divider = glamorous.div(({color, weight}) => ({
+  width: "100%",
+  borderTop: "1px solid",
+  borderWidth: weight ? weight : "2px",
+  borderColor: color ? color : Colors.text,
+  margin: 0,
+  padding: 0
 }));
