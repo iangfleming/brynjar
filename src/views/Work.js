@@ -40,7 +40,6 @@ class Work extends Component {
             >
               {(Project, i) => ({ Y }) => {
                 const path = `/work/${Project.slug}`;
-                console.log(i);
                 return (
                   <React.Fragment>
                     <animated.div

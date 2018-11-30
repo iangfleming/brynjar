@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1124px" height="605px" viewBox="0 0 1124 605" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-13-Copy" transform="translate(-188.000000, -125.000000)" stroke="#0B21A8">
+            <g id="carbon-pattern">
+                <g id="3" transform="translate(172.000000, 126.000000)">
+                    <g id="Group" transform="translate(745.394054, 0.628716)">
+                        <polygon id="Shape" stroke-width="2" points="0.530246679 97.3281594 119.937407 46.6428463 170.62272 166.050006 51.2156483 216.735319"></polygon>
+                        <polygon id="Shape" stroke-width="2" opacity="0.3" points="8.13806452 74.7645161 127.545136 24.079203 178.230449 143.486275 58.8233776 194.171588"></polygon>
+                        <polygon id="Shape" stroke-width="1.9985" opacity="0.1" points="14.3851107 51.0102973 133.726743 0.419822897 184.317217 119.761455 64.9755851 170.351929"></polygon>
+                    </g>
+                    <g id="Group" transform="translate(908.328906, 414.164453)" stroke-width="2">
+                        <polygon id="Shape" points="0.672991777 51.043327 114.905996 0.183478811 165.765844 114.416483 51.53284 165.276331"></polygon>
+                        <polygon id="Shape" opacity="0.3" points="29.5781657 60.7867426 143.811259 9.92689437 194.671107 124.159899 80.4380139 175.019747"></polygon>
+                        <polygon id="Shape" opacity="0.1" points="64.8651613 73.7065022 179.098166 22.8467426 229.958014 137.079747 115.725009 187.939595"></polygon>
+                    </g>
+                    <g id="Group" transform="translate(0.675522, 81.210626)" stroke-width="2">
+                        <circle id="Oval" transform="translate(119.609589, 96.252170) rotate(-19.000000) translate(-119.609589, -96.252170) " cx="119.609589" cy="96.2521695" r="58.054396"></circle>
+                        <circle id="Oval" opacity="0.3" transform="translate(97.097925, 85.273106) rotate(-19.000000) translate(-97.097925, -85.273106) " cx="97.0979254" cy="85.2731056" r="58.054396"></circle>
+                        <circle id="Oval" opacity="0.1" transform="translate(74.586262, 74.294042) rotate(-19.000000) translate(-74.586262, -74.294042) " cx="74.5862619" cy="74.2940417" r="58.054396"></circle>
+                    </g>
+                    <g id="Group" transform="translate(837.487666, 216.694497)" stroke-width="2">
+                        <polygon id="Shape" points="0.850094877 130.719798 69.6103732 0.416192283 148.102467 126.035421 0.850094877 130.719798"></polygon>
+                        <polygon id="Shape" opacity="0.3" points="3.37381404 157.249842 72.1340923 26.9462366 150.635041 152.565465 3.37381404 157.249842"></polygon>
+                        <polygon id="Shape" opacity="0.1" points="8.04048071 189.464896 76.800759 59.1612903 155.301708 184.780519 8.04048071 189.464896"></polygon>
+                    </g>
+                    <g id="Group" transform="translate(45.836812, 295.505376)" stroke-width="2">
+                        <polygon id="Shape" points="0.575585073 66.1214421 54.3175206 21.0221379 120.235294 45.0196078 132.419987 114.107527 78.6780519 159.206831 12.7514231 135.209361 0.575585073 66.1214421"></polygon>
+                        <polygon id="Shape" opacity="0.3" points="35.5357369 58.5237192 89.2776724 13.4244149 155.204301 37.4218849 167.388994 106.509804 113.647059 151.600253 47.7204301 127.611638 35.5357369 58.5237192"></polygon>
+                        <polygon id="Shape" opacity="0.1" points="69.0702087 45.9139785 122.812144 0.823529412 188.738773 24.8121442 200.914611 93.9000633 147.172676 138.999367 81.2460468 115.001898"></polygon>
+                    </g>
+                    <g id="Group" transform="translate(591.314358, 314.101202)" stroke-width="2">
+                        <polygon id="Shape" points="177.643264 156.142948 104.8716 156.142948 68.4857685 93.1208096 104.8716 30.0986717 177.643264 30.0986717 214.029096 93.1208096"></polygon>
+                        <polygon id="Shape" opacity="0.3" points="144.790639 138.86654 72.0189753 138.86654 35.6331436 75.8444023 72.0189753 12.8222644 144.790639 12.8222644 181.176471 75.8444023"></polygon>
+                        <polygon id="Shape" opacity="0.1" points="109.741935 126.522454 36.970272 126.522454 0.584440228 63.5003163 36.970272 0.478178368 109.741935 0.478178368 146.136622 63.5003163"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

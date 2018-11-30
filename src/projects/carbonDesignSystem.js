@@ -5,6 +5,7 @@ import ProjectBackBtn from "../components/ProjectBackBtn";
 import ProjectModal from "../components/ProjectModal";
 import { SectionTitle, BlockLink, Content, FullWidth, Divider } from "../components/ProjectLayout";
 import Code from "../components/Code";
+import CarbonPlx from "../components/CarbonPlx";
 import Sizes from "../vars/Sizes";
 import Colors from "../vars/Colors";
 import hacktime1 from "../images/carbon/hacktime-1.jpg";
@@ -21,10 +22,13 @@ import { glMatrix } from "gl-matrix";
 class carbonDesignSystem extends Component {
   render() {
     const Header = glamorous.header({
-      height: "88vh",
-      width: "100vw",
-      background: `url(${carbonPattern})`,
+      position: "relative",
+      height: "800px",
+      // width: "100%",
+      // background: `url(${carbonPattern})`,
+      background: Colors.carbonBlue,
       textAlign: "center",
+      overflow: "hidden",
     });
     const Row = glamorous.div({
       display: "flex",
@@ -50,12 +54,10 @@ class carbonDesignSystem extends Component {
       marginBottom: "2rem",
     })
     return (
-      <ProjectModal>
+      <React.Fragment>
         <ProjectBackBtn />
         <Header>
-          <glamorous.H1 color="white" fontSize={Sizes.head} paddingTop="40vh">
-            Carbon Design System
-          </glamorous.H1>
+          <CarbonPlx />
         </Header>
         <Content>
           <glamorous.H4
@@ -105,7 +107,6 @@ class carbonDesignSystem extends Component {
               src={hacktime1}
               alt=""
               width="100%"
-              maxWidth="500px"
             />
           </glamorous.Div>
           <p>
@@ -227,7 +228,7 @@ class carbonDesignSystem extends Component {
             </BlockLink>
           </p>
         </Content>
-      </ProjectModal>
+      </React.Fragment>
     );
   }
 }

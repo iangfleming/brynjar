@@ -11,7 +11,8 @@ const ColorsHex = {
   background: "#FBFBFB",
   gray1: "#696b76",
   gray2: "#c2c3c8",
-  gray3: "#ededee"
+  gray3: "#ededee",
+  carbonBlue: "#3D70B2"
 };
 const ColorsVars = {
   text: ColorsHex.purple1,

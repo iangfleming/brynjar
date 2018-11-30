@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1247px" height="674px" viewBox="0 0 1247 674" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-13-Copy" transform="translate(-65.000000, 0.000000)" stroke="#0B21A8">
+            <g id="carbon-pattern">
+                <g id="1" transform="translate(65.000000, 0.000000)">
+                    <g id="Group" transform="translate(208.624288, 0.000000)">
+                        <polygon id="Shape" stroke-width="2" points="15.911828 192.882985 95.1408476 79.7322581 208.291575 158.961278 129.062644 272.112005"></polygon>
+                        <polygon id="Shape" stroke-width="2" opacity="0.3" points="13.5317394 150.778318 92.760759 37.6275901 205.911486 116.85661 126.682467 230.007337"></polygon>
+                        <polygon id="Shape" stroke-width="1.9973" opacity="0.1" points="0.710449083 114.026856 79.4454396 0.758975332 192.713321 79.4939658 113.97833 192.761847"></polygon>
+                    </g>
+                    <g id="Group" transform="translate(0.528147, 304.617331)" stroke-width="2">
+                        <polygon id="Shape" points="0.814674257 147.464896 10.6350411 0.460468058 133.43833 83.2915876"></polygon>
+                        <polygon id="Shape" opacity="0.3" points="13.9114485 170.674257 23.7318153 23.6698292 146.535104 106.500949"></polygon>
+                        <polygon id="Shape" opacity="0.1" points="31.2852625 198.204934 41.0967742 51.200506 163.908918 134.031626"></polygon>
+                    </g>
+                    <g id="Group" transform="translate(557.517394, 79.696395)" stroke-width="2">
+                        <polygon id="Shape" points="45.0993042 0.292220114 133.641999 0.292220114 177.908918 76.969007 133.641999 153.645794 45.0993042 153.645794 0.823529412 76.969007"></polygon>
+                        <polygon id="Shape" opacity="0.3" points="85.0714738 21.3055028 173.605313 21.3055028 217.881088 97.9911448 173.605313 174.667932 85.0714738 174.667932 40.7956989 97.9911448"></polygon>
+                        <polygon id="Shape" opacity="0.1" points="124.016445 28.0265655 212.550285 28.0265655 256.826059 104.703352 212.550285 181.380139 124.016445 181.380139 79.7406705 104.703352"></polygon>
+                    </g>
+                    <g id="Group" transform="translate(1055.177103, 110.689437)" stroke-width="2">
+                        <circle id="Oval" transform="translate(119.770044, 74.794176) rotate(-87.000000) translate(-119.770044, -74.794176) " cx="119.770044" cy="74.7941763" r="70.4958887"></circle>
+                        <circle id="Oval" opacity="0.3" transform="translate(97.165490, 95.141202) rotate(-87.000000) translate(-97.165490, -95.141202) " cx="97.1654902" cy="95.1412018" r="70.4958887"></circle>
+                        <circle id="Oval" opacity="0.1" transform="translate(74.560400, 115.497255) rotate(-87.000000) translate(-74.560400, -115.497255) " cx="74.5604002" cy="115.497255" r="70.4958887"></circle>
+                    </g>
+                    <g id="Group" transform="translate(496.416825, 484.376977)" stroke-width="2.0085">
+                        <circle id="Oval" transform="translate(140.411145, 117.232600) rotate(-15.005000) translate(-140.411145, -117.232600) " cx="140.411145" cy="117.2326" r="70.7948387"></circle>
+                        <circle id="Oval" opacity="0.3" transform="translate(113.941581, 102.001822) rotate(-15.005000) translate(-113.941581, -102.001822) " cx="113.941581" cy="102.001822" r="70.7948387"></circle>
+                        <circle id="Oval" opacity="0.1" transform="translate(87.489462, 86.768741) rotate(-15.005000) translate(-87.489462, -86.768741) " cx="87.4894624" cy="86.7687413" r="70.7948387"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
