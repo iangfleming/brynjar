@@ -18,16 +18,17 @@ class Card extends Component {
     const CardOuter = glamorous.div(
       {
         position: "relative",
-        minHeight: "10vmax",
-        width: "95vw",
-        backgroundImage: `url(${this.props.projectImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-        padding: "3rem 2rem",
-        marginBottom: "-26px",
-        clipPath: "polygon(0 10%, 100% 0, 100% 90%, 0% 100%)",
-        overflow: "hidden",
-        transition: "transform 175ms",
+        // minHeight: "10vmax",
+        width: "250px",
+        height: "250px",
+        // backgroundImage: `url(${this.props.projectImage})`,
+        // backgroundSize: "cover",
+        // backgroundPosition: "center center",
+        // padding: "3rem 2rem",
+        // marginBottom: "-26px",
+        // clipPath: "polygon(0 10%, 100% 0, 100% 90%, 0% 100%)",
+        // overflow: "hidden",
+        // transition: "transform 175ms",
         // [MediaQueries.md]: {
         //   height: "10vmax",
         // },
@@ -43,12 +44,12 @@ class Card extends Component {
         //   transition: "transform 175ms",
         //   transform: "rotate(-20deg) translateY(125%)"
         // },
-        ":hover": {
-          transform: "scale(1.05)"
-        },
-        ":active, :focus": {
-          transform: "scale(1)"
-        },
+        // ":hover": {
+        //   transform: "scale(1.05)"
+        // },
+        // ":active, :focus": {
+        //   transform: "scale(1)"
+        // },
       },
       ({ open }) => ({
         transform: open ? "scale(3)" : "scale(1)"
@@ -57,22 +58,40 @@ class Card extends Component {
 
     const Title = glamorous.h2({
       fontSize: Sizes.head,
-      color: "white",
+      // color: "white",
       fontWeight: "600",
     });
+    const Line = glamorous.div({
+      display: "flex",
+      justifyContent: "space-between",
+    })
     const Desc = glamorous.p({
-      color: "white"
+      // color: "white"
     })
     const StyledLink = glamorous(Link)({
-      textDecoration: "none"
+      textDecoration: "none",
+      color: Colors.text,
     })
+
+    const titleLines = this.props.projectName.split(" ")
+    const titleWrapped = [];
+    titleLines.forEach((line) => {
+      const wrap = line.replace(/\w/g, "<span>$&</span>");
+      titleWrapped.push(wrap);
+    })
+
+    console.log(titleLines, titleWrapped)
 
     return (
       <StyledLink to={this.props.projectLink}>
         <CardOuter open={this.state.open}>
           <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto">
-            <Title>{this.props.projectName}</Title>
-            <Desc>{this.props.projectDescription}</Desc>
+            <Title>
+              {titleWrapped.map((line) => (
+                <Line dangerouslySetInnerHTML={{__html: line}} />
+              ))}
+            </Title>
+            {/* <Desc>{this.props.projectDescription}</Desc> */}
             {this.props.children}
           </glamorous.Div>
         </CardOuter>

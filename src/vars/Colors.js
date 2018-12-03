@@ -3,6 +3,7 @@ const ColorsHex = {
   purple2: "#665262",
   purple3: "#B1A0AE",
   red: "#F95457",
+  pink: "#F6ACB3",
   orange: "#F98825",
   yellow: "#F5D41F",
   teal: "#01B3BB",

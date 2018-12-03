@@ -5,6 +5,7 @@ import { Trail, Transition, animated, interpolate, config } from "react-spring";
 import glamorous from "glamorous";
 import Card from "../components/Card";
 import projects from "../projects";
+import Sizes from "../vars/Sizes";
 
 class Work extends Component {
   componentDidMount() {
@@ -20,17 +21,26 @@ class Work extends Component {
     }
   };
   render() {
+    const SectionLabel = glamorous.h2({
+      fontSize: Sizes.base,
+      textTransform: "uppercase",
+      transform: "rotate(-90deg)",
+      flexGrow: 1,
+      flex: "1 1 10%"
+    });
     const projectsArray = Object.values(projects);
     if (this.props.active) {
       return (
         <div className="work">
           <glamorous.Div
+            maxWidth="1000px"
             display="flex"
+            position="relative"
             flexFlow="row wrap"
-            margin="1rem 0"
-            overflow="hidden"
+            margin="1rem auto"
             paddingBottom="5rem"
           >
+            <SectionLabel>Projects</SectionLabel>
             <Trail
               from={{ Y: 100 }}
               to={{ Y: 0 }}
@@ -45,7 +55,9 @@ class Work extends Component {
                     <animated.div
                       key={i}
                       style={{
-                        transform: Y.interpolate(Y => `translateY(${Y}vh)`)
+                        transform: Y.interpolate(Y => `translateY(${Y}vh)`),
+                        flexGrow: 1,
+                        flex: "1 1 40%"
                       }}
                     >
                       <Card

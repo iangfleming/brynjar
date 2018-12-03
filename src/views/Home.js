@@ -7,18 +7,21 @@ import Work from "./Work";
 import Life from "./Life";
 import Logo from "../components/Logo";
 import glamorous from "glamorous";
+import Color from "color";
 import Colors from "../vars/Colors";
 import MediaQueries from "../vars/MediaQueries";
 
+const workPanelMutedColor = Color(Colors.pink).hex();
+const lifePanelMutedColor = Color(Colors.teal).fade(5).lighten(.2).hex();
 const WorkPanel = Keyframes.Spring({
-  home: { to: { width: "50vw" } },
-  work: { to: { width: "95vw" } },
-  life: { to: { width: "5vw" } }
+  home: { width: "50vw", background: Colors.pink },
+  work: { width: "95vw", background: workPanelMutedColor },
+  life: { width: "5vw", background: workPanelMutedColor }
 });
 const LifePanel = Keyframes.Spring({
-  home: { to: { width: "50vw" } },
-  work: { to: { width: "5vw" } },
-  life: { to: { width: "95vw" } }
+  home: { width: "50vw", background: Colors.teal },
+  work: { width: "5vw", background: lifePanelMutedColor },
+  life: { width: "95vw", background: lifePanelMutedColor }
 });
 const panelSpringConfig = {
   tension: 150,
@@ -80,7 +83,6 @@ class Home extends Component {
             <animated.div
               style={{
                 ...styles,
-                background: Colors.yellow,
                 minHeight: "100vh",
                 cursor: work ? "auto" : "pointer"
               }}
@@ -133,7 +135,6 @@ class Home extends Component {
             <animated.div
               style={{
                 ...styles,
-                background: Colors.teal,
                 minHeight: "100vh",
                 cursor: life ? "auto" : "pointer"
               }}
