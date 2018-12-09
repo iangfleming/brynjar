@@ -7,21 +7,19 @@ import Work from "./Work";
 import Life from "./Life";
 import Logo from "../components/Logo";
 import glamorous from "glamorous";
-import Color from "color";
 import Colors from "../vars/Colors";
 import MediaQueries from "../vars/MediaQueries";
+import Sizes from "../vars/Sizes";
 
-const workPanelMutedColor = Color(Colors.pink).hex();
-const lifePanelMutedColor = Color(Colors.teal).fade(5).lighten(.2).hex();
 const WorkPanel = Keyframes.Spring({
-  home: { width: "50vw", background: Colors.pink },
-  work: { width: "95vw", background: workPanelMutedColor },
-  life: { width: "5vw", background: workPanelMutedColor }
+  home: { to: { width: "50vw" } },
+  work: { to: { width: "95vw" } },
+  life: { to: { width: "5vw" } }
 });
 const LifePanel = Keyframes.Spring({
-  home: { width: "50vw", background: Colors.teal },
-  work: { width: "5vw", background: lifePanelMutedColor },
-  life: { width: "95vw", background: lifePanelMutedColor }
+  home: { to: { width: "50vw" } },
+  work: { to: { width: "5vw" } },
+  life: { to: { width: "95vw" } }
 });
 const panelSpringConfig = {
   tension: 150,
@@ -60,17 +58,37 @@ class Home extends Component {
     }
   };
   render() {
-    const {
-      panel,
-      workContentHidden,
-      lifeContentHidden
-    } = this.state;
+    const { panel, workContentHidden, lifeContentHidden } = this.state;
     const home = this.state.panel === "home";
     const work = this.state.panel === "work";
     const life = this.state.panel === "life";
+    const Back = glamorous.button({
+      position: "fixed",
+      top: "5rem",
+      right: "0",
+      transform: "rotate(90deg)",
+      textTransform: "uppercase",
+      fontSize: Sizes.base,
+      fontFamily: "Oswald",
+      background: "none",
+      border: "none"
+    });
     return (
       <glamorous.Div display="flex" position="relative">
         <Logo panel={this.state.panel} direction={this.state.direction} />
+        {work ? (
+          <Spring
+            from={{ transform: "translateX(110vw)" }}
+            to={{ transform: "translateX(95vw)" }}
+            native
+          >
+            {styles => (
+              <animated.div style={{ ...styles }}>
+                <Back onClick={() => this.handlePanelClick("life")}>Back</Back>
+              </animated.div>
+            )}
+          </Spring>
+        ) : null}
         <WorkPanel
           state={panel}
           config={panelSpringConfig}
@@ -83,15 +101,17 @@ class Home extends Component {
             <animated.div
               style={{
                 ...styles,
+                background: Colors.pink,
                 minHeight: "100vh",
+                margin: "0 auto",
                 cursor: work ? "auto" : "pointer"
               }}
               onClick={() => this.handlePanelClick("work")}
               onMouseOver={() => this.handleHover("left")}
             >
               <Spring
-                from={{ Y: 60, opacity: 1 }}
-                to={{ Y: work ? 0 : 60, opacity: work ? 0 : 1 }}
+                from={{ Y: 60, opacity: 0 }}
+                to={{ Y: work ? 0 : 60, opacity: work ? 1 : 0 }}
                 onRest={() =>
                   work ? this.setState({ lifeContentHidden: true }) : null
                 }
@@ -101,6 +121,8 @@ class Home extends Component {
                   <animated.div
                     style={{
                       display: workContentHidden ? "none" : "block",
+                      minHeight: "200px",
+                      maxWidth: Sizes.content,
                       margin: "3rem",
                       opacity: life ? 0 : 1,
                       transform: styles.Y.interpolate(
@@ -108,14 +130,40 @@ class Home extends Component {
                       )
                     }}
                   >
-                    <glamorous.H2>Work</glamorous.H2>
-                    <animated.p>
-                      I’m a designer and developer.
-                      <br />
-                      Here are some highlights from my career
-                      <br />
-                      <em>Beta; still in development</em>
-                    </animated.p>
+                    <glamorous.Div
+                      display={work ? "flex" : "block"}
+                      justifyContent="space-between"
+                    >
+                      <glamorous.H2>Work</glamorous.H2>
+                      <animated.p
+                        style={{
+                          display: home ? "initial" : "none"
+                        }}
+                      >
+                        I’m a designer and developer.
+                        <br />
+                        Here are some highlights from my career
+                        <br />
+                        <em>Beta; still in development</em>
+                      </animated.p>
+                      <animated.div
+                        style={{
+                          opacity: styles.opacity,
+                          display: !work ? "none" : "initial",
+                          maxWidth: "400px",
+                        }}
+                      >
+                        <p>
+                          I am a designer first and foremost. My strengths lie
+                          in drawing together disparate pieces of information to
+                          solve problems and create beautiful designs.
+                        </p>
+                        <p>
+                          I am passionate about data driven decisions and
+                          helping the end user.
+                        </p>
+                      </animated.div>
+                    </glamorous.Div>
                   </animated.div>
                 )}
               </Spring>
@@ -135,6 +183,7 @@ class Home extends Component {
             <animated.div
               style={{
                 ...styles,
+                background: Colors.teal,
                 minHeight: "100vh",
                 cursor: life ? "auto" : "pointer"
               }}
