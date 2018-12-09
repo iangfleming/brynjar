@@ -47,21 +47,21 @@ const projects = {
     image: ibmLogo,
     component: mobileFirst
   },
-  // IBMDesignCamp: {
-  //   slug: "ibm-design-camp",
-  //   name: "IBM Design Camp",
-  //   description: "lorem lorem stuf stuff",
-  //   color: Colors.yellow,
-  //   image: hacktime1,
-  //   component: IBMDesignCamp
-  // },
-  // CollegePlus: {
-  //   slug: "collegeplus",
-  //   name: "Redesigning the CollegePlus Home Page",
-  //   description: "Design is more than making stuff pretty",
-  //   color: Colors.purple1,
-  //   image: hacktime1,
-  //   component: CollegePlus
-  // },
+  IBMDesignCamp: {
+    slug: "ibm-design-camp",
+    name: "IBM Design Camp",
+    description: "lorem lorem stuf stuff",
+    color: Colors.yellow,
+    image: hacktime1,
+    component: IBMDesignCamp
+  },
+  CollegePlus: {
+    slug: "collegeplus",
+    name: "CollegePlus Home Page",
+    description: "Design is more than making stuff pretty",
+    color: Colors.purple1,
+    image: hacktime1,
+    component: CollegePlus
+  },
 }
 export default projects;
