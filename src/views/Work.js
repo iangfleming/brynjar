@@ -13,6 +13,7 @@ import glamorous from "glamorous";
 import Card from "../components/Card";
 import ShadowLink from "../components/ShadowLink";
 import projects from "../projects";
+import experiments from "../experiments";
 import Sizes from "../vars/Sizes";
 
 class Work extends Component {
@@ -25,6 +26,7 @@ class Work extends Component {
       flex: "1 1 10%"
     });
     const projectsArray = Object.values(projects);
+    const experimentsArray = Object.values(experiments);
     if (this.props.active) {
       return (
         <Spring
@@ -107,32 +109,25 @@ class Work extends Component {
                   display="flex"
                   flexFlow="row wrap"
                 >
-                  <Trail
-                    from={{ Y: 100 }}
-                    to={{ Y: 0 }}
-                    items={projectsArray}
-                    delay="500"
-                    native
-                  >
-                    {(Project, i) => ({ Y }) => {
-                      const path = `/work/${Project.slug}`;
+                    {experimentsArray.map((Experiment) => {
+                      let path = null;
+                      if (Experiment.slug) { path = `/work/${Experiment.slug}` }
+                      const linkProps = {
+                        to: path ? path : null,
+                        href: Experiment.href ? Experiment.href : null,
+                      }
                       return (
-                        <React.Fragment>
-                          <animated.div
-                            key={i}
+                          <div
                             style={{
-                              transform: Y.interpolate(Y => `translateY(${Y}vh)`),
                               flexGrow: 1,
                               flex: "1 1 40%",
                               marginBottom: "5rem",
                             }}
                           >
-                            <ShadowLink experimentLink={path}>{Project.name}</ShadowLink>
-                          </animated.div>
-                        </React.Fragment>
+                            <ShadowLink {...linkProps}>{Experiment.name}</ShadowLink>
+                          </div>
                       );
-                    }}
-                  </Trail>
+                    })}
                 </glamorous.Div>
               </glamorous.Div>
             </animated.div>

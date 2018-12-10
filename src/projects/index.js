@@ -2,7 +2,6 @@ import Colors from "../vars/Colors";
 import carbonDesignSystem from "./carbonDesignSystem";
 import CollegePlus from "./CollegePlus";
 import IBMDesignCamp from "./IBMDesignCamp";
-import Acorns from "./Acorns";
 import mobileFirst from "./mobileFirst";
 import phobioOps from "./phobioOps";
 
@@ -30,14 +29,6 @@ const projects = {
     color: Colors.yellow,
     image: warehousePattern,
     component: phobioOps
-  },
-  acorns: {
-    slug: "acorns",
-    name: "Acorns",
-    description: "Personal library of helpers",
-    color: Colors.purple1,
-    image: acornsPattern,
-    component: Acorns
   },
   mobileFirst: {
     slug: "mobilefirst",
