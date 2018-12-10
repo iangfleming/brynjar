@@ -3,9 +3,10 @@ import Colors from "../vars/Colors";
 import Sizes from "../vars/Sizes";
 import MediaQueries from "../vars/MediaQueries";
 
-export const Hero = glamorous.div(({bg}) => ({
+export const Hero = glamorous.div(({bg, image}) => ({
   position: "relative",
-  background: bg,
+  background: image ? `url(${bg})`: bg,
+  backgroundSize: "cover",
   height: "350px",
   display: "flex",
   alignItems: "center",
