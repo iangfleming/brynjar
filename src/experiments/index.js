@@ -30,11 +30,5 @@ const experiments = {
     href: "https://codepen.io/iangfleming/pen/LlkbB"
   },
 }
-// moving sun https://codepen.io/iangfleming/pen/kkNzvA
-// tab slider https://codepen.io/iangfleming/pen/GqWLKy
-// easing sandbox https://codepen.io/iangfleming/pen/rLmKVL
-// good range input https://codepen.io/iangfleming/pen/eJVZbJ
-// braun https://codepen.io/iangfleming/pen/zGKyJq
-// equilateral triangle https://codepen.io/iangfleming/pen/LlkbB
 
 export default experiments;

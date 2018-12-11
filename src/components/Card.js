@@ -8,61 +8,77 @@ import { animated, Spring } from "react-spring";
 
 class Card extends Component {
   state = {
-    open: false
+    hover: false
   };
   handleClick = () => {
     this.setState({ open: !this.state.open });
   };
   render() {
-    const CardOuter = glamorous.div(
-      {
-        position: "relative",
-        width: "250px",
-        height: "250px",
-        border: `8px solid ${Colors.teal}`,
-        padding: "1rem",
-        // transition: "transform 175ms",
-        // [MediaQueries.md]: {
-        //   height: "10vmax",
-        // },
-        // ":hover": {
-        //   transform: "scale(1.05)"
-        // },
-        // ":active, :focus": {
-        //   transform: "scale(1)"
-        // },
-      },
-      ({ open }) => ({
-        transform: open ? "scale(3)" : "scale(1)"
-      })
-    );
-
+    const StyledLink = glamorous(Link)({
+      display: "block",
+      position: "relative",
+      width: "250px",
+      height: "250px",
+      marginBottom: "5rem",
+      textDecoration: "none",
+      color: Colors.text,
+      padding: "1rem"
+    });
+    const CardBorder = glamorous.svg({
+      position: "absolute",
+      top: 0,
+      left: 0,
+    });
     const Title = glamorous.h2({
       fontSize: Sizes.superhead,
       fontWeight: "600",
-      margin: 0,
+      margin: 0
     });
-    const Line = glamorous.div({
-      display: "flex",
-      justifyContent: "space-between",
-    })
-    const StyledLink = glamorous(Link)({
-      textDecoration: "none",
-      color: Colors.text,
-    })
+    const Line = glamorous.div({});
 
-    const titleLines = this.props.projectName.split(" ")
+    const titleLines = this.props.projectName.split(" ");
 
     return (
-      <StyledLink to={this.props.projectLink}>
-        <CardOuter open={this.state.open}>
-            <Title>
-              {titleLines.map((line) => (
-                <Line dangerouslySetInnerHTML={{__html: line}} />
-              ))}
-            </Title>
-            {this.props.children}
-        </CardOuter>
+      <StyledLink to={this.props.projectLink} onMouseOver={() => this.setState({hover: true})}>
+        <CardBorder width="250" height="250">
+          <Spring
+            from={{offset1: 0, offset2: -1000}}
+            to={{
+              offset1: this.state.hover ? 1000 : 0,
+              offset2: this.state.hover ? 0 : -1000
+            }}
+            duration="5000"
+          >
+            {props => (
+              <g>
+                <path
+                  fill="none"
+                  fill-rule="evenodd"
+                  stroke={Colors.teal}
+                  stroke-width="8"
+                  strokeDasharray="1000"
+                  strokeDashoffset={props.offset1}
+                  d="M.5.5h249v249H.5z"
+                />
+                <path
+                  fill="none"
+                  fill-rule="evenodd"
+                  stroke={Colors.pink}
+                  stroke-width="8"
+                  strokeDasharray="1000"
+                  strokeDashoffset={props.offset2}
+                  d="M.5.5h249v249H.5z"
+                />
+              </g>
+            )}
+          </Spring>
+        </CardBorder>
+        <Title>
+          {titleLines.map(line => (
+            <Line dangerouslySetInnerHTML={{ __html: line }} />
+          ))}
+        </Title>
+        {this.props.children}
       </StyledLink>
     );
   }

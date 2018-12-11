@@ -11,7 +11,7 @@ const styles = {
   textTransform: "uppercase",
   textDecoration: "none",
   padding: "5px",
-  ":before": {
+  "::before": {
     content: `''`,
     position: "absolute",
     bottom: 0,
@@ -23,7 +23,7 @@ const styles = {
     transition: "all 70ms",
     transformOrigin: "bottom"
   },
-  ":hover:before": {
+  ":hover::before": {
     transform: "translateY(-5px) scaleY(2)"
   }
 };

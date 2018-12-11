@@ -62,7 +62,8 @@ class Work extends Component {
                   flexFlow="row wrap"
                 >
                   <Trail
-                    from={{ Y: 100 }}
+                    // from={{ Y: 100 }}
+                    from={{ Y: 0 }}
                     to={{ Y: 0 }}
                     items={projectsArray}
                     delay="500"
@@ -78,7 +79,6 @@ class Work extends Component {
                               transform: Y.interpolate(Y => `translateY(${Y}vh)`),
                               flexGrow: 1,
                               flex: "1 1 40%",
-                              marginBottom: "5rem",
                             }}
                           >
                             <Card
