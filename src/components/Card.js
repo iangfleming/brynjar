@@ -40,6 +40,12 @@ class Card extends Component {
 
     return (
       <StyledLink to={this.props.projectLink} onMouseOver={() => this.setState({hover: true})}>
+        <Title>
+          {titleLines.map(line => (
+            <Line dangerouslySetInnerHTML={{ __html: line }} />
+          ))}
+        </Title>
+        {this.props.children}
         <CardBorder width="250" height="250">
           <Spring
             from={{offset1: 0, offset2: -1000}}
@@ -73,12 +79,6 @@ class Card extends Component {
             )}
           </Spring>
         </CardBorder>
-        <Title>
-          {titleLines.map(line => (
-            <Line dangerouslySetInnerHTML={{ __html: line }} />
-          ))}
-        </Title>
-        {this.props.children}
       </StyledLink>
     );
   }

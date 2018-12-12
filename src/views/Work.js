@@ -32,6 +32,7 @@ class Work extends Component {
         <Spring
           from={{ transform: "translateY(100%)" }}
           to={{ transform: "translateY(0%)" }}
+          delay="500"
           native
         >
           {styles => (
