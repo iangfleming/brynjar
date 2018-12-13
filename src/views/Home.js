@@ -154,13 +154,16 @@ class Home extends Component {
                         }}
                       >
                         <p>
-                          I am a designer first and foremost. My strengths lie
-                          in drawing together disparate pieces of information to
-                          solve problems and create beautiful designs.
+                          I am a designer and developer in Austin, TX.
                         </p>
                         <p>
-                          I am passionate about data driven decisions and
-                          helping the end user.
+                          Formerly at the IBM Carbon Design System.
+                        </p>
+                        <p>
+                          Currently at Phobio.
+                        </p>
+                        <p>
+                          Working to design great products and build robust design systems.
                         </p>
                       </animated.div>
                     </glamorous.Div>
