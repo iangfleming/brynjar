@@ -15,9 +15,19 @@ import ShadowLink from "../components/ShadowLink";
 import projects from "../projects";
 import experiments from "../experiments";
 import Sizes from "../vars/Sizes";
+import MediaQueries from "../vars/MediaQueries";
 
 class Work extends Component {
   render() {
+    const WorkContent = glamorous.div({
+      display: "flex",
+      maxWidth: "1000px",
+      margin: "1rem auto",
+      paddingTop: "180px",
+      [MediaQueries.md]: {
+        paddingTop: "150px",
+      }
+    });
     const SectionLabel = glamorous.h2({
       fontSize: Sizes.base,
       textTransform: "uppercase",
@@ -45,15 +55,10 @@ class Work extends Component {
                 clipPath: "polygon(0 0, 100% 9%, 100% 100%, 0% 100%)",
                 // why isn't this working (fix)
                 padding: "0 -5vw",
-                ...styles,
+                ...styles
               }}
             >
-              <glamorous.Div
-                display="flex"
-                maxWidth="1000px"
-                margin="1rem auto"
-                padding="5rem 0"
-              >
+              <WorkContent>
                 <div>
                   <SectionLabel>Projects</SectionLabel>
                 </div>
@@ -77,9 +82,12 @@ class Work extends Component {
                           <animated.div
                             key={i}
                             style={{
-                              transform: Y.interpolate(Y => `translateY(${Y}vh)`),
+                              transform: Y.interpolate(
+                                Y => `translateY(${Y}vh)`
+                              ),
                               flexGrow: 1,
                               flex: "1 1 40%",
+                              margin: "1rem"
                             }}
                           >
                             <Card
@@ -95,7 +103,7 @@ class Work extends Component {
                     }}
                   </Trail>
                 </glamorous.Div>
-              </glamorous.Div>
+              </WorkContent>
               <glamorous.Div
                 display="flex"
                 maxWidth="1000px"
@@ -110,25 +118,29 @@ class Work extends Component {
                   display="flex"
                   flexFlow="row wrap"
                 >
-                    {experimentsArray.map((Experiment) => {
-                      let path = null;
-                      if (Experiment.slug) { path = `/work/${Experiment.slug}` }
-                      const linkProps = {
-                        to: path ? path : null,
-                        href: Experiment.href ? Experiment.href : null,
-                      }
-                      return (
-                          <div
-                            style={{
-                              flexGrow: 1,
-                              flex: "1 1 40%",
-                              marginBottom: "5rem",
-                            }}
-                          >
-                            <ShadowLink {...linkProps}>{Experiment.name}</ShadowLink>
-                          </div>
-                      );
-                    })}
+                  {experimentsArray.map(Experiment => {
+                    let path = null;
+                    if (Experiment.slug) {
+                      path = `/work/${Experiment.slug}`;
+                    }
+                    const linkProps = {
+                      to: path ? path : null,
+                      href: Experiment.href ? Experiment.href : null
+                    };
+                    return (
+                      <div
+                        style={{
+                          flexGrow: 1,
+                          flex: "1 1 40%",
+                          marginBottom: "5rem"
+                        }}
+                      >
+                        <ShadowLink {...linkProps}>
+                          {Experiment.name}
+                        </ShadowLink>
+                      </div>
+                    );
+                  })}
                 </glamorous.Div>
               </glamorous.Div>
             </animated.div>
