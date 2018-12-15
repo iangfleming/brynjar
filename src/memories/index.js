@@ -6,33 +6,43 @@ import carbonPattern from "../images/carbon/carbon-pattern.svg";
 import hacktime1 from "../images/carbon/hacktime-1.jpg";
 import hacktime2 from "../images/carbon/hacktime-2.jpg";
 import hacktime3 from "../images/carbon/hacktime-3.jpg";
+import templeArch from "../images/japan/templeArch.jpg"
+import riders from "../images/theShortcut/GC032439.JPG"
 
 const memories = {
   theShortcut: {
     slug: "the-shortcut",
     name: "The Shortcut",
-    description: "",
+    image: riders,
+    size: 75,
+    x: "end",
+    y: "end",
     color: Colors.red,
-    image: carbonPattern,
-    grow: 1,
     component: TheShortcut
   },
   test2: {
     slug: "test",
     name: "test",
-    description: "",
-    color: Colors.red,
     image: carbonPattern,
-    grow: 2,
+    x: "end",
+    y: "end",
     component: carbonDesignSystem
   },
   test4: {
     slug: "test",
     name: "test",
-    description: "",
-    color: Colors.red,
     image: carbonPattern,
-    grow: 1,
+    x: "end",
+    y: "end",
+    component: carbonDesignSystem
+  },
+  Japan: {
+    slug: "japan",
+    name: "Japan",
+    image: templeArch,
+    size: 75,
+    x: "end",
+    y: "end",
     component: carbonDesignSystem
   },
 };

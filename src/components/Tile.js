@@ -5,24 +5,26 @@ import Sizes from "../vars/Sizes";
 import Colors from "../vars/Colors";
 
 const Tile = (props) => {
-  const TileOuter = glamorous.div({
-    // flexGrow: props.grow,
+  const StyledLink = glamorous(Link)({
+    textDecoration: "none",
+    display: "flex",
+    justifyContent: `flex-${props.x}`,
+    alignItems: `flex-${props.y}`,
+    position: "relative",
     height: "20rem",
-    // border: "1px solid black",
-    background: "#00DAE2",
-    boxShadow: `0 0 45px 0 ${Colors.teal} inset`,
+    width: props.size ? `${props.size - 1}%` : "24%",
+    background: props.image ? `url(${props.image})` : Colors.pink,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    marginBottom: "2rem",
+    padding: "2rem",
   });
   const Title = glamorous.h2({
-    color: "red"
-  });
-  const StyledLink = glamorous(Link)({
-    textDecoration: "none"
+    color: props.color ? props.color : "white",
   });
   return (
     <StyledLink to={props.link}>
-      <TileOuter>
         <Title>{props.name}</Title>
-      </TileOuter>
     </StyledLink>
   );
 };

@@ -3,9 +3,22 @@ import { Spring, animated, config } from "react-spring";
 import glamorous from "glamorous";
 import Tile from "../components/Tile";
 import memories from "../memories";
+import MediaQueries from "../vars/MediaQueries";
 
 class Life extends Component {
   render() {
+    const LifeContent = glamorous.div({
+      display: "flex",
+      flexFlow: "row wrap",
+      justifyContent: "space-between",
+      maxWidth: "1000px",
+      margin: "1rem auto",
+      padding: "0 -5vw",
+      paddingTop: "180px",
+      [MediaQueries.md]: {
+        paddingTop: "150px"
+      }
+    });
     const memoriesArray = Object.values(memories);
     if (this.props.active) {
       return (
@@ -20,23 +33,18 @@ class Life extends Component {
               className="life"
               style={{
                 background: "white",
-                display: "flex",
-                flexFlow: "row wrap",
                 minHeight: "100%",
                 margin: "0 -5vw",
                 clipPath: "polygon(0 9%, 100% 0%, 100% 100%, 0% 100%)",
-                // why isn't this working (fix)
-                padding: "0 -5vw",
-                // alignItems="stretch"
-                // justifyContent="space-between"
-                // margin="1rem 0"
                 ...styles
               }}
             >
-              {memoriesArray.map(Memory => {
-                const path = `/life/${Memory.slug}`;
-                return <Tile link={path} name={Memory.name} />;
-              })}
+              <LifeContent>
+                {memoriesArray.map(Memory => {
+                  const path = `/life/${Memory.slug}`;
+                  return <Tile link={path} {...Memory} />;
+                })}
+              </LifeContent>
             </animated.div>
           )}
         </Spring>
