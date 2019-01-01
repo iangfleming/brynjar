@@ -17,7 +17,7 @@ const memories = {
     size: 75,
     x: "end",
     y: "end",
-    color: Colors.red,
+    color: Colors.pink,
     component: TheShortcut
   },
   test2: {
@@ -25,7 +25,7 @@ const memories = {
     name: "test",
     image: carbonPattern,
     x: "end",
-    y: "end",
+    y: "start",
     component: carbonDesignSystem
   },
   test4: {
