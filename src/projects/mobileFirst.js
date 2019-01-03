@@ -34,27 +34,23 @@ class mobileFirst extends Component {
           </SectionTitle>
           <p>
             Sometimes preventing the wrong product from being made is just as
-            important as building a product. Although it's weird having nothing
+            important as building a product. Although it's weird to have nothing
             to show for several months of work!
           </p>
           <p>
             My first team after joining IBM Design was the MobileFirst product
-            group. At the time the product managers debating building a new
-            analytics tool for mobile developers. We had an analytics tool
-            already but it was very basic with limited insights.
+            group. At the time the product managers were debating building a new
+            analytics tool for mobile developers. We already had an analytics tool, but it was basic with limited insights and capabilities.
           </p>
           <p>
-            Myself and a teammate were tasked with researching the mobile
-            analytics space and learning what our users would need.
+            A teammate and I researched the mobile
+            analytics space and learned what our users would need. We interviewed developers, read everything we could about the
+            domain, and dug deep into all our competitor's products.
           </p>
           <p>
-            When you are working in an unfamiliar area of knowledge it can
-            sometimes take awhile to see the forest for the trees.
+                                                                                                                                                                                                                                                                                                                                       
           </p>
-          <p>
-            We interviewed developers, read everything we could about the
-            domain, and dug deep into all our competitors products.
-          </p>
+   
           <FullWidth bg={Colors.purple3} css={{padding: "2rem 0", textAlign: "center"}}>
             <Content>
               <glamorous.P fontSize={Sizes.head} fontFamily="Oswald">
@@ -69,13 +65,13 @@ class mobileFirst extends Component {
           </p>
           <SectionTitle>Result</SectionTitle>
           <p>
-            After this realization we designed a plan for our existing analytics
+            After this realization, we designed a plan for our existing analytics
             tool to work with, instead of against, the other IBM analytics
             products.
           </p>
           <p>
-            It's a weird thing to talk about. We didn't end up building
-            anything. But I would argue that the research and synthesis we did
+            Although we didn't end up building
+            anything, I would argue that the research and synthesis we did
             was far more valuable than just building another app. We saved the
             company time and money and most importantly helped product teams,
             that weren't talking to each other, connect.
