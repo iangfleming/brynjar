@@ -70,29 +70,28 @@ class carbonDesignSystem extends Component {
           <p>
             I was a founding member of the team that built and maintained a
             system of patterns and components for designers and developers of
-            IBM products. Carbon design system was built so that products could
-            be more easily maintained and end users would have a more consistent
-            experience. It has received widespread adoption from thousands of
+            IBM products. <LINK>Carbon Design System<LINK> was originally built so that IBM products could
+            be maintained more easily and the end users would have a more consistent
+            experience. Additionally, it has received widespread adoption from thousands of
             developers and recognition in the form of awards and references in
             books and articles.
           </p>
           <p>
-            My role involved building components, researching patterns and how
-            they were used in IBM products, and collecting and addressing
+            My role with Carbon included building components, researching patterns and how
+            they were used in current IBM products, and collecting and addressing
             feedback from users.
           </p>
           <SectionTitle>Need</SectionTitle>
           <Row>
             <p>
               IBM Design consists of several thousand designers. Which sounds
-              like a lot, but at a company of over 300,000 employees we were
-              still outnumbered. At that scale there should’ve been a design
+              like a lot but at a company of over 300,000 employees we were
+              still outnumbered. At that scale, there should’ve already been a design
               system in place to help the designers communicate their work to
-              the rest of the company. However, previous attempts at building
-              design systems had never really taken off. They had primarily
+              the rest of the company. However, previous attempts had never really taken off. They had primarily
               focused on static design assets and left engineers with the
               difficult task of translating them into code. We saw an
-              opportunity for a better solution.
+              opportunity for a better solution that bridged the gap between designers and engineers.
             </p>
           </Row>
           <SectionTitle>Process</SectionTitle>
@@ -117,17 +116,19 @@ class carbonDesignSystem extends Component {
             whatever their faults we learned a lot from them.
           </p>
           <p>
-            While we gathered all this data we also held team design workshops
+            While we gathered all this data we  were also holding team design workshops
             where we synthesized our findings and planned how we would develop
-            our design system
+            our design system.
           </p>
           <SectionTitle>Result</SectionTitle>
           <p>
-            The system we built includes a component library built using vanilla
+            Ultimately we were able to build a design system for all of IBM that successfully
+      addresses many of the pain points we discovered during our research phase.  Carbon includes a component library
+      built using vanilla
             javascript and one for the React.js environment, design assets in a
             Sketch library, and a website with detailed documentation and usage
-            guidelines.
-          </p>
+            guidelines. 
+
           <Row>
             {/* <Quote image={blob}>
               <p>
