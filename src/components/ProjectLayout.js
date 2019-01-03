@@ -80,3 +80,9 @@ export const Divider = glamorous.div(({color, weight}) => ({
   margin: 0,
   padding: 0
 }));
+export const UnstyledLink = glamorous.a({
+  textDecoration: "none",
+  [":visited"]: {
+    color: "initial",
+  }
+})

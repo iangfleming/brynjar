@@ -12,7 +12,6 @@ import {
   SectionTitle,
   FullWidth
 } from "../components/ProjectLayout";
-import WindshieldWiper from "../components/WinshieldWiper";
 import Colors from "../vars/Colors";
 import earlyWireframes from "../images/phobio/early-wireframes.png";
 import before from "../images/phobio/before.png";
@@ -172,8 +171,8 @@ class phobioOps extends Component {
               in the right direction for Phobio's codebase.
             </p>
             <FullWidth>
-              <WindshieldWiper after={after} before={before} />
-              {/* <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto" padding="3rem 1rem">
+              {/* <WindshieldWiper after={after} before={before} /> */}
+              <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto" padding="3rem 1rem">
                 <SectionTitle css={{ color: "#fff"}}>
                   Before
                 </SectionTitle>
@@ -215,7 +214,7 @@ class phobioOps extends Component {
                   </glamorous.Figcaption>
                 </glamorous.Figure>
               </glamorous.Div>
-              <p /> */}
+              <p />
             </FullWidth>
             <p>
               The redesigned app is in the finally stages of testing now but

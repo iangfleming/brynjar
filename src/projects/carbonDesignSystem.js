@@ -3,7 +3,7 @@ import glamorous from "glamorous";
 import { Spring } from "react-spring";
 import ProjectBackBtn from "../components/ProjectBackBtn";
 import ProjectModal from "../components/ProjectModal";
-import { SectionTitle, BlockLink, Content, FullWidth, Divider } from "../components/ProjectLayout";
+import { SectionTitle, BlockLink, Content, FullWidth, Divider, UnstyledLink } from "../components/ProjectLayout";
 import Code from "../components/Code";
 import CarbonPlx from "../components/CarbonPlx";
 import Sizes from "../vars/Sizes";
@@ -61,9 +61,11 @@ class carbonDesignSystem extends Component {
         </Header>
         <Content>
           <glamorous.H4
-            fontSize={Sizes.sub}
-            marginTop=".5rem"
-            marginBottom="2rem"
+            textAlign="center"
+            fontSize={Sizes.super}
+            fontStyle="italic"
+            marginTop="5rem"
+            marginBottom="5rem"
           >
             A design ecosystem for IBM products
           </glamorous.H4>
@@ -126,8 +128,7 @@ class carbonDesignSystem extends Component {
             The system we built includes a component library built using vanilla
             javascript and one for the React.js environment, design assets in a
             Sketch library, and a website with detailed documentation and usage
-            guidelines.
-          </p>
+            guidelines. </p>
           <Row>
             {/* <Quote image={blob}>
               <p>
@@ -150,8 +151,8 @@ class carbonDesignSystem extends Component {
               </p>
             </div>
           </Row>
-          <FullWidth>
-            <glamorous.Div maxWidth="700px" margin="2rem auto" padding="2rem 0">
+          <FullWidth bg={Colors.carbonBlue}>
+           <glamorous.Div maxWidth="700px" margin="2rem auto" padding="2rem 0">
               <glamorous.Img
                 src={carbonSite}
                 alt=""
@@ -174,14 +175,18 @@ class carbonDesignSystem extends Component {
               <SectionTitle>Recognition</SectionTitle>
               <Divider />
               <glamorous.Div display="flex" justifyContent="space-around" flexFlow="row wrap" marginTop="3rem">
-                <figure>
-                  <RecBadge src={howLogo} />
-                  <glamorous.Figcaption maxWidth="200px">Winner of the In-House Design Award 2017</glamorous.Figcaption>
-                </figure>
-                <figure>
-                  <RecBadge src={smashingLogo} />
-                  <glamorous.Figcaption maxWidth="200px">Featured in the book “Design Systems” by Alla Kholmatova</glamorous.Figcaption>
-                </figure>
+                <UnstyledLink target="_blank" href="http://www.howdesign.com/in-house-design-awards-best-of-show-carbon-design-system/">
+                  <figure>
+                    <RecBadge src={howLogo} />
+                    <glamorous.Figcaption maxWidth="200px">Winner of the In-House Design Award 2017</glamorous.Figcaption>
+                  </figure>
+                </UnstyledLink>
+                <UnstyledLink target="_blank" href="https://www.smashingmagazine.com/printed-books/design-systems/">
+                  <figure>
+                    <RecBadge src={smashingLogo} />
+                    <glamorous.Figcaption maxWidth="200px">Featured in the book “Design Systems” by Alla Kholmatova</glamorous.Figcaption>
+                  </figure>
+                </UnstyledLink>
               </glamorous.Div>
             </glamorous.Div>
           </FullWidth>
@@ -190,7 +195,7 @@ class carbonDesignSystem extends Component {
               <SectionTitle>Usage</SectionTitle>
               <Divider />
               <glamorous.Div display="flex" justifyContent="space-around" alignItems="center"flexFlow="row wrap" marginTop="3rem">
-                <glamorous.P maxWidth="200px">Number of installs of the
+                <glamorous.P maxWidth="200px">Weekly number of installs of the
                 <BlockLink bg={Colors.text} href="https://www.npmjs.com/package/carbon-components">carbon-components</BlockLink>
                 package on npm</glamorous.P>
                 <glamorous.P fontSize="144px" fontFamily="Oswald" margin="0">31,529</glamorous.P>
@@ -198,7 +203,9 @@ class carbonDesignSystem extends Component {
             </glamorous.Div>
           </FullWidth>
           <p>
-            Currently the Carbon Components package is averaging{" "}
+            members of our team have spoken about Carbon at
+            conferences all over the globe.
+          Currently the Carbon Components package is averaging{" "}
             <strong>31,529 </strong>
             downloads a *week* on NPM, it's frequently reference in the new
             Smashing Mag book “Design Systems", we won the
@@ -208,22 +215,19 @@ class carbonDesignSystem extends Component {
             >
               HOW In-House Design Award
             </BlockLink>
-            in 2017 and members of our team have spoken about Carbon at
-            conferences all over the globe.
+            in 2017 and p>
           </p>
           <p>
             Successfully launching and maintaining a design system is no small
             task, especially in such a large organization, but I learned so much
             and I'm proud of what we built.
           </p>
-          {/* <SectionTitle>TLDR;</SectionTitle>
-          <p>stuff</p> */}
           <p>
             See more at
             <BlockLink
-              bg={Colors.orange}
+              bg={Colors.carbonBlue}
               href="http://www.carbondesignsystem.com/"
-            >
+            >orange
               Carbon Design System
             </BlockLink>
           </p>
