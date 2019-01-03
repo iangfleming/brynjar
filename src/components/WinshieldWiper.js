@@ -2,12 +2,15 @@ import React, {Component} from "react";
 import glamorous from "glamorous";
 
 class WindShieldWiper extends Component {
+  handleMouseMove = e => {
+    console.log(e)
+  }
   render() {
     const Wrapper = glamorous.div({
       height: "250px",
-      position: "relative",
-      display: "flex",
-      justifyContent: "center",
+      // position: "relative",
+      // display: "flex",
+      // justifyContent: "center",
     })
     const Wiper = glamorous.div({
       width: "50%",
@@ -23,9 +26,11 @@ class WindShieldWiper extends Component {
       top: "0",
     })
     return (
-      <Wrapper>
+      <Wrapper onMouseMove={(e) => this.handleMouseMove(e)}>
         <Wiper>
-          <After src={this.props.after} />
+          <glamorous.Div overflow="hidden" display="block" height="100%" width="100%">
+            <After src={this.props.after} />
+          </glamorous.Div>
         </Wiper>
         <Before src={this.props.before} />
       </Wrapper>
