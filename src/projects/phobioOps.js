@@ -59,7 +59,7 @@ class phobioOps extends Component {
             <HeroTitle>Phobio Operations App</HeroTitle>
             <HeroDesc>
               Phobio works with cell phone retailers to handle devices that are
-              traded-in by customers upgrading their devices
+              traded-in by customers wanting to upgrade their devices
             </HeroDesc>
           </glamorous.Div>
           <UpperPlx parallaxData={plxConfig}>
@@ -100,35 +100,36 @@ class phobioOps extends Component {
           <Content css={{ background: "white", paddingTop: "3rem", marginBottom: "3rem" }}>
             <SectionTitle>Need</SectionTitle>
             <p>
-              To the customer it is presented a simple easy process but behind
-              the scenes there is quite an infrastructure to handle around a
+              To the customer, it is presented as an easy process to trade-in their device but behind
+              the scenes there is quite an infrastructure built to handle around a
               million devices a year.
             </p>
             <p>
-              This project in particular was to redesign the internal
-              application that Phobio team members in the various warehouses
+              This project was to redesign the internal
+              application that the Phobio team members in the various warehouses
               around the country use to track and managed all these devices.
             </p>
             <SectionTitle>Design</SectionTitle>
             <p>
-              The previous interation of these was tools usuable but far from
-              ideal. It presented the users with every piece of information and
-              every available option with very little hierachy. And the last
-              thing you want to be doing in a fast pace warehouse enviroment is
+                   The previous iteration of this tool was usable but far from ideal.
+      It presented the users with every piece of information and available options 
+      but had very little hierarchy. The last
+              thing you should be doing in a fast paced warehouse environment is
               hunting through a dense screen of information for the one option
               you need.
+
             </p>
             <p>
-              The problem was clear and so was the solution. By simplifying the
+              The problem was clear, but so was the solution. By simplifying the
               interface for the majority of users we could drastically increase
               speed and accuracy while reducing stress and improving the
               experience for them.
             </p>
             <p>
-              We identified two primary user journeys, receiving shipments and
-              inspecting devices. Because of their step-by-step nature the views
+              We identified two primary user journeys: receiving shipments and
+              inspecting devices. Because of their step-by-step nature, both views
               were incredibly minimal. Most of the steps only needed to present
-              a single choice to the user, i.e. "Is this shipment damaged?" or
+              a single choice to the user. For example: "Is this shipment damaged?" or
               "Scan the next device".
             </p>
             <glamorous.Figure width="100%" margin="0 auto 2.5rem auto">
@@ -154,9 +155,9 @@ class phobioOps extends Component {
             </p>
             <SectionTitle>Build</SectionTitle>
             <p>
-              The majority of the Phobio applications just use a simple MVC
+              The majority of the Phobio applications use a simple MVC
               pattern with Django. However, because of the limited scope of this
-              new app I decided it would be a good place to start modernizing
+              new app, I decided it would be a good time to start modernizing
               the front-end stack.
             </p>
             <p>
@@ -165,9 +166,9 @@ class phobioOps extends Component {
               CSS-in-JS styles.
             </p>
             <p>
-              I'd been involved in building several large React apps but his was
+              I'd been involved in building several large React apps but this was
               the first time, outside of personal projects, I'd built one from
-              scratch. It was an excellent learning experience for me and a step
+              scratch. It was an excellent learning experience for me and also a step
               in the right direction for Phobio's codebase.
             </p>
             <FullWidth>
@@ -217,12 +218,12 @@ class phobioOps extends Component {
               <p />
             </FullWidth>
             <p>
-              The redesigned app is in the finally stages of testing now but
-              response so far has been great!
+              The redesigned app is in the final stages of testing now but
+              responses have been great so far!
             </p>
             <p>
               Rather than fighting and hunting their way through the old app the
-              users are now presented only with information they need and the
+              users are now presented with only the information they need and are easily guided through the
               next steps they must take.
             </p>
           </Content>
