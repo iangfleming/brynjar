@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-import { Route, Link } from "react-router-dom";
 import {
-  Trail,
-  Transition,
   animated,
-  interpolate,
-  config,
   Spring
 } from "react-spring";
 import glamorous from "glamorous";
@@ -67,28 +62,15 @@ class Work extends Component {
                   display="flex"
                   flexFlow="row wrap"
                 >
-                  <Trail
-                    // from={{ Y: 100 }}
-                    from={{ Y: 0 }}
-                    to={{ Y: 0 }}
-                    items={projectsArray}
-                    delay="500"
-                    native
-                  >
-                    {(Project, i) => ({ Y }) => {
+                    {projectsArray.map((Project, i) => {
                       const path = `/work/${Project.slug}`;
                       return (
                         <React.Fragment>
-                          <animated.div
+                          <glamorous.Div
                             key={i}
-                            style={{
-                              transform: Y.interpolate(
-                                Y => `translateY(${Y}vh)`
-                              ),
-                              flexGrow: 1,
-                              flex: "1 1 40%",
-                              margin: "1rem"
-                            }}
+                            flexGrow="1"
+                            flex="1 1 40%"
+                            margin="1rem"
                           >
                             <Card
                               projectLink={path}
@@ -97,11 +79,10 @@ class Work extends Component {
                               projectColor={Project.color}
                               projectImage={Project.image}
                             />
-                          </animated.div>
+                          </glamorous.Div>
                         </React.Fragment>
                       );
-                    }}
-                  </Trail>
+                    })}
                 </glamorous.Div>
               </WorkContent>
               <glamorous.Div
