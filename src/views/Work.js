@@ -28,12 +28,12 @@ class Work extends Component {
         paddingTop: "150px",
       }
     });
-    const SectionLabel = glamorous.h2({
+    const Label = glamorous.h2({
       fontSize: Sizes.base,
       textTransform: "uppercase",
       transform: "rotate(-90deg)",
-      flexGrow: 1,
-      flex: "1 1 10%"
+      transformOrigin: "bottom right",
+      margin: 0,
     });
     const projectsArray = Object.values(projects);
     const experimentsArray = Object.values(experiments);
@@ -59,9 +59,9 @@ class Work extends Component {
               }}
             >
               <WorkContent>
-                <div>
-                  <SectionLabel>Projects</SectionLabel>
-                </div>
+                <glamorous.Div marginRight="2rem">
+                  <Label>Projects</Label>
+                </glamorous.Div>
                 <glamorous.Div
                   position="relative"
                   display="flex"
@@ -110,9 +110,9 @@ class Work extends Component {
                 margin="1rem auto"
                 padding="5rem 0"
               >
-                <div>
-                  <SectionLabel>Experiments</SectionLabel>
-                </div>
+                <glamorous.Div marginRight="2rem">
+                  <Label>Experiments</Label>
+                </glamorous.Div>
                 <glamorous.Div
                   position="relative"
                   display="flex"
