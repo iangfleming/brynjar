@@ -83,6 +83,6 @@ export const Divider = glamorous.div(({color, weight}) => ({
 export const UnstyledLink = glamorous.a({
   textDecoration: "none",
   [":visited"]: {
-    color: "initial",
+    color: Colors.text,
   }
 })

@@ -1,6 +1,7 @@
 import Colors from "../vars/Colors";
 import carbonDesignSystem from "../projects/carbonDesignSystem";
 import TheShortcut from "../memories/theShortcut";
+import Japan from "../memories/japan";
 
 import carbonPattern from "../images/carbon/carbon-pattern.svg";
 import hacktime1 from "../images/carbon/hacktime-1.jpg";
@@ -43,7 +44,7 @@ const memories = {
     size: 75,
     x: "end",
     y: "end",
-    component: carbonDesignSystem
+    component: Japan,
   },
 };
 export default memories;

@@ -66,7 +66,7 @@ class carbonDesignSystem extends Component {
         <Header>
           <CarbonPlx />
         </Header>
-        <Content>
+        <Content css={{marginBottom: "5rem"}}>
           <glamorous.H4
             textAlign="center"
             fontSize={Sizes.super}
@@ -248,13 +248,30 @@ class carbonDesignSystem extends Component {
               </glamorous.Div>
             </glamorous.Div>
           </FullWidth>
+          <SectionTitle css={{ marginTop: "6rem" }}>Reflection</SectionTitle>
           <p>
             Successfully launching and maintaining a design system is no small
-            task, especially in such a large organization, but I learned so much
-            and I'm proud of what we built.
+            task, especially in such a large organization.
           </p>
           <p>
-            See more at
+            I came to the Carbon team somewhat disillusioned from working on my
+            previous team (see
+            <BlockLink bg={Colors.purple2} href="">
+              MobileFirst
+            </BlockLink>
+            ) so it was incredibly refreshing to see a team with clear vision,
+            working and learning from their mistakes.
+          </p>
+          <p>
+            Our team was small and tight knit so we all did a bit of everything.
+            On any given day I could be fixing bugs in production, designing and
+            prototyping a new feature, or interviewing users. That's not to say
+            we didn't have our own specilizations. I focused on typograhy,
+            motion design, and performance in particular.
+          </p>
+          <p>I learned so much and I'm proud of what I built.</p>
+          <p>
+            See the finished product at
             <BlockLink
               bg={Colors.carbonBlue}
               href="http://www.carbondesignsystem.com/"
