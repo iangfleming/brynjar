@@ -90,14 +90,14 @@ class phobioOps extends Component {
               viewBox="0 0 516 225"
             >
               <path
-                fill="#f87d82"
+                fill={Colors.darkerPink}
                 d="M514 129c11-54-37-82-83-74-69 11-94 44-165 12-42-18-85-72-134-67C92 4 36 38 12 70c-36 45 15 144 71 152 59 8 114-32 169-28 69 4 214 98 262-65z"
               />
             </LowerShape>
           </Plx>
         </Hero>
         <glamorous.Div width="100%" height="100%" background="white">
-          <Content css={{ background: "white", paddingTop: "3rem", marginBottom: "3rem" }}>
+          <Content css={{ background: "white", paddingTop: "3rem" }}>
             <SectionTitle>Need</SectionTitle>
             <p>
               To the customer, it is presented as an easy process to trade-in their device but behind
@@ -171,10 +171,19 @@ class phobioOps extends Component {
               scratch. It was an excellent learning experience for me and also a step
               in the right direction for Phobio's codebase.
             </p>
-            <FullWidth>
-              {/* <WindshieldWiper after={after} before={before} /> */}
+            <SectionTitle>Result</SectionTitle>
+            <p>
+              The redesigned app is in the final stages of testing now but
+              responses have been great so far!
+            </p>
+            <p>
+              Rather than fighting and hunting their way through the old app the
+              users are now presented with only the information they need and are easily guided through the
+              next steps they must take.
+            </p>
+            <FullWidth css={{marginTop: "4rem"}}>
               <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto" padding="3rem 1rem">
-                <SectionTitle css={{ color: "#fff"}}>
+                <SectionTitle css={{color: "white"}}>
                   Before
                 </SectionTitle>
                 <glamorous.Figure width="100%" margin="0 auto 2.5rem auto">
@@ -194,7 +203,7 @@ class phobioOps extends Component {
                     Dense information, low hierachy, and no clear path
                   </glamorous.Figcaption>
                 </glamorous.Figure>
-                <SectionTitle css={{ color: "#fff"}}>
+                <SectionTitle css={{color: "white"}}>
                   After
                 </SectionTitle>
                 <glamorous.Figure width="100%" margin="0 auto 2.5rem auto">
@@ -217,15 +226,6 @@ class phobioOps extends Component {
               </glamorous.Div>
               <p />
             </FullWidth>
-            <p>
-              The redesigned app is in the final stages of testing now but
-              responses have been great so far!
-            </p>
-            <p>
-              Rather than fighting and hunting their way through the old app the
-              users are now presented with only the information they need and are easily guided through the
-              next steps they must take.
-            </p>
           </Content>
         </glamorous.Div>
       </div>
