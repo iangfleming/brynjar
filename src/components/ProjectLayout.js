@@ -31,7 +31,6 @@ export const HeroDesc = glamorous.p(({white}) => ({
   color: white ? "white" : "inherit",
   margin: "0",
   paddingTop: "1rem",
-  maxWidth: Sizes.content,
   fontStyle: "italic"
 }));
 export const Content = glamorous.div({
