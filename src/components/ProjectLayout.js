@@ -33,11 +33,11 @@ export const HeroDesc = glamorous.p(({white}) => ({
   paddingTop: "1rem",
   fontStyle: "italic"
 }));
-export const Content = glamorous.div({
-  maxWidth: Sizes.content,
+export const Content = glamorous.div(({maxWidth}) => ({
+  maxWidth: maxWidth ? maxWidth : Sizes.content,
   margin: "0 auto",
   padding: "0 2rem"
-})
+}))
 export const SectionTitle = glamorous.h3({
   fontFamily: "Oswald",
   fontSize: Sizes.head,

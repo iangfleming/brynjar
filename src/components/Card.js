@@ -17,8 +17,8 @@ class Card extends Component {
     const StyledLink = glamorous(Link)({
       display: "block",
       position: "relative",
-      width: "250px",
-      height: "250px",
+      width: "270px",
+      height: "270px",
       marginBottom: "5rem",
       textDecoration: "none",
       color: Colors.text,

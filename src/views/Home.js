@@ -10,6 +10,8 @@ import glamorous from "glamorous";
 import Colors from "../vars/Colors";
 import MediaQueries from "../vars/MediaQueries";
 import Sizes from "../vars/Sizes";
+import { Content, BlockLink } from "../components/ProjectLayout";
+import { cpus } from "os";
 
 const WorkPanel = Keyframes.Spring({
   home: { to: { width: "50vw" } },
@@ -65,13 +67,13 @@ class Home extends Component {
     const Back = glamorous.button({
       position: "fixed",
       top: "5rem",
-      right: "0",
       transform: "rotate(90deg)",
       textTransform: "uppercase",
       fontSize: Sizes.base,
       fontFamily: "Oswald",
       background: "none",
-      border: "none"
+      border: "none",
+      pointerEvents: "none"
     });
     return (
       <glamorous.Div display="flex" position="relative">
@@ -84,7 +86,7 @@ class Home extends Component {
           >
             {styles => (
               <animated.div style={{ ...styles }}>
-                <Back onClick={() => this.handlePanelClick("life")}>Back</Back>
+                <Back>Back</Back>
               </animated.div>
             )}
           </Spring>
@@ -122,7 +124,6 @@ class Home extends Component {
                     style={{
                       display: workContentHidden ? "none" : "block",
                       minHeight: "200px",
-                      maxWidth: Sizes.content,
                       margin: "3rem",
                       opacity: life ? 0 : 1,
                       transform: styles.Y.interpolate(
@@ -130,43 +131,50 @@ class Home extends Component {
                       )
                     }}
                   >
-                    <glamorous.Div
-                      display={work ? "flex" : "block"}
-                      justifyContent="space-between"
-                    >
-                      <glamorous.H2>Work</glamorous.H2>
-                      <animated.p
-                        style={{
-                          display: home ? "initial" : "none"
-                        }}
+                    <Content maxWidth="1000px">
+                      <glamorous.Div
+                        display={work ? "flex" : "block"}
                       >
-                        I’m a designer and developer.
-                        <br />
-                        Here are some highlights from my career
-                        <br />
-                        <em>Beta; still in development</em>
-                      </animated.p>
-                      <animated.div
-                        style={{
-                          opacity: styles.opacity,
-                          display: !work ? "none" : "initial",
-                          maxWidth: "400px",
-                        }}
-                      >
-                        <p>
-                          I am a designer and developer in Austin, TX.
-                        </p>
-                        <p>
-                          Formerly at the IBM Carbon Design System.
-                        </p>
-                        <p>
-                          Currently at Phobio.
-                        </p>
-                        <p>
-                          Working to design great products and build robust design systems.
-                        </p>
-                      </animated.div>
-                    </glamorous.Div>
+                        <glamorous.H2>Work</glamorous.H2>
+                        <animated.p
+                          style={{
+                            display: home ? "initial" : "none"
+                          }}
+                        >
+                          I’m a designer and developer.
+                          <br />
+                          Here are some highlights from my career
+                        </animated.p>
+                        <animated.div
+                          style={{
+                            opacity: styles.opacity,
+                            display: !work ? "none" : "initial",
+                            maxWidth: "400px",
+                            marginLeft: "4rem"
+                          }}
+                        >
+                          <p>I am a designer and developer in Austin, TX.</p>
+                          <p>Formerly at the IBM Carbon Design System.</p>
+                          <p>Currently at Phobio.</p>
+                          <p>
+                            Working to design great products and build robust
+                            design systems.
+                          </p>
+                          <glamorous.A
+                            background={Colors.teal}
+                            color="white"
+                            padding="10px 15px"
+                            textDecoration="none"
+                            marginTop="2rem"
+                            width="96px"
+                            display="block"
+                            href="mailto:ian@ianfleming.me"
+                          >
+                            Email Me
+                          </glamorous.A>
+                        </animated.div>
+                      </glamorous.Div>
+                    </Content>
                   </animated.div>
                 )}
               </Spring>
@@ -218,7 +226,7 @@ class Home extends Component {
                       <br />
                       These are the public records of my experiences.
                       <br />
-                      <em>Coming soon</em>
+                      <em>More coming soon</em>
                     </animated.p>
                   </animated.div>
                 )}
