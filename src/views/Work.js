@@ -29,6 +29,7 @@ class Work extends Component {
       transform: "rotate(-90deg)",
       transformOrigin: "bottom right",
       margin: 0,
+      whiteSpace: "nowrap",
     });
     const projectsArray = Object.values(projects);
     const experimentsArray = Object.values(experiments);
@@ -55,7 +56,7 @@ class Work extends Component {
             >
               <WorkContent>
                 <glamorous.Div marginRight="2rem">
-                  <Label>Projects</Label>
+                  <Label>Case Studies</Label>
                 </glamorous.Div>
                 <glamorous.Div
                   position="relative"

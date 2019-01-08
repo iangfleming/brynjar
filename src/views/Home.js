@@ -105,6 +105,8 @@ class Home extends Component {
                 ...styles,
                 background: Colors.pink,
                 minHeight: "100vh",
+                minWidth: life ? "65px" : "0",
+                maxWidth: life ? "85px" : "100%",
                 margin: "0 auto",
                 cursor: work ? "auto" : "pointer"
               }}
@@ -134,6 +136,7 @@ class Home extends Component {
                     <Content maxWidth="1000px">
                       <glamorous.Div
                         display={work ? "flex" : "block"}
+                        flexFlow="row wrap"
                       >
                         <glamorous.H2>Work</glamorous.H2>
                         <animated.p

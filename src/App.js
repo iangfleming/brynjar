@@ -5,6 +5,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./views/Home";
 import projects from "./projects";
 import memories from "./memories";
+import { Transition } from "react-spring";
 
 class App extends Component {
   render() {
@@ -13,14 +14,16 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Route exact path="/(|work|life)" component={Home}/>
+          <Route exact path="/(|work|life)" component={Home} />
           {projectsArray.map((Project, idx) => {
             const path = `/work/${Project.slug}`;
-            return (<Route exact path={path} component={Project.component}/>)
+            return (
+                <Route exact path={path} component={Project.component} />
+            );
           })}
           {memoriesArray.map((Memory, idx) => {
             const path = `/life/${Memory.slug}`;
-            return (<Route exact path={path} component={Memory.component}/>)
+            return <Route exact path={path} component={Memory.component} />;
           })}
         </div>
       </BrowserRouter>

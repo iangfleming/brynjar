@@ -4,11 +4,11 @@ import TheShortcut from "../memories/theShortcut";
 import Japan from "../memories/japan";
 
 import carbonPattern from "../images/carbon/carbon-pattern.svg";
-import hacktime1 from "../images/carbon/hacktime-1.jpg";
-import hacktime2 from "../images/carbon/hacktime-2.jpg";
-import hacktime3 from "../images/carbon/hacktime-3.jpg";
 import templeArch from "../images/japan/templeArch.jpg"
 import riders from "../images/theShortcut/GC032439.JPG"
+import jack from "../images/r3/jack.jpg";
+import hawaii from "../images/pano/hawaii-open-valley.jpg";
+
 
 const memories = {
   theShortcut: {
@@ -21,18 +21,18 @@ const memories = {
     color: Colors.pink,
     component: TheShortcut
   },
-  test2: {
-    slug: "test",
-    name: "test",
-    image: carbonPattern,
+  pano: {
+    slug: "panoramas",
+    name: "Panoramas",
+    image: hawaii,
     x: "end",
     y: "start",
     component: carbonDesignSystem
   },
-  test4: {
-    slug: "test",
-    name: "test",
-    image: carbonPattern,
+  r3: {
+    slug: "btc-r3",
+    name: "BTC R3",
+    image: jack,
     x: "end",
     y: "end",
     component: carbonDesignSystem

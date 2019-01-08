@@ -7,12 +7,6 @@ import MediaQueries from "../vars/MediaQueries";
 import { animated, Spring } from "react-spring";
 
 class Card extends Component {
-  state = {
-    hover: false
-  };
-  handleClick = () => {
-    this.setState({ open: !this.state.open });
-  };
   render() {
     const StyledLink = glamorous(Link)({
       display: "block",

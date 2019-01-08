@@ -11,6 +11,8 @@ const styles = {
   textTransform: "uppercase",
   textDecoration: "none",
   padding: "5px",
+  whiteSpace: "nowrap",
+  marginRight: "5px",
   "::before": {
     content: `''`,
     position: "absolute",
