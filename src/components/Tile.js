@@ -3,21 +3,28 @@ import glamorous from "glamorous";
 import { Link } from "react-router-dom";
 import Sizes from "../vars/Sizes";
 import Colors from "../vars/Colors";
+import MediaQueries from "../vars/MediaQueries";
 
 const Tile = (props) => {
-  const DisabledTile = glamorous.div({
+  const SharedStyles = {
     display: "flex",
     justifyContent: `flex-${props.x}`,
     alignItems: `flex-${props.y}`,
     position: "relative",
     height: "20rem",
-    width: props.size ? `${props.size - 2}%` : "24%",
-    minWidth: "240px",
     background: props.image ? `url(${props.image})` : Colors.pink,
     backgroundSize: "cover",
     backgroundPosition: "center",
     marginBottom: "2rem",
     padding: "2rem",
+    width: "100%",
+    [MediaQueries.md]: {
+      width: props.size ? `${props.size - 2}%` : "24%",
+      minWidth: "195px",
+    }
+  }
+  const DisabledTile = glamorous.div({
+    ...SharedStyles,
     "::after": {
       content: `''`,
       position: "absolute",
@@ -40,18 +47,7 @@ const Tile = (props) => {
   })
   const StyledLink = glamorous(Link)({
     textDecoration: "none",
-    display: "flex",
-    justifyContent: `flex-${props.x}`,
-    alignItems: `flex-${props.y}`,
-    position: "relative",
-    height: "20rem",
-    width: props.size ? `${props.size - 2}%` : "24%",
-    minWidth: "240px",
-    background: props.image ? `url(${props.image})` : Colors.pink,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    marginBottom: "2rem",
-    padding: "2rem",
+    ...SharedStyles
   });
   const Title = glamorous.h2({
     color: props.color ? props.color : "white",

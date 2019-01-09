@@ -13,6 +13,7 @@ class Life extends Component {
       justifyContent: "space-between",
       maxWidth: "1000px",
       margin: "1rem auto",
+      padding: "0 2rem",
       paddingTop: "180px",
       [MediaQueries.md]: {
         paddingTop: "150px"
