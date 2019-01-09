@@ -20,7 +20,8 @@ const memories = {
     x: "end",
     y: "end",
     color: Colors.pink,
-    component: TheShortcut
+    component: TheShortcut,
+    disabled: true,
   },
   pano: {
     slug: "panoramas",
@@ -29,6 +30,7 @@ const memories = {
     x: "end",
     y: "start",
     component: pano,
+    disabled: false,
   },
   r3: {
     slug: "btc-r3",
@@ -36,7 +38,8 @@ const memories = {
     image: jack,
     x: "end",
     y: "end",
-    component: carbonDesignSystem
+    component: carbonDesignSystem,
+    disabled: false,
   },
   Japan: {
     slug: "japan",
@@ -45,7 +48,9 @@ const memories = {
     size: 75,
     x: "end",
     y: "end",
+    color: Colors.pink,
     component: Japan,
+    disabled: true,
   },
 };
 export default memories;
