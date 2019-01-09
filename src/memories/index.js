@@ -2,6 +2,7 @@ import Colors from "../vars/Colors";
 import carbonDesignSystem from "../projects/carbonDesignSystem";
 import TheShortcut from "../memories/theShortcut";
 import Japan from "../memories/japan";
+import pano from "../memories/pano";
 
 import carbonPattern from "../images/carbon/carbon-pattern.svg";
 import templeArch from "../images/japan/templeArch.jpg"
@@ -27,7 +28,7 @@ const memories = {
     image: hawaii,
     x: "end",
     y: "start",
-    component: carbonDesignSystem
+    component: pano,
   },
   r3: {
     slug: "btc-r3",
