@@ -13,7 +13,6 @@ class Life extends Component {
       justifyContent: "space-between",
       maxWidth: "1000px",
       margin: "1rem auto",
-      paddingLeft: "5vw",
       paddingTop: "180px",
       [MediaQueries.md]: {
         paddingTop: "150px"
@@ -34,7 +33,6 @@ class Life extends Component {
               style={{
                 background: "white",
                 minHeight: "100%",
-                margin: "0 0 0 -5vw",
                 clipPath: "polygon(0 9%, 100% 0%, 100% 100%, 0% 100%)",
                 ...styles
               }}

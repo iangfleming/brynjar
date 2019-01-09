@@ -47,10 +47,8 @@ class Work extends Component {
               style={{
                 background: "white",
                 minHeight: "100%",
-                margin: "0 -5vw",
                 clipPath: "polygon(0 0, 100% 9%, 100% 100%, 0% 100%)",
                 // why isn't this working (fix)
-                padding: "0 -5vw",
                 ...styles
               }}
             >

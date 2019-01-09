@@ -15,13 +15,13 @@ import { cpus } from "os";
 
 const WorkPanel = Keyframes.Spring({
   home: { to: { width: "50vw" } },
-  work: { to: { width: "95vw" } },
-  life: { to: { width: "5vw" } }
+  work: { to: { width: "100vw" } },
+  life: { to: { width: "0vw" } }
 });
 const LifePanel = Keyframes.Spring({
   home: { to: { width: "50vw" } },
-  work: { to: { width: "5vw" } },
-  life: { to: { width: "95vw" } }
+  work: { to: { width: "0vw" } },
+  life: { to: { width: "100vw" } }
 });
 const panelSpringConfig = {
   tension: 150,
@@ -64,17 +64,20 @@ class Home extends Component {
     const home = this.state.panel === "home";
     const work = this.state.panel === "work";
     const life = this.state.panel === "life";
-    const Back = glamorous.button({
+    const Back = glamorous.button(({work, life}) => ({
       position: "fixed",
-      top: "5rem",
-      transform: "rotate(90deg)",
       textTransform: "uppercase",
       fontSize: Sizes.base,
       fontFamily: "Oswald",
-      background: "none",
       border: "none",
-      pointerEvents: "none"
-    });
+      top: "2rem",
+      cursor: "pointer",
+      padding: "5rem",
+      right: work ? "1rem" : "unset",
+      left: life ? "1rem" : "unset",
+      background: "none",
+      color: work ? Colors.teal : Colors.pink,
+    }));
     return (
       <glamorous.Div display="flex" position="relative">
         <Logo panel={this.state.panel} direction={this.state.direction} />
@@ -86,7 +89,7 @@ class Home extends Component {
           >
             {styles => (
               <animated.div style={{ ...styles }}>
-                <Back>Back</Back>
+                <Back work onClick={() => this.handlePanelClick("right")}>Back</Back>
               </animated.div>
             )}
           </Spring>
@@ -105,8 +108,6 @@ class Home extends Component {
                 ...styles,
                 background: Colors.pink,
                 minHeight: "100vh",
-                minWidth: life ? "65px" : "0",
-                maxWidth: life ? "85px" : "100%",
                 margin: "0 auto",
                 cursor: work ? "auto" : "pointer"
               }}
@@ -185,6 +186,19 @@ class Home extends Component {
             </animated.div>
           )}
         </WorkPanel>
+        {life ? (
+          <Spring
+            from={{ transform: "translateX(-10vw)" }}
+            to={{ transform: "translateX(10vw)" }}
+            native
+          >
+            {styles => (
+              <animated.div style={{ ...styles }}>
+                <Back life onClick={() => this.handlePanelClick("left")}>Back</Back>
+              </animated.div>
+            )}
+          </Spring>
+        ) : null}
         <LifePanel
           state={panel}
           config={panelSpringConfig}
