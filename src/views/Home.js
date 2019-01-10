@@ -64,19 +64,21 @@ class Home extends Component {
     const home = this.state.panel === "home";
     const work = this.state.panel === "work";
     const life = this.state.panel === "life";
-    const Back = glamorous.button(({work, life}) => ({
-      position: "fixed",
+    const Title = glamorous.h2({
+      fontSize: Sizes.superhead,
+      marginTop: "5rem",
+      marginRight: "5rem"
+    });
+    const Back = glamorous.button(({ work, life }) => ({
       textTransform: "uppercase",
-      fontSize: Sizes.base,
+      fontSize: Sizes.subhead,
       fontFamily: "Oswald",
       border: "none",
-      top: "2rem",
       cursor: "pointer",
-      padding: "5rem",
-      right: work ? "1rem" : "unset",
-      left: life ? "1rem" : "unset",
-      background: "none",
-      color: work ? Colors.teal : Colors.pink,
+      background: work ? Colors.teal : Colors.pink,
+      clipPath: `polygon(${work ? "100% 0, 0 50%, 100% 100%" : "0 0, 0% 100%, 100% 52%"})`,
+      paddingLeft: work ? "42px" : "unset",
+      paddingRight: life ? "42px" : "unset",
     }));
     return (
       <glamorous.Div display="flex" position="relative">
@@ -84,12 +86,21 @@ class Home extends Component {
         {work ? (
           <Spring
             from={{ transform: "translateX(110vw)" }}
-            to={{ transform: "translateX(95vw)" }}
+            to={{ transform: "translateX(0)" }}
             native
           >
             {styles => (
-              <animated.div style={{ ...styles }}>
-                <Back work onClick={() => this.handlePanelClick("right")}>Back</Back>
+              <animated.div
+                style={{
+                  position: "fixed",
+                  right: "0",
+                  top: "2rem",
+                  ...styles
+                }}
+              >
+                <Back work onClick={() => this.handlePanelClick("right")}>
+                  Back
+                </Back>
               </animated.div>
             )}
           </Spring>
@@ -139,7 +150,7 @@ class Home extends Component {
                         display={work ? "flex" : "block"}
                         flexFlow="row wrap"
                       >
-                        <glamorous.H2>Work</glamorous.H2>
+                        <Title>Work</Title>
                         <animated.p
                           style={{
                             display: home ? "initial" : "none"
@@ -157,20 +168,24 @@ class Home extends Component {
                             marginLeft: "4rem"
                           }}
                         >
-                          <p>I am a designer and developer in Austin, TX.</p>
-                          <p>Formerly at the IBM Carbon Design System.</p>
-                          <p>Currently at Phobio.</p>
+                          <p>
+                            I am a designer and developer in Austin, TX.
+                            Formerly at the IBM Carbon Design System. Currently
+                            at Phobio.
+                          </p>
                           <p>
                             Working to design great products and build robust
                             design systems.
                           </p>
                           <glamorous.A
                             background={Colors.teal}
-                            color="white"
+                            color={Colors.text}
                             padding="10px 15px"
                             textDecoration="none"
+                            textTransform="uppercase"
+                            fontWeight="600"
                             marginTop="2rem"
-                            width="96px"
+                            width="100px"
                             display="block"
                             href="mailto:ian@ianfleming.me"
                           >
@@ -189,12 +204,18 @@ class Home extends Component {
         {life ? (
           <Spring
             from={{ transform: "translateX(-10vw)" }}
-            to={{ transform: "translateX(10vw)" }}
+            to={{ transform: "translateX(0)" }}
             native
           >
             {styles => (
-              <animated.div style={{ ...styles }}>
-                <Back life onClick={() => this.handlePanelClick("left")}>Back</Back>
+              <animated.div style={{
+                   position: "fixed",
+                  left: "0",
+                  top: "2rem",
+                 ...styles }}>
+                <Back life onClick={() => this.handlePanelClick("left")}>
+                  Back
+                </Back>
               </animated.div>
             )}
           </Spring>
@@ -237,7 +258,7 @@ class Home extends Component {
                       )
                     }}
                   >
-                    <h2>Life</h2>
+                    <Title>Life</Title>
                     <animated.p>
                       Call it a blog or whatever you like.
                       <br />
