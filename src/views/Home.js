@@ -71,7 +71,7 @@ class Home extends Component {
     const Desc = glamorous.div({
       maxWidth: "400px",
       [MediaQueries.md]: {
-        marginLeft: "4rem",
+        marginLeft: home ? 0 : "4rem",
       }
     })
     const Back = glamorous.button(({ work, life }) => ({
@@ -156,7 +156,6 @@ class Home extends Component {
                     style={{
                       display: workContentHidden ? "none" : "block",
                       minHeight: "200px",
-                      margin: "3rem",
                       opacity: life ? 0 : 1,
                       transform: styles.Y.interpolate(
                         Y => `translateY(${Y}vmin)`
@@ -276,7 +275,6 @@ class Home extends Component {
                   <animated.div
                     style={{
                       display: lifeContentHidden ? "none" : "block",
-                      margin: "3rem",
                       opacity: work ? 0 : 1,
                       transform: styles.Y.interpolate(
                         Y => `translateY(${Y}vmin)`

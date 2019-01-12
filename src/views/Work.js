@@ -24,6 +24,7 @@ class Work extends Component {
       }
     });
     const Label = glamorous.h2({
+      width: "50px",
       fontSize: Sizes.base,
       textTransform: "uppercase",
       transform: "rotate(-90deg)",

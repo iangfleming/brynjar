@@ -11,8 +11,8 @@ class Card extends Component {
     const StyledLink = glamorous(Link)({
       display: "block",
       position: "relative",
-      width: "270px",
-      height: "270px",
+      width: "200px",
+      height: "200px",
       marginBottom: "5rem",
       textDecoration: "none",
       color: Colors.text,
@@ -20,14 +20,21 @@ class Card extends Component {
       border: "8px solid",
       borderColor: Colors.teal,
       transition: "all 100ms cubic-bezier(0.5, 0, 0.1, 1)",
-      [":hover"]: {
+      ":hover": {
         borderColor: Colors.pink
-      }
+      },
+      [MediaQueries.md]: {
+        width: "270px",
+        height: "270px",
+      },
     });
     const Title = glamorous.h2({
-      fontSize: Sizes.superhead,
+      fontSize: Sizes.head,
       fontWeight: "600",
-      margin: 0
+      margin: 0,
+      [MediaQueries.md]: {
+        fontSize: Sizes.superhead,
+      },
     });
     const Line = glamorous.div({});
 
