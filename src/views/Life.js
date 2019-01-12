@@ -35,6 +35,7 @@ class Life extends Component {
                 background: "white",
                 minHeight: "100%",
                 clipPath: "polygon(0 9%, 100% 0%, 100% 100%, 0% 100%)",
+                willChange: "transform",
                 ...styles
               }}
             >

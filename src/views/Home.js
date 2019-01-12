@@ -11,7 +11,6 @@ import Colors from "../vars/Colors";
 import MediaQueries from "../vars/MediaQueries";
 import Sizes from "../vars/Sizes";
 import { Content, BlockLink } from "../components/ProjectLayout";
-import { cpus } from "os";
 
 const WorkPanel = Keyframes.Spring({
   home: { to: { width: "50vw" } },
@@ -69,16 +68,31 @@ class Home extends Component {
       marginTop: "5rem",
       marginRight: "5rem"
     });
+    const Desc = glamorous.div({
+      maxWidth: "400px",
+      [MediaQueries.md]: {
+        marginLeft: "4rem",
+      }
+    })
     const Back = glamorous.button(({ work, life }) => ({
+      height: "15rem",
+      width: "15rem",
+      background: work ? Colors.teal : Colors.pink,
+      clipPath: `circle(${work ? "50% at 100% 1%" : "50% at 10% 1%"})`,
       textTransform: "uppercase",
       fontSize: Sizes.subhead,
       fontFamily: "Oswald",
       border: "none",
       cursor: "pointer",
-      background: work ? Colors.teal : Colors.pink,
-      clipPath: `polygon(${work ? "100% 0, 0 50%, 100% 100%" : "0 0, 0% 100%, 100% 52%"})`,
-      paddingLeft: work ? "42px" : "unset",
-      paddingRight: life ? "42px" : "unset",
+      paddingLeft: work ? "8rem" : "unset",
+      paddingRight: life ? "8rem" : "unset",
+      paddingBottom: "8rem"
+    }));
+    const BackArrow = glamorous.svg(({ work, life }) => ({
+      display: "block",
+      transform: `scale(2) rotate(${work ? "180deg" : "0"})`,
+      marginLeft: `${work ? 3.5 : 2.5}rem`,
+      marginTop: "4px"
     }));
     return (
       <glamorous.Div display="flex" position="relative">
@@ -87,19 +101,23 @@ class Home extends Component {
           <Spring
             from={{ transform: "translateX(110vw)" }}
             to={{ transform: "translateX(0)" }}
+            delay="500"
             native
           >
             {styles => (
               <animated.div
                 style={{
-                  position: "fixed",
+                  position: "absolute",
                   right: "0",
-                  top: "2rem",
+                  top: "0",
                   ...styles
                 }}
               >
                 <Back work onClick={() => this.handlePanelClick("right")}>
                   Back
+                  <BackArrow work width="16" height="14" viewBox="0 0 16 14">
+                    <path d="M4.044 8.003l4.09 3.905-1.374 1.453-6.763-6.356L6.759.639 8.135 2.09 4.043 6.003h11.954v2H4.044z" />
+                  </BackArrow>
                 </Back>
               </animated.div>
             )}
@@ -164,33 +182,33 @@ class Home extends Component {
                           style={{
                             opacity: styles.opacity,
                             display: !work ? "none" : "initial",
-                            maxWidth: "400px",
-                            marginLeft: "4rem"
                           }}
                         >
-                          <p>
-                            I am a designer and developer in Austin, TX.
-                            Formerly at the IBM Carbon Design System. Currently
-                            at Phobio.
-                          </p>
-                          <p>
-                            Working to design great products and build robust
-                            design systems.
-                          </p>
-                          <glamorous.A
-                            background={Colors.teal}
-                            color={Colors.text}
-                            padding="10px 15px"
-                            textDecoration="none"
-                            textTransform="uppercase"
-                            fontWeight="600"
-                            marginTop="2rem"
-                            width="100px"
-                            display="block"
-                            href="mailto:ian@ianfleming.me"
-                          >
-                            Email Me
-                          </glamorous.A>
+                          <Desc>
+                            <p>
+                              I am a designer and developer in Austin, TX.
+                              Formerly at the IBM Carbon Design System.
+                              Currently at Phobio.
+                            </p>
+                            <p>
+                              Working to design great products and build robust
+                              design systems.
+                            </p>
+                            <glamorous.A
+                              background={Colors.teal}
+                              color={Colors.text}
+                              padding="10px 15px"
+                              textDecoration="none"
+                              textTransform="uppercase"
+                              fontWeight="600"
+                              marginTop="2rem"
+                              width="100px"
+                              display="block"
+                              href="mailto:ian@ianfleming.me"
+                            >
+                              Email Me
+                            </glamorous.A>
+                          </Desc>
                         </animated.div>
                       </glamorous.Div>
                     </Content>
@@ -205,16 +223,23 @@ class Home extends Component {
           <Spring
             from={{ transform: "translateX(-10vw)" }}
             to={{ transform: "translateX(0)" }}
+            delay="500"
             native
           >
             {styles => (
-              <animated.div style={{
-                   position: "fixed",
+              <animated.div
+                style={{
+                  position: "absolute",
                   left: "0",
-                  top: "2rem",
-                 ...styles }}>
+                  top: "0",
+                  ...styles
+                }}
+              >
                 <Back life onClick={() => this.handlePanelClick("left")}>
                   Back
+                  <BackArrow width="16" height="14" viewBox="0 0 16 14">
+                    <path d="M4.044 8.003l4.09 3.905-1.374 1.453-6.763-6.356L6.759.639 8.135 2.09 4.043 6.003h11.954v2H4.044z" />
+                  </BackArrow>
                 </Back>
               </animated.div>
             )}
@@ -258,14 +283,36 @@ class Home extends Component {
                       )
                     }}
                   >
-                    <Title>Life</Title>
-                    <animated.p>
-                      Call it a blog or whatever you like.
-                      <br />
-                      These are the public records of my experiences.
-                      <br />
-                      <em>More coming soon</em>
-                    </animated.p>
+                    <Content maxWidth="1000px">
+                      <glamorous.Div
+                        display={life ? "flex" : "block"}
+                        flexFlow="row wrap"
+                        alignItems="flex-end"
+                      >
+                        <Title>Life</Title>
+                        <Desc>
+                          <p>
+                            Call it a blog or whatever you like. These are the
+                            public records of my experiences.
+                          </p>
+                          <glamorous.A
+                            background={Colors.pink}
+                            color={Colors.text}
+                            padding="10px 15px"
+                            textDecoration="none"
+                            textTransform="uppercase"
+                            fontWeight="600"
+                            marginTop="2rem"
+                            width="125px"
+                            display={life ? "block" : "none"}
+                            href="https://www.instagram.com/iangfleming/"
+                            target="_blank"
+                          >
+                            Instagram
+                          </glamorous.A>
+                        </Desc>
+                      </glamorous.Div>
+                    </Content>
                   </animated.div>
                 )}
               </Spring>

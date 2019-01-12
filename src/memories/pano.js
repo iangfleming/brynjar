@@ -34,7 +34,7 @@ const FigCaption = glamorous.figcaption({
   fontStyle: "italic",
   color: "white",
   paddingTop: "1rem",
-  paddingRight: "1rem",
+  paddingRight: "4rem",
 });
 const Pano = props => {
   const imagesArray = Object.values(images);

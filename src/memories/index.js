@@ -2,6 +2,7 @@ import Colors from "../vars/Colors";
 import carbonDesignSystem from "../projects/carbonDesignSystem";
 import TheShortcut from "../memories/theShortcut";
 import Japan from "../memories/japan";
+import r3 from "../memories/r3";
 import pano from "../memories/pano";
 
 import carbonPattern from "../images/carbon/carbon-pattern.svg";
@@ -38,7 +39,7 @@ const memories = {
     image: jack,
     x: "end",
     y: "end",
-    component: carbonDesignSystem,
+    component: r3,
     disabled: false,
   },
   Japan: {

@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./views/Home";
 import projects from "./projects";
+import Acorns from  "./experiments/Acorns";
 import memories from "./memories";
 import { Transition } from "react-spring";
 
@@ -21,6 +22,7 @@ class App extends Component {
                 <Route exact path={path} component={Project.component} />
             );
           })}
+          <Route exact path="/work/acorns" component={Acorns} />
           {memoriesArray.map((Memory, idx) => {
             const path = `/life/${Memory.slug}`;
             return <Route exact path={path} component={Memory.component} />;
