@@ -75,24 +75,25 @@ class Home extends Component {
       }
     })
     const Back = glamorous.button(({ work, life }) => ({
-      height: "15rem",
-      width: "15rem",
+      height: "6rem",
+      width: "6rem",
       background: work ? Colors.teal : Colors.pink,
-      clipPath: `circle(${work ? "50% at 100% 1%" : "50% at 10% 1%"})`,
-      textTransform: "uppercase",
-      fontSize: Sizes.subhead,
-      fontFamily: "Oswald",
+      borderRadius: "50%",
       border: "none",
       cursor: "pointer",
-      paddingLeft: work ? "8rem" : "unset",
-      paddingRight: life ? "8rem" : "unset",
-      paddingBottom: "8rem"
+      transition: "transform 75ms",
+      ":focus": {
+        outline: "none",
+      },
+      ":hover": {
+        transform: "scale(1.125)",
+      },
+      ":active": {
+        transform: "scale(1)",
+      },
     }));
     const BackArrow = glamorous.svg(({ work, life }) => ({
-      display: "block",
       transform: `scale(2) rotate(${work ? "180deg" : "0"})`,
-      marginLeft: `${work ? 3.5 : 2.5}rem`,
-      marginTop: "4px"
     }));
     return (
       <glamorous.Div display="flex" position="relative">
@@ -108,13 +109,13 @@ class Home extends Component {
               <animated.div
                 style={{
                   position: "absolute",
-                  right: "0",
-                  top: "0",
+                  right: "1rem",
+                  top: "1rem",
+                  zIndex: "2",
                   ...styles
                 }}
               >
                 <Back work onClick={() => this.handlePanelClick("right")}>
-                  Back
                   <BackArrow work width="16" height="14" viewBox="0 0 16 14">
                     <path d="M4.044 8.003l4.09 3.905-1.374 1.453-6.763-6.356L6.759.639 8.135 2.09 4.043 6.003h11.954v2H4.044z" />
                   </BackArrow>
@@ -156,6 +157,7 @@ class Home extends Component {
                     style={{
                       display: workContentHidden ? "none" : "block",
                       minHeight: "200px",
+                      marginTop: "5rem",
                       opacity: life ? 0 : 1,
                       transform: styles.Y.interpolate(
                         Y => `translateY(${Y}vmin)`
@@ -229,13 +231,13 @@ class Home extends Component {
               <animated.div
                 style={{
                   position: "absolute",
-                  left: "0",
-                  top: "0",
+                  left: "1rem",
+                  top: "1rem",
+                  zIndex: "2",
                   ...styles
                 }}
               >
                 <Back life onClick={() => this.handlePanelClick("left")}>
-                  Back
                   <BackArrow width="16" height="14" viewBox="0 0 16 14">
                     <path d="M4.044 8.003l4.09 3.905-1.374 1.453-6.763-6.356L6.759.639 8.135 2.09 4.043 6.003h11.954v2H4.044z" />
                   </BackArrow>
@@ -275,6 +277,8 @@ class Home extends Component {
                   <animated.div
                     style={{
                       display: lifeContentHidden ? "none" : "block",
+                      minHeight: "200px",
+                      marginTop: "4rem",
                       opacity: work ? 0 : 1,
                       transform: styles.Y.interpolate(
                         Y => `translateY(${Y}vmin)`
