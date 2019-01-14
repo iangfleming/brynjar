@@ -103,7 +103,6 @@ class Work extends Component {
                         <Label>Experiments</Label>
                       </glamorous.Div>
                       <glamorous.Div
-                        position="relative"
                         display="flex"
                         flexFlow="row wrap"
                       >
