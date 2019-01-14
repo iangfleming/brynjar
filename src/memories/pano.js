@@ -3,6 +3,7 @@ import glamorous from "glamorous";
 import Sizes from "../vars/Sizes";
 import MediaQueries from "../vars/MediaQueries";
 import Colors from "../vars/Colors";
+import ProjectBackBtn from "../components/ProjectBackBtn";
 import images from "../images/pano/";
 const Plaque = glamorous.div({
   height: "80vh",
@@ -40,6 +41,7 @@ const Pano = props => {
   const imagesArray = Object.values(images);
   return (
     <React.Fragment>
+      <ProjectBackBtn absolute />
       <Plaque>
         <Title>pan•o•ram•a</Title>
         <Desc>

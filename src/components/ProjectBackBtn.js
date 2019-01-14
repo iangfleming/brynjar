@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import glamorous from "glamorous";
 
-const ProjectBackBtn = ({ match, white }) => {
+const ProjectBackBtn = ({ match, white, absolute }) => {
   const StyledLink = glamorous(Link)({
     color: white ? "white !important" : "inherit",
     textDecoration: "none",
@@ -13,7 +13,7 @@ const ProjectBackBtn = ({ match, white }) => {
     fontFamily: "Oswald",
     top: "1rem",
     right: "1.5rem",
-    position: "fixed",
+    position: absolute ? "absolute" : "fixed",
     transition: "transform 60ms",
     ":hover": {
       transform: "translateX(-8px)"

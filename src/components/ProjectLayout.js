@@ -67,6 +67,11 @@ export const BlockLink = glamorous.a(({bg}) => ({
     transform: "scale(1)",
   }
 }));
+export const SublteLink = glamorous.a({
+  color: Colors.text,
+  paddingRight: "5px",
+  paddingLeft: "5px",
+});
 export const Row = glamorous.div(({bg}) => ({
   display: "flex",
   alignItems: "center"

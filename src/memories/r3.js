@@ -3,19 +3,24 @@ import glamorous from "glamorous";
 import Sizes from "../vars/Sizes";
 import MediaQueries from "../vars/MediaQueries";
 import Colors from "../vars/Colors";
+import ProjectBackBtn from "../components/ProjectBackBtn";
 
 const Plaque = glamorous.div({
   display: "flex",
   flexFlow: "row wrap",
   justifyContent: "center",
-  alignItems: "center"
+  alignItems: "center",
+  maxWidth: Sizes.content,
+  margin: "0 auto",
+  padding: "0 2rem"
 });
 const Title = glamorous.h2({});
 const Desc = glamorous.p({});
 const r3 = props => {
   return (
     <React.Fragment>
-      <glamorous.Div margin="0 auto" maxWidth={Sizes.maxWidth}>
+      <ProjectBackBtn absolute />
+      <glamorous.Div margin="4rem auto" maxWidth={Sizes.maxWidth}>
         <glamorous.Div
           position="relative"
           padding-bottom="56.25%"
@@ -29,8 +34,10 @@ const r3 = props => {
             left="0"
             width="100%"
             height="100%"
-            src="https://player.vimeo.com/video/289892193"
+            src="https://www.youtube.com/embed/Vi5tfM2Jzxg"
             border="0"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             webkitallowfullscreen
             mozallowfullscreen
             allowfullscreen
@@ -53,7 +60,17 @@ const r3 = props => {
             weather but this year our luck ran out. The forecasted rain held off
             but we faced a steady 15+ mph headwind with gusts up to 25mph.
           </p>
-          <p />
+          <p>
+            I had intended to shoot a lot more video and maybe some interviews
+            but weather and the resulting suffering put an end to that plan.
+            What you see is what I got. Short clips here and there when my
+            frozen fingers could find the shutter button.
+          </p>
+          <p>
+            In a way this is probably a more accurate representation of
+            endurance cycling. Your hands shake and your plans fall apart but at
+            the end of the day all that matters is you did it.
+          </p>
         </Desc>
       </Plaque>
     </React.Fragment>

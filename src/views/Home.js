@@ -10,7 +10,7 @@ import glamorous from "glamorous";
 import Colors from "../vars/Colors";
 import MediaQueries from "../vars/MediaQueries";
 import Sizes from "../vars/Sizes";
-import { Content, BlockLink } from "../components/ProjectLayout";
+import { Content, BlockLink, SublteLink } from "../components/ProjectLayout";
 
 const WorkPanel = Keyframes.Spring({
   home: { to: { width: "50vw" } },
@@ -188,8 +188,14 @@ class Home extends Component {
                           <Desc>
                             <p>
                               I am a designer and developer in Austin, TX.
-                              Formerly at the IBM Carbon Design System.
-                              Currently at Phobio.
+                              Formerly at the IBM
+                              <SublteLink href="https://www.carbondesignsystem.com/" target="_blank">
+                                Carbon Design System
+                              </SublteLink>
+                              . Currently at
+                              <SublteLink href="https://www.phobio.com/" target="_blank">
+                                Phobio.
+                              </SublteLink>
                             </p>
                             <p>
                               Working to design great products and build robust
@@ -203,7 +209,7 @@ class Home extends Component {
                               textTransform="uppercase"
                               fontWeight="600"
                               marginTop="2rem"
-                              width="100px"
+                              width="109px"
                               display="block"
                               href="mailto:ian@ianfleming.me"
                             >
