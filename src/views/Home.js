@@ -66,10 +66,12 @@ class Home extends Component {
     const Title = glamorous.h2({
       fontSize: Sizes.superhead,
       marginTop: "5rem",
-      marginRight: "5rem"
+      marginRight: "5rem",
+      pointerEvents: "none",
     });
     const Desc = glamorous.div({
       maxWidth: "400px",
+      pointerEvents: home ? "none" : "auto",
       [MediaQueries.md]: {
         marginLeft: home ? 0 : "4rem",
       }
