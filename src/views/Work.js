@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-import {
-  animated,
-  Spring
-} from "react-spring";
+import { animated, Spring, config } from "react-spring";
 import glamorous from "glamorous";
 import Card from "../components/Card";
 import ShadowLink from "../components/ShadowLink";
@@ -13,6 +10,7 @@ import Sizes from "../vars/Sizes";
 import MediaQueries from "../vars/MediaQueries";
 
 class Work extends Component {
+  state = { up: false };
   render() {
     const WorkContent = glamorous.div({
       display: "flex",
@@ -20,7 +18,7 @@ class Work extends Component {
       margin: "1rem auto",
       paddingTop: "180px",
       [MediaQueries.md]: {
-        paddingTop: "150px",
+        paddingTop: "150px"
       }
     });
     const Label = glamorous.h2({
@@ -30,7 +28,7 @@ class Work extends Component {
       transform: "rotate(-90deg)",
       transformOrigin: "bottom right",
       margin: 0,
-      whiteSpace: "nowrap",
+      whiteSpace: "nowrap"
     });
     const projectsArray = Object.values(projects);
     const experimentsArray = Object.values(experiments);
@@ -41,6 +39,8 @@ class Work extends Component {
           to={{ transform: "translateY(0%)" }}
           delay="500"
           native
+          onStart={() => this.setState({ up: false })}
+          onRest={() => this.setState({ up: true })}
         >
           {styles => (
             <animated.div
@@ -53,77 +53,88 @@ class Work extends Component {
                 ...styles
               }}
             >
-              <WorkContent>
-                <glamorous.Div marginRight="2rem">
-                  <Label>Case Studies</Label>
-                </glamorous.Div>
-                <glamorous.Div
-                  position="relative"
-                  display="flex"
-                  flexFlow="row wrap"
-                >
-                    {projectsArray.map((Project, i) => {
-                      const path = `/work/${Project.slug}`;
-                      return (
-                        <React.Fragment>
-                          <glamorous.Div
-                            key={i}
-                            flexGrow="1"
-                            flex="1 1 40%"
-                            margin="1rem"
-                          >
-                            <Card
-                              projectLink={path}
-                              projectName={Project.name}
-                              projectDescription={Project.description}
-                              projectColor={Project.color}
-                              projectImage={Project.image}
-                            />
-                          </glamorous.Div>
-                        </React.Fragment>
-                      );
-                    })}
-                </glamorous.Div>
-              </WorkContent>
-              <glamorous.Div
-                display="flex"
-                maxWidth="1000px"
-                margin="1rem auto"
-                padding="5rem 0"
+              <Spring
+                from={{ opacity: 0 }}
+                to={{ opacity: this.state.up ? 1 : 0 }}
+                config={config.stiff}
+                native
               >
-                <glamorous.Div marginRight="2rem">
-                  <Label>Experiments</Label>
-                </glamorous.Div>
-                <glamorous.Div
-                  position="relative"
-                  display="flex"
-                  flexFlow="row wrap"
-                >
-                  {experimentsArray.map(Experiment => {
-                    let path = null;
-                    if (Experiment.slug) {
-                      path = `/work/${Experiment.slug}`;
-                    }
-                    const linkProps = {
-                      to: path ? path : null,
-                      href: Experiment.href ? Experiment.href : null
-                    };
-                    return (
-                      <div
-                        style={{
-                          flexGrow: 1,
-                          flex: "1 1 40%",
-                          marginBottom: "5rem"
-                        }}
+                {styles => (
+                  <animated.div style={{ ...styles }}>
+                    <WorkContent>
+                      <glamorous.Div marginRight="2rem">
+                        <Label>Case Studies</Label>
+                      </glamorous.Div>
+                      <glamorous.Div
+                        position="relative"
+                        display="flex"
+                        flexFlow="row wrap"
                       >
-                        <ShadowLink {...linkProps}>
-                          {Experiment.name}
-                        </ShadowLink>
-                      </div>
-                    );
-                  })}
-                </glamorous.Div>
-              </glamorous.Div>
+                        {projectsArray.map((Project, i) => {
+                          const path = `/work/${Project.slug}`;
+                          return (
+                            <React.Fragment>
+                              <glamorous.Div
+                                key={i}
+                                flexGrow="1"
+                                flex="1 1 40%"
+                                margin="1rem"
+                              >
+                                <Card
+                                  projectLink={path}
+                                  projectName={Project.name}
+                                  projectDescription={Project.description}
+                                  projectColor={Project.color}
+                                  projectImage={Project.image}
+                                />
+                              </glamorous.Div>
+                            </React.Fragment>
+                          );
+                        })}
+                      </glamorous.Div>
+                    </WorkContent>
+                    <glamorous.Div
+                      display="flex"
+                      maxWidth="1000px"
+                      margin="1rem auto"
+                      padding="5rem 0"
+                    >
+                      <glamorous.Div marginRight="2rem">
+                        <Label>Experiments</Label>
+                      </glamorous.Div>
+                      <glamorous.Div
+                        position="relative"
+                        display="flex"
+                        flexFlow="row wrap"
+                      >
+                        {experimentsArray.map(Experiment => {
+                          let path = null;
+                          if (Experiment.slug) {
+                            path = `/work/${Experiment.slug}`;
+                          }
+                          const linkProps = {
+                            to: path ? path : null,
+                            href: Experiment.href ? Experiment.href : null
+                          };
+                          return (
+                            <div
+                              style={{
+                                flexGrow: 1,
+                                flex: "1 1 40%",
+                                marginBottom: "5rem"
+                              }}
+                            >
+                              <ShadowLink {...linkProps}>
+                                {Experiment.name}
+                              </ShadowLink>
+                            </div>
+                          );
+                        })}
+                      </glamorous.Div>
+                    </glamorous.Div>
+                  </animated.div>
+                )}
+              </Spring>
             </animated.div>
           )}
         </Spring>

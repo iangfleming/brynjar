@@ -6,6 +6,7 @@ import memories from "../memories";
 import MediaQueries from "../vars/MediaQueries";
 
 class Life extends Component {
+  state = {up: false};
   render() {
     const LifeContent = glamorous.div({
       display: "flex",
@@ -27,6 +28,8 @@ class Life extends Component {
           to={{ transform: "translateY(0%)" }}
           delay="500"
           native
+          onStart={() => this.setState({up: false})}
+          onRest={() => this.setState({up: true})}
         >
           {styles => (
             <animated.div
@@ -39,12 +42,23 @@ class Life extends Component {
                 ...styles
               }}
             >
-              <LifeContent>
-                {memoriesArray.map(Memory => {
-                  const path = `/life/${Memory.slug}`;
-                  return <Tile link={path} {...Memory} />;
-                })}
-              </LifeContent>
+              <Spring
+                from={{ opacity: 0 }}
+                to={{ opacity: this.state.up ? 1 : 0 }}
+                config={config.stiff}
+                native
+              >
+                {styles => (
+                  <animated.div style={{...styles}}>
+                    <LifeContent>
+                      {memoriesArray.map(Memory => {
+                        const path = `/life/${Memory.slug}`;
+                        return <Tile link={path} {...Memory} />;
+                      })}
+                    </LifeContent>
+                  </animated.div>
+                )}
+              </Spring>
             </animated.div>
           )}
         </Spring>

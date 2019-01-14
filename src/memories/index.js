@@ -5,9 +5,8 @@ import Japan from "../memories/japan";
 import r3 from "../memories/r3";
 import pano from "../memories/pano";
 
-import carbonPattern from "../images/carbon/carbon-pattern.svg";
 import templeArch from "../images/japan/templeArch.jpg"
-import riders from "../images/theShortcut/GC032439.JPG"
+import riders from "../images/theShortcut/thumbnail.jpg"
 import jack from "../images/r3/jack.jpg";
 import hawaii from "../images/pano/hawaii-open-valley.jpg";
 
