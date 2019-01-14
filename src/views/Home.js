@@ -36,6 +36,23 @@ class Home extends Component {
       this.setState({ panel: "life" });
     }
   }
+  componentDidMount() {
+    window.addEventListener('deviceorientation', this.handleTilt)
+  }
+  handleTilt = e => {
+      // gamma is the left-to-right tilt in degrees, where right is positive
+      const devicePos = e.gamma;
+      // beta is the front-to-back tilt in degrees, where front is positive
+      const tiltFB = e.beta;
+      // alpha is the compass direction the device is facing in degrees
+      const dir = e.alpha;
+      if (devicePos < -5) {
+        this.handleHover("left")
+      }
+      if (devicePos > 5) {
+        this.handleHover("right")
+      }
+  }
   handleHover = direction => {
     if (direction === "left" && this.state.panel === "home") {
       this.setState({ direction });
