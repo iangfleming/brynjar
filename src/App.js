@@ -1,7 +1,9 @@
 /* global location */
 /* eslint no-restricted-globals: ["off", "location"] */
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { BrowserRouter, Route } from "react-router-dom";
+import ScrollReset from "./components/ScrollReset";
 import Home from "./views/Home";
 import projects from "./projects";
 import Acorns from  "./experiments/Acorns";
@@ -14,7 +16,7 @@ class App extends Component {
     const memoriesArray = Object.values(memories);
     return (
       <BrowserRouter>
-        <div>
+        <ScrollReset>
           <Route exact path="/(|work|life)" component={Home} />
           {projectsArray.map((Project, idx) => {
             const path = `/work/${Project.slug}`;
@@ -27,7 +29,7 @@ class App extends Component {
             const path = `/life/${Memory.slug}`;
             return <Route exact path={path} component={Memory.component} />;
           })}
-        </div>
+        </ScrollReset>
       </BrowserRouter>
     );
   }
