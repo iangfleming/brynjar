@@ -112,6 +112,7 @@ class Home extends Component {
       }
     }));
     const BackArrow = glamorous.svg(({ work, life }) => ({
+      marginTop: "3px",
       transform: `scale(1.5) rotate(${work ? "180deg" : "0"})`
     }));
     return (
@@ -229,7 +230,7 @@ class Home extends Component {
                               If you're interested in working together feel free
                               to
                               <BlockLink
-                                href="https://www.instagram.com/iangfleming/"
+                                href="mailto:ian@ianfleming.me"
                                 bg={Colors.teal}
                                 css={{ marginRight: 0, color: Colors.text }}
                               >
