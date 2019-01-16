@@ -156,7 +156,7 @@ class Home extends Component {
               style={{
                 ...styles,
                 background: Colors.pink,
-                minHeight: "100vh",
+                minHeight: home ? "100vh" : "unset",
                 margin: "0 auto",
                 cursor: work ? "auto" : "pointer"
               }}
@@ -287,7 +287,7 @@ class Home extends Component {
               style={{
                 ...styles,
                 background: Colors.teal,
-                minHeight: "100vh",
+                minHeight: home ? "100vh" : "unset",
                 cursor: life ? "auto" : "pointer"
               }}
               onClick={() => this.handlePanelClick("life")}

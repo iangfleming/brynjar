@@ -47,9 +47,8 @@ class Work extends Component {
               className="work"
               style={{
                 background: "white",
-                minHeight: "100%",
                 clipPath: "polygon(0 0, 100% 9%, 100% 100%, 0% 100%)",
-                // why isn't this working (fix)
+                paddingBottom: "2rem",
                 ...styles
               }}
             >

@@ -36,7 +36,7 @@ class Life extends Component {
               className="life"
               style={{
                 background: "white",
-                minHeight: "100%",
+                paddingBottom: "2rem",
                 clipPath: "polygon(0 9%, 100% 0%, 100% 100%, 0% 100%)",
                 willChange: "transform",
                 ...styles
