@@ -41,7 +41,11 @@ export const Content = glamorous.div(({maxWidth}) => ({
 export const SectionTitle = glamorous.h3({
   fontFamily: "Oswald",
   fontSize: Sizes.head,
-  textTransform: "uppercase"
+  textTransform: "uppercase",
+  // font size
+  marginTop: Sizes.head,
+  // 1/2 font size
+  marginBottom: "1rem" ,
 });
 export const FullWidth = glamorous.div(({bg}) => ({
   width: "100vw",

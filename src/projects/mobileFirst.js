@@ -20,7 +20,7 @@ class mobileFirst extends Component {
         <Hero bg={Colors.purple2}>
           <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto">
             <HeroTitle white>IBM MobileFirst</HeroTitle>
-            <HeroDesc white>
+            <HeroDesc white css={{maxWidth: Sizes.content}}>
               Sometimes preventing the wrong product from being made is just as
               imporant as building a product.
             </HeroDesc>

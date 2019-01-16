@@ -80,9 +80,12 @@ class carbonDesignSystem extends Component {
             I was a founding member of the team that built and maintained a
             system of patterns and components for designers and developers of
             IBM products.
+          </p>
+          <p>
             <BlockLink
               bg={Colors.carbonBlue}
               href="http://www.carbondesignsystem.com/"
+              css={{marginLeft: 0}}
             >
               Carbon Design System
             </BlockLink>

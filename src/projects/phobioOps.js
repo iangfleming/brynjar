@@ -57,7 +57,7 @@ class phobioOps extends Component {
         <Hero bg={Colors.yellow}>
           <glamorous.Div maxWidth={Sizes.maxWidth}>
             <HeroTitle>Phobio Operations App</HeroTitle>
-            <HeroDesc css={{maxWidth: Sizes.maxWidth}}>
+            <HeroDesc css={{maxWidth: Sizes.content}}>
               Phobio works with cell phone retailers to handle devices that are
               traded-in by customers wanting to upgrade their devices
             </HeroDesc>

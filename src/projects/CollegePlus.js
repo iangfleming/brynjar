@@ -8,6 +8,7 @@ import {
   HeroDesc,
   Content,
   SectionTitle,
+  SublteLink,
 } from "../components/ProjectLayout";
 
 import cirleOldHome from "../images/cp-homepage/circle-old-home.jpeg";
@@ -33,14 +34,14 @@ class CollegePlus extends Component {
         <ProjectBackBtn />
         <Hero bg={hero} image>
           <glamorous.Div maxWidth={Sizes.maxWidth} textAlign="center">
-            <HeroTitle white>Redesigning the CollegePlus Home Page</HeroTitle>
+            <HeroTitle white>Redesigning the CollegePlus Homepage</HeroTitle>
             <HeroDesc white>"Design is more than making stuff pretty"</HeroDesc>
             <p style={{color: "white"}}>February 20th 2015</p>
           </glamorous.Div>
         </Hero>
         <Content css={{marginTop: "4rem", marginBottom: "4rem"}}>
           <p>
-            It was suffering from the bloat that comes from long periods of
+            The CollegePlus site was suffering from the bloat that comes from long periods of
             inattention, the pain anyone who has worked on a website redesign
             before will feel.
           </p>
@@ -59,7 +60,7 @@ class CollegePlus extends Component {
             made for a confusing user experience. I could talk for hours about
             the project, but for now, let's focus on one thing.
           </p>
-          <SectionTitle>The Home Page</SectionTitle>
+          <SectionTitle>The Homepage</SectionTitle>
           <StyledImg src={plainOldHome} />
           <p>
             It was clear from the beginning that this was more than just a
@@ -104,9 +105,9 @@ class CollegePlus extends Component {
           <p class="italic">
             NOTE: The video background was awesome, but unnecessary. If you want
             to make one
-            <a href="http://vodkabears.github.io/vide/">
+            <SublteLink href="http://vodkabears.github.io/vide/">
               here is a good starting place.
-            </a>
+            </SublteLink>
           </p>
           <p>
             At this point the design had undergone a massive change but still
@@ -129,7 +130,7 @@ class CollegePlus extends Component {
             the content? What I needed now was a simple way to give a visitor a
             peek into our product without overwhelming them with the copy. This
             is where
-            <a href="https://dribbble.com/ruthiefleming">Ruthie</a>, our graphic
+            <SublteLink href="https://dribbble.com/ruthiefleming">Ruthie</SublteLink>, our graphic
             designer, stepped in.
           </p>
           <StyledImg src={iconsNewHome} />
@@ -139,9 +140,9 @@ class CollegePlus extends Component {
           </p>
           <p>
             I tested this in a
-            <a href="https://usabilityhub.com/tour">
+            <SublteLink href="https://usabilityhub.com/tour">
               Usability Hub 5 Second Test
-            </a>
+            </SublteLink>
             where users were shown the design with copy and illustrations.
             Amazingly the majority of users tested could understand something of
             what we did in just 5 seconds. This was unprecedented in the history
@@ -161,7 +162,7 @@ class CollegePlus extends Component {
             of visitors we can look at the data.
           </p>
           <p>
-            The home page already had a low bounce rate at 36.42% however after
+            The homepage already had a low bounce rate at 36.42% however after
             launch the new site dropped that by 2.99% for a new low of 35.33%.
             Interestingly enough mobile traffic saw an even bigger drop of 3.90%
             in the bounce rate. I believe this is mostly due to increasing
@@ -169,7 +170,7 @@ class CollegePlus extends Component {
           </p>
           <p>
             Another interesting result shows up in the heat-maps from
-            <a href="http://www.crazyegg.com/">CrazyEgg.</a>
+            <SublteLink href="http://www.crazyegg.com/">CrazyEgg.</SublteLink>
             Although the new homepage has had fewer visits than the old one
             there are definitely enough for a comparison.
           </p>

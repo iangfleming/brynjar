@@ -37,22 +37,22 @@ class Home extends Component {
     }
   }
   componentDidMount() {
-    window.addEventListener('deviceorientation', this.handleTilt)
+    window.addEventListener("deviceorientation", this.handleTilt);
   }
   handleTilt = e => {
-      // gamma is the left-to-right tilt in degrees, where right is positive
-      const devicePos = e.gamma;
-      // beta is the front-to-back tilt in degrees, where front is positive
-      const tiltFB = e.beta;
-      // alpha is the compass direction the device is facing in degrees
-      const dir = e.alpha;
-      if (devicePos < -5) {
-        this.handleHover("left")
-      }
-      if (devicePos > 5) {
-        this.handleHover("right")
-      }
-  }
+    // gamma is the left-to-right tilt in degrees, where right is positive
+    const devicePos = e.gamma;
+    // beta is the front-to-back tilt in degrees, where front is positive
+    const tiltFB = e.beta;
+    // alpha is the compass direction the device is facing in degrees
+    const dir = e.alpha;
+    if (devicePos < -5) {
+      this.handleHover("left");
+    }
+    if (devicePos > 5) {
+      this.handleHover("right");
+    }
+  };
   handleHover = direction => {
     if (direction === "left" && this.state.panel === "home") {
       this.setState({ direction });
@@ -84,35 +84,35 @@ class Home extends Component {
       fontSize: Sizes.superhead,
       marginTop: "5rem",
       marginRight: "5rem",
-      pointerEvents: "none",
+      pointerEvents: "none"
     });
     const Desc = glamorous.div({
       maxWidth: "400px",
       pointerEvents: home ? "none" : "auto",
       [MediaQueries.md]: {
-        marginLeft: home ? 0 : "4rem",
+        marginLeft: home ? 0 : "4rem"
       }
-    })
+    });
     const Back = glamorous.button(({ work, life }) => ({
-      height: "6rem",
-      width: "6rem",
+      height: "5rem",
+      width: "5rem",
       background: work ? Colors.teal : Colors.pink,
       borderRadius: "50%",
       border: "none",
       cursor: "pointer",
       transition: "transform 75ms",
       ":focus": {
-        outline: "none",
+        outline: "none"
       },
       ":hover": {
-        transform: "scale(1.125)",
+        transform: "scale(1.05)"
       },
       ":active": {
-        transform: "scale(1)",
-      },
+        transform: "scale(1)"
+      }
     }));
     const BackArrow = glamorous.svg(({ work, life }) => ({
-      transform: `scale(2) rotate(${work ? "180deg" : "0"})`,
+      transform: `scale(1.5) rotate(${work ? "180deg" : "0"})`
     }));
     return (
       <glamorous.Div display="flex" position="relative">
@@ -201,39 +201,42 @@ class Home extends Component {
                         <animated.div
                           style={{
                             opacity: styles.opacity,
-                            display: !work ? "none" : "initial",
+                            display: !work ? "none" : "initial"
                           }}
                         >
                           <Desc>
                             <p>
                               I am a designer and developer in Austin, TX.
                               Formerly at the IBM
-                              <SublteLink href="https://www.carbondesignsystem.com/" target="_blank">
+                              <SublteLink
+                                href="https://www.carbondesignsystem.com/"
+                                target="_blank"
+                                css={{ paddingRight: 0 }}
+                              >
                                 Carbon Design System
                               </SublteLink>
                               . Currently at
-                              <SublteLink href="https://www.phobio.com/" target="_blank">
+                              <SublteLink
+                                href="https://www.phobio.com/"
+                                target="_blank"
+                              >
                                 Phobio.
                               </SublteLink>
+                              I work designing great products and building
+                              robust design systems.
                             </p>
                             <p>
-                              Working to design great products and build robust
-                              design systems.
+                              If you're interested in working together feel free
+                              to
+                              <BlockLink
+                                href="https://www.instagram.com/iangfleming/"
+                                bg={Colors.teal}
+                                css={{ marginRight: 0, color: Colors.text }}
+                              >
+                                email me
+                              </BlockLink>
+                              .
                             </p>
-                            <glamorous.A
-                              background={Colors.teal}
-                              color={Colors.text}
-                              padding="10px 15px"
-                              textDecoration="none"
-                              textTransform="uppercase"
-                              fontWeight="600"
-                              marginTop="2rem"
-                              width="109px"
-                              display="block"
-                              href="mailto:ian@ianfleming.me"
-                            >
-                              Email Me
-                            </glamorous.A>
                           </Desc>
                         </animated.div>
                       </glamorous.Div>
@@ -318,25 +321,28 @@ class Home extends Component {
                       >
                         <Title>Life</Title>
                         <Desc>
-                          <p>
+                          <glamorous.P display={home ? "block" : "none"}>
                             Call it a blog or whatever you like. These are the
                             public records of my experiences.
-                          </p>
-                          <glamorous.A
-                            background={Colors.pink}
-                            color={Colors.text}
-                            padding="10px 15px"
-                            textDecoration="none"
-                            textTransform="uppercase"
-                            fontWeight="600"
-                            marginTop="2rem"
-                            width="125px"
-                            display={life ? "block" : "none"}
-                            href="https://www.instagram.com/iangfleming/"
-                            target="_blank"
-                          >
-                            Instagram
-                          </glamorous.A>
+                          </glamorous.P>
+                          <glamorous.P display={life ? "block" : "none"}>
+                            Call it a blog or whatever you like. These are the
+                            public records of my experiences. This could include
+                            travel, bikes, food, art, or anything else I'm
+                            interested in at that moment.
+                          </glamorous.P>
+                          <glamorous.P display={life ? "block" : "none"}>
+                            For a more current look at what I'm up to you can
+                            always check my
+                            <BlockLink
+                              href="https://www.instagram.com/iangfleming/"
+                              bg={Colors.pink}
+                              css={{ marginRight: 0, color: Colors.text }}
+                            >
+                              Instagram
+                            </BlockLink>
+                            .
+                          </glamorous.P>
                         </Desc>
                       </glamorous.Div>
                     </Content>
