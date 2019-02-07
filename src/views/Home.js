@@ -5,6 +5,7 @@ import { Spring, Keyframes, animated, interpolate, config } from "react-spring";
 import { withRouter } from "react-router-dom";
 import Work from "./Work";
 import Life from "./Life";
+import Links from "../views/Links";
 import Logo from "../components/Logo";
 import glamorous from "glamorous";
 import Colors from "../vars/Colors";
@@ -27,13 +28,16 @@ const panelSpringConfig = {
   friction: 10
 };
 class Home extends Component {
-  state = { panel: "home" };
+  state = { panel: "home", linksOpen: false };
   componentWillMount() {
     if (this.props.location.pathname.includes("work")) {
       this.setState({ panel: "work" });
     }
     if (this.props.location.pathname.includes("life")) {
       this.setState({ panel: "life" });
+    }
+    if (this.props.location.pathname.includes("links")) {
+      this.setState({ linksOpen: true });
     }
   }
   componentDidMount() {
@@ -117,6 +121,7 @@ class Home extends Component {
     }));
     return (
       <glamorous.Div display="flex" position="relative">
+        {this.state.linksOpen ? <Links /> : null}
         <Logo panel={this.state.panel} direction={this.state.direction} />
         {work ? (
           <Spring

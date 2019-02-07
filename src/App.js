@@ -1,14 +1,13 @@
 /* global location */
 /* eslint no-restricted-globals: ["off", "location"] */
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { BrowserRouter, Route } from "react-router-dom";
 import ScrollReset from "./components/ScrollReset";
 import Home from "./views/Home";
 import projects from "./projects";
 import Acorns from  "./experiments/Acorns";
 import memories from "./memories";
-import { Transition } from "react-spring";
+import Upload from "./views/Upload";
 
 class App extends Component {
   render() {
@@ -29,6 +28,8 @@ class App extends Component {
             const path = `/life/${Memory.slug}`;
             return <Route exact path={path} component={Memory.component} />;
           })}
+          <Route exact path="/upload" component={Upload} />
+          <Route exact path="/links" component={Home} />
         </ScrollReset>
       </BrowserRouter>
     );
