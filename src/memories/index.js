@@ -41,7 +41,7 @@ const memories = {
     y: "end",
     color: Colors.pink,
     component: TheShortcut,
-    disabled: true,
+    disabled: false,
   },
   pano: {
     slug: "panoramas",
