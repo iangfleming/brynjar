@@ -122,7 +122,7 @@ class Home extends Component {
     return (
       <glamorous.Div display="flex" position="relative">
         {this.state.linksOpen ? <Links /> : null}
-        <Logo panel={this.state.panel} direction={this.state.direction} />
+        {!this.state.linksOpen ? <Logo panel={this.state.panel} direction={this.state.direction} /> : null}
         {work ? (
           <Spring
             from={{ transform: "translateX(110vw)" }}
@@ -194,16 +194,17 @@ class Home extends Component {
                         display={work ? "flex" : "block"}
                         flexFlow="row wrap"
                       >
-                        <Title>Work</Title>
-                        <animated.p
-                          style={{
-                            display: home ? "initial" : "none"
-                          }}
-                        >
-                          I’m a designer and developer.
-                          <br />
-                          Here are some highlights from my career
-                        </animated.p>
+                        {!this.state.linksOpen ? (
+                          <Title>Work</Title>
+                          <animated.p
+                            style={{
+                              display: home ? "initial" : "none"
+                            }}
+                          >
+                            I’m a designer and developer.
+                            <br />
+                            Here are some highlights from my career
+                          </animated.p>
                         <animated.div
                           style={{
                             opacity: styles.opacity,
@@ -245,6 +246,7 @@ class Home extends Component {
                             </p>
                           </Desc>
                         </animated.div>
+                        ) : null }
                       </glamorous.Div>
                     </Content>
                   </animated.div>

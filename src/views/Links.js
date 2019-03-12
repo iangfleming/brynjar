@@ -1,26 +1,14 @@
 import React, { Component } from "react";
-import axios from "axios";
 import glamorous from "glamorous";
+import {Spring, animated} from "react-spring";
 
 class Links extends Component {
   state = {
-    data: [],
-    intervalIsSet: false,
+    data: []
   };
 
   componentDidMount() {
     this.getDataFromDb();
-    if (!this.state.intervalIsSet) {
-      let interval = setInterval(this.getDataFromDb, 1000);
-      this.setState({ intervalIsSet: interval });
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.state.intervalIsSet) {
-      clearInterval(this.state.intervalIsSet);
-      this.setState({ intervalIsSet: null });
-    }
   }
 
   getDataFromDb = () => {
@@ -32,29 +20,35 @@ class Links extends Component {
   render() {
     const { data } = this.state;
     const Modal = glamorous.div({
+      zIndex: "100",
       position: "fixed",
       top: 0,
       left: 0,
       height: "100vh",
       width: "100vw",
-      background: "black",
-      opacity: .5,
-    })
+      background: "white",
+      clipPath: "polygon(0 0, 100% 1%, 100% 85%, 50% 95%, 0 85%)",
+    });
+    const StyledLink = glamorous.a({
+      display: "block",
+      height: "10rem",
+      width: "10rem",
+      background: "white"
+    });
     return (
-      <Modal>
-        <ul>
-          {data.length <= 0
-            ? "NO DB ENTRIES YET"
-            : data.map(dat => (
-                <li style={{ padding: "10px" }} key={data.title}>
-                  <span style={{ color: "gray" }}> id: </span> {dat.id} <br />
-                  <span style={{ color: "gray" }}> data: </span>
-                  {dat.title}
-                  {dat.link}
-                </li>
-              ))}
-        </ul>
-      </Modal>
+      <Spring from={{ transform: "translateY(-100vh" }} to={{ transform: "translateY(0)" }}>
+        {styles => (
+          <animated.div style={{...styles}}>
+            <Modal>
+              {data.length <= 0
+                ? null
+                : data.map(dat => (
+                    <StyledLink href={dat.link}>{dat.title}</StyledLink>
+                  ))}
+            </Modal>
+          </animated.div>
+        )}
+      </Spring>
     );
   }
 }
