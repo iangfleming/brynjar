@@ -50,31 +50,81 @@ const TheShortcut = props => {
       </glamorous.Div>
       <Plaque>
         <Title>The Shortcut</Title>
-          <StyledImg href={p1}></StyledImg>
+        <StyledImg href={p1} />
         <Desc>
           <p>
-            In what has become everyone's favorite way to end the year, 70 or so
-            people ride a large loop through small towns around Austin. Very
-            much unsanctioned the route is between 110 and 120 miles depending
-            on who you ask. It passes through Creedmore, Dale, Mcmahan, Red Rock
-            (the namesake), Bastrop, Sayersville, Littig, Manor, and finally
-            back to Austin.
+            I've always had this curiosity. As a kid it was satisfied by
+            wandering farther and farther into the bushes behind the house. As I
+            grew up so did the scope of these explorations. It can be as simple
+            as discovering what is at the end of that "dead-end" street on the
+            next block or, as in this particular case, much more complex and
+            time consuming.
           </p>
           <p>
-            The past two iterations of this event have had unusually good
-            weather but this year our luck ran out. The forecasted rain held off
-            but we faced a steady 15+ mph headwind with gusts up to 25mph.
+            Texas is defined by it's privately held land. In a state know for
+            it's vast empty spaces the average citizen is contained to thin
+            strips of public land, roads and parks, sandwiched in between huge
+            tracts with "no trespassing" emblazoned on their gates.
           </p>
           <p>
-            I had intended to shoot a lot more video and maybe some interviews
-            but weather and the resulting suffering put an end to that plan.
-            What you see is what I got. Short clips here and there when my
-            frozen fingers could find the shutter button.
+            In case you think I'm exaggerating only 4% of Texas is public land.
+            That's the same as Ohio. One state over, New Mexico is 47% public
+            land.
           </p>
           <p>
-            In a way this is probably a more accurate representation of
-            endurance cycling. Your hands shake and your plans fall apart but at
-            the end of the day all that matters is you did it.
+            Politics aside, this can be incredibly frustating for someone like
+            myself who is driven by their curiosity to explore. However, as with
+            many types of adversity, these challenges have created some very
+            clever solutions. They force us to look for hidden paths and disused
+            routes.
+          </p>
+          <p>
+            Which brings us to this story. It's the story of a cycling route
+            that was born out of limitations I just described. A route that
+            under ordinary circumstances would be laughable.
+          </p>
+          <iframe
+            height="405"
+            width="590"
+            frameborder="0"
+            allowtransparency="true"
+            scrolling="no"
+            src="https://www.strava.com/activities/2187102328/embed/3c0b465d5c661cabd6f4c09cfb76b707a2a6ec36"
+          />
+          <p>
+            To ride out Fitzhugh and back through Bee Creek/Cave, and be
+            reasonably safe, you typically have to take the route shown above.
+            This is a beautiful ride but gets to be a pretty long day. If you
+            want to shorten the route you'd have to ride east on Hamilton Pool
+            Rd. which any self respecting Austin cyclist will tell you is a
+            terribly dangerous idea.
+          </p>
+          <p>
+            My idea was to shorten the original route by passing through a thin
+            strip public land that runs along the Pedernales River. I knew there
+            were some mountain bike trails on that land but it didn't look like
+            they went all the way through. I combed through all the public land
+            records I could find and spent a good amount of time looking at
+            satellite images.
+          </p>
+          <iframe
+            height="405"
+            width="590"
+            frameborder="0"
+            allowtransparency="true"
+            scrolling="no"
+            src="https://www.strava.com/activities/1582766921/embed/ff31689487798fb9328c55597e7c37ddfe7da3c8"
+          />
+          <p>
+            And well, it worked! As you can see the route was signicifcantly
+            shorter with much less climbing. But most importantly it satisified
+            that love of getting lost, seeing something you haven't seen before,
+            and finding your way out.
+          </p>
+          <p>
+            Researching and riding routes like this has become one of my
+            favorite hobbies. If you have any questions about this one or any
+            other dubious shortcuts give me a shout!
           </p>
         </Desc>
       </Plaque>
