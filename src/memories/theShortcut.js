@@ -38,7 +38,7 @@ const TheShortcut = props => {
             left="0"
             width="100%"
             height="100%"
-            src="https://player.vimeo.com/video/289892193"
+            src="https://www.youtube.com/embed/1hd-xp7OWk4"
             border="0"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -51,7 +51,6 @@ const TheShortcut = props => {
       <Plaque>
         <Title>The Shortcut</Title>
         <StyledImg href={p1} />
-        <Desc>
           <p>
             I've always had this curiosity. As a kid, it was satisfied by
             wandering farther and farther into the bushes behind the house. As I
@@ -126,7 +125,6 @@ const TheShortcut = props => {
             favorite hobbies. If you have any questions about this one or any
             other dubious shortcuts give me a shout!
           </p>
-        </Desc>
         <StyledImg src={p1} />
       </Plaque>
     </React.Fragment>
