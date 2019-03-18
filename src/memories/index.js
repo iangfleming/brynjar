@@ -12,26 +12,6 @@ import hawaii from "../images/pano/hawaii-open-valley.jpg";
 
 
 const memories = {
-  r3: {
-    slug: "btc-r3",
-    name: "BTC R3",
-    image: jack,
-    x: "end",
-    y: "end",
-    component: r3,
-    disabled: false,
-  },
-  Japan: {
-    slug: "japan",
-    name: "Japan",
-    image: templeArch,
-    size: 75,
-    x: "end",
-    y: "end",
-    color: Colors.pink,
-    component: Japan,
-    disabled: true,
-  },
   theShortcut: {
     slug: "the-shortcut",
     name: "The Shortcut",
@@ -51,6 +31,26 @@ const memories = {
     y: "start",
     component: pano,
     disabled: false,
+  },
+  r3: {
+    slug: "btc-r3",
+    name: "BTC R3",
+    image: jack,
+    x: "end",
+    y: "end",
+    component: r3,
+    disabled: false,
+  },
+  Japan: {
+    slug: "japan",
+    name: "Japan",
+    image: templeArch,
+    size: 75,
+    x: "end",
+    y: "end",
+    color: Colors.pink,
+    component: Japan,
+    disabled: true,
   },
 };
 export default memories;
