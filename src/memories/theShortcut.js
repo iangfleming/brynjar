@@ -4,7 +4,7 @@ import Sizes from "../vars/Sizes";
 import MediaQueries from "../vars/MediaQueries";
 import Colors from "../vars/Colors";
 import ProjectBackBtn from "../components/ProjectBackBtn";
-import p1 from "../images/theShortcut/GC032431.jpg";
+import p1 from "../images/theShortcut/closing-image.jpg";
 
 const Plaque = glamorous.div({
   display: "flex",
