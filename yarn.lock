@@ -3512,11 +3512,6 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-google-calendar-url@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/google-calendar-url/-/google-calendar-url-0.0.5.tgz#05ecd76a4d7073976c4d72fe7da3f344cbc662ce"
-  integrity sha512-wrKZTMDBbz2AOf1+aGN+xeKWc9FjTF/ZkOmeC7dkv/vixG48FLermpBRU1nYGK/3Z24G2QqGjcn22Fyc1Yn9Ng==
-
 got@^5.0.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/got/-/got-5.7.1.tgz#5f81635a61e4a6589f180569ea4e381680a51f35"

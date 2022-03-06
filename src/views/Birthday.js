@@ -4,15 +4,8 @@ import glamorous from "glamorous";
 import MediaQueries from "../vars/MediaQueries";
 import Sizes from "../vars/Sizes";
 import Colors from "../vars/Colors";
-import { googleCalendarEventUrl } from "google-calendar-url";
 
-const url = googleCalendarEventUrl({
-  start: "20220319T130000",
-  end: "20220319T200000",
-  title: "Ian's Birthday Ride (Party starts at 4pm)",
-  details: "Come ramble around the east side and session some trails with me! Meetup at my house and we'll end up back there for drinks and pizza. If you're not riding 4pm is a good arrival time.",
-  location: "5517 Northdale Dr, Austin, TX 78723",
-});
+const url = "https://calendar.google.com/calendar/event?action=TEMPLATE&dates=20220319T130000%2F20220319T200000&text=Ian%27s+Birthday+Ride+%28Party+starts+at+4pm%29&details=Come+ramble+around+the+east+side+and+session+some+trails+with+me%21+Meetup+at+my+house+and+we%27ll+end+up+back+there+for+drinks+and+pizza.+If+you%27re+not+riding+4pm+is+a+good+arrival+time.&location=5517+Northdale+Dr%2C+Austin%2C+TX+78723"
 
 class Birthday extends Component {
   state = { direction: "left" };
