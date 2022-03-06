@@ -4,9 +4,18 @@ import glamorous from "glamorous";
 import MediaQueries from "../vars/MediaQueries";
 import Sizes from "../vars/Sizes";
 import Colors from "../vars/Colors";
+import { googleCalendarEventUrl } from "google-calendar-url";
+
+const url = googleCalendarEventUrl({
+  start: "20220319T130000",
+  end: "20220319T200000",
+  title: "Ian's Birthday Ride (Party starts at 4pm)",
+  details: "Come ramble around the east side and session some trails with me! Meetup at my house and we'll end up back there for drinks and pizza. If you're not riding 4pm is a good arrival time.",
+  location: "5517 Northdale Dr, Austin, TX 78723",
+});
 
 class Birthday extends Component {
-  state = { direction: 'left' };
+  state = { direction: "left" };
   componentDidMount() {
     window.addEventListener("deviceorientation", this.handleTilt);
     window.addEventListener("mousemove", this.handleMove);
@@ -18,22 +27,22 @@ class Birthday extends Component {
     const tiltFB = e.beta;
     // alpha is the compass direction the device is facing in degrees
     const dir = e.alpha;
-    if (devicePos < -5 && this.state.direction === 'right' ) {
+    if (devicePos < -5 && this.state.direction === "right") {
       this.setState({ direction: "left" });
     }
-    if (devicePos > 5 && this.state.direction === 'left' ) {
+    if (devicePos > 5 && this.state.direction === "left") {
       this.setState({ direction: "right" });
     }
   };
   handleMove = (e) => {
     const middle = window.innerWidth / 2;
-    if (e.screenX < middle && this.state.direction === 'right' ) {
+    if (e.screenX < middle && this.state.direction === "right") {
       this.setState({ direction: "left" });
     }
-    if (e.screenX > middle && this.state.direction === 'left' ) {
+    if (e.screenX > middle && this.state.direction === "left") {
       this.setState({ direction: "right" });
     }
-  }
+  };
   render() {
     const Page = glamorous.div({
       minHeight: "100vh",
@@ -62,17 +71,18 @@ class Birthday extends Component {
       },
     });
     const CalBtn = glamorous.a({
+      fontSize: Sizes.super,
       textDecoration: "none",
       color: "white",
-      padding: "10px 20px",
-      background: Colors.pink,
+      padding: "15px 25px",
+      background: "#b35357",
       borderRadius: "2px",
       transition: "all 175ms",
       cursor: "pointer",
       textAlign: "center",
       marginBottom: "2rem",
       ":hover": {
-        background: "#b35357",
+        background: Colors.pink,
       },
     });
     const Title = glamorous.h2({
@@ -82,8 +92,18 @@ class Birthday extends Component {
     return (
       <Page>
         <Spring
-          from={{ transform: this.state.direction === 'left' ? "rotate(15deg)" : 'rotate(-15deg)' }}
-          to={{ transform: this.state.direction === 'left' ? "rotate(-15deg)" : 'rotate(15deg)' }}
+          from={{
+            transform:
+              this.state.direction === "left"
+                ? "rotate(15deg)"
+                : "rotate(-15deg)",
+          }}
+          to={{
+            transform:
+              this.state.direction === "left"
+                ? "rotate(-15deg)"
+                : "rotate(15deg)",
+          }}
           native
         >
           {(styles) => (
@@ -125,7 +145,8 @@ class Birthday extends Component {
         </Content>
         <CalBtn
           target="_blank"
-          href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NzBvbTZlOWw3MHEzaWJiMTY0cGpjYjlrY2NwMzZiYjJjNHBqNmI5a2M4cm1hZTM2NzRzMzBjOWo2MCBmeWVka2EyQG0&amp;tmsrc=fyedka2%40gmail.com"
+          //   href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NzBvbTZlOWw3MHEzaWJiMTY0cGpjYjlrY2NwMzZiYjJjNHBqNmI5a2M4cm1hZTM2NzRzMzBjOWo2MCBmeWVka2EyQG0&amp;tmsrc=fyedka2%40gmail.com"
+          href={url}
         >
           Add This Very Important Event to Your Calendar By Clicking Here
         </CalBtn>
