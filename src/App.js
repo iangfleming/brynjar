@@ -8,6 +8,7 @@ import projects from "./projects";
 import Acorns from  "./experiments/Acorns";
 import memories from "./memories";
 import Upload from "./views/Upload";
+import Birthday from "./views/Birthday";
 
 class App extends Component {
   render() {
@@ -30,6 +31,7 @@ class App extends Component {
           })}
           <Route exact path="/upload" component={Upload} />
           <Route exact path="/links" component={Home} />
+          <Route exact path="/birthday" component={Birthday} />
         </ScrollReset>
       </BrowserRouter>
     );
