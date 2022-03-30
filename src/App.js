@@ -31,7 +31,6 @@ class App extends Component {
           })}
           <Route exact path="/upload" component={Upload} />
           <Route exact path="/links" component={Home} />
-          <Route exact path="/birthday" component={Birthday} />
         </ScrollReset>
       </BrowserRouter>
     );
