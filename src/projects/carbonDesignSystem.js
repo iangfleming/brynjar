@@ -246,7 +246,7 @@ class carbonDesignSystem extends Component {
                   package on npm
                 </glamorous.P>
                 <glamorous.P fontSize="144px" fontFamily="Oswald" margin="0">
-                  31,529
+                  95,859
                 </glamorous.P>
               </glamorous.Div>
             </glamorous.Div>

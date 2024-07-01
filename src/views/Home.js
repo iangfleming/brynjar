@@ -213,7 +213,14 @@ class Home extends Component {
                           <Desc>
                             <p>
                               I am a designer and developer in Austin, TX.
-                              Formerly at the IBM
+                              Formerly at
+                              <SublteLink
+                                href="https://www.indeed.com/"
+                                target="_blank"
+                              >
+                              Indeed
+                              </SublteLink>
+                               and the IBM
                               <SublteLink
                                 href="https://www.carbondesignsystem.com/"
                                 target="_blank"
@@ -221,13 +228,7 @@ class Home extends Component {
                               >
                                 Carbon Design System
                               </SublteLink>
-                              . Currently at
-                              <SublteLink
-                                href="https://www.phobio.com/"
-                                target="_blank"
-                              >
-                                Phobio.
-                              </SublteLink>
+                              . Currently looking for my next role.
                               I work designing great products and building
                               robust design systems.
                             </p>
@@ -235,7 +236,7 @@ class Home extends Component {
                               If you're interested in working together feel free
                               to
                               <BlockLink
-                                href="mailto:ian@ianfleming.me"
+                                href="mailto:iangablefleming@gmail.com"
                                 bg={Colors.teal}
                                 css={{ marginRight: 0, color: Colors.text }}
                               >

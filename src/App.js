@@ -8,7 +8,6 @@ import projects from "./projects";
 import Acorns from  "./experiments/Acorns";
 import memories from "./memories";
 import Upload from "./views/Upload";
-import Birthday from "./views/Birthday";
 
 class App extends Component {
   render() {
