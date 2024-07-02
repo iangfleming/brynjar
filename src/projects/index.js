@@ -7,7 +7,7 @@ import indeedJobPostingAI from "./indeedJobPostingAI";
 const projects = {
   indeedJobPostingAI: {
     slug: "indeed",
-    name: "Indeed Job Posting AI",
+    name: "Indeed AI",
     description: "",
     component: indeedJobPostingAI
   },
