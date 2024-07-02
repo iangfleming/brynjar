@@ -5,12 +5,12 @@ import phobioOps from "./phobioOps";
 import indeedJobPostingAI from "./indeedJobPostingAI";
 
 const projects = {
-  // indeedJobPostingAI: {
-  //   slug: "indeed",
-  //   name: "Indeed Job Posting AI",
-  //   description: "",
-  //   component: indeedJobPostingAI
-  // },
+  indeedJobPostingAI: {
+    slug: "indeed",
+    name: "Indeed Job Posting AI",
+    description: "",
+    component: indeedJobPostingAI
+  },
   carbonDesignSystem: {
     slug: "carbon-design-system",
     name: "Carbon Design System",
