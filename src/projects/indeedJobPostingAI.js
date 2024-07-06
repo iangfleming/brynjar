@@ -13,6 +13,11 @@ import {
   FullWidth
 } from "../components/ProjectLayout";
 import Colors from "../vars/Colors";
+import screens1 from '../images/indeedJobPostingAI/iha-screens-1.jpg'
+import screens2 from '../images/indeedJobPostingAI/iha-screens-2.jpg'
+import convo0 from '../images/indeedJobPostingAI/iha-convo-0.jpg'
+import convo1 from '../images/indeedJobPostingAI/iha-convo-1.jpg'
+import convo2 from '../images/indeedJobPostingAI/iha-convo-2.jpg'
 
 class indeedJobPostingAI extends Component {
   render() {
@@ -55,44 +60,11 @@ class indeedJobPostingAI extends Component {
           <glamorous.Div maxWidth={Sizes.maxWidth}>
             <HeroTitle>Indeed Job Posting AI</HeroTitle>
             <HeroDesc css={{maxWidth: Sizes.content}}>
-              Led the creation of the UI for the first ever job posting AI powered chatbot at Indeed
+              I led the creation of the UI for the first ever AI powered chatbot at Indeed for posting a job
             </HeroDesc>
           </glamorous.Div>
-          {/* <UpperPlx parallaxData={plxConfig}>
-            <UpperShape
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 352 334"
-              height="500px"
-              width="auto"
-            >
-              <path
-                fill="#91cbc8"
-                d="M3 80c-13 60 21 143 44 194 18 39 46 68 94 58 99-20 174-152 204-235v-1l-1 4v-1c23-63-6-111-72-96-49 11-80 80-130 86-39 5-128-61-139-9z"
-              />
-            </UpperShape>
-          </UpperPlx>
-          <Plx
-            parallaxData={plxConfig}
-            style={{
-              position: "absolute",
-              top: "250px",
-              left: "-50px"
-            }}
-          >
-            <LowerShape
-              xmlns="http://www.w3.org/2000/svg"
-              height="auto"
-              width="600px"
-              viewBox="0 0 516 225"
-            >
-              <path
-                fill={Colors.darkerPink}
-                d="M514 129c11-54-37-82-83-74-69 11-94 44-165 12-42-18-85-72-134-67C92 4 36 38 12 70c-36 45 15 144 71 152 59 8 114-32 169-28 69 4 214 98 262-65z"
-              />
-            </LowerShape>
-          </Plx> */}
         </Hero>
-        <glamorous.Div width="100%" height="100%" background="white" paddingBottom="3rem">
+        <glamorous.Div width="100%" height="100%" background="white">
           <Content css={{ background: "white", paddingTop: "3rem" }}>
           <SectionTitle>
             Background
@@ -103,6 +75,40 @@ class indeedJobPostingAI extends Component {
             <p>
               This was the first such project at Indeed and only the second LLM driven chatbot product in the entire company. 
             </p>
+            <FullWidth css={{marginTop: "4rem"}} bg={Colors.gray3}>
+              <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto" padding="3rem 1rem">
+                <glamorous.Figure
+                  display="grid"
+                  gridTemplateColumns="repeat(3, 1fr)"
+                  gridColumnGap="2rem"
+                >
+                    <glamorous.Img
+                      src={convo0}
+                      alt=""
+                      width="100%"
+                    />
+                    <glamorous.Img
+                      src={convo1}
+                      alt=""
+                      width="100%"
+                    />
+                    <glamorous.Img
+                      src={convo2}
+                      alt=""
+                      width="100%"
+                    />
+                </glamorous.Figure>
+                    <glamorous.Figcaption
+                      fontSize={Sizes.sub}
+                      fontStyle="italic"
+                      float="right"
+                      marginTop="8px"
+                    >
+                      Example conversation
+                    </glamorous.Figcaption>
+              </glamorous.Div>
+              <p />
+            </FullWidth>
           <SectionTitle>
             Role and Contributions
           </SectionTitle>
@@ -124,6 +130,35 @@ class indeedJobPostingAI extends Component {
             <p>
             The launch of the Employer Hiring Assistant set a new standard in job posting solutions, enhancing user satisfaction with its intuitive UI and boosting adoption rates. This project underscores my expertise in driving UI development for AI solutions and collaborating effectively to deliver impactful outcomes in user-centric design.
             </p>
+            <FullWidth css={{marginTop: "4rem"}} bg={Colors.gray3}>
+              <glamorous.Div maxWidth={Sizes.maxWidth} margin="0 auto" padding="3rem 1rem">
+                <glamorous.Figure width="100%" margin="0 auto 2.5rem auto">
+                  <glamorous.Img
+                    src={screens1}
+                    alt=""
+                    width="100%"
+                    height="auto"
+                  />
+                </glamorous.Figure>
+                <glamorous.Figure width="100%" margin="0 auto 2.5rem auto">
+                  <glamorous.Img
+                    src={screens2}
+                    alt=""
+                    width="100%"
+                    height="auto"
+                  />
+                  <glamorous.Figcaption
+                    fontSize={Sizes.sub}
+                    fontStyle="italic"
+                    float="right"
+                    marginTop="8px"
+                  >
+                    Early design iterations
+                  </glamorous.Figcaption>
+                </glamorous.Figure>
+              </glamorous.Div>
+              <p />
+            </FullWidth>
           </Content>
         </glamorous.Div>
       </div>
