@@ -1,3 +1,4 @@
 # Pure static site — files committed directly, no build step.
 [build]
   publish = "public"
+  command = ""
