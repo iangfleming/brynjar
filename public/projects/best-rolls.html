@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Rolls — Ian Fleming</title>
+  <meta name="description" content="A selection of my favorite film photos.">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-title" href="/">Ian Fleming<span class="accent-dot">.</span></a>
+  </header>
+
+  <main class="project">
+    <a class="back-link" href="/">&larr; Back to the board</a>
+
+    <h1 class="project-title">Best Rolls</h1>
+    <p class="project-lede">A selection of my favorite film photos.</p>
+
+    <div class="gallery" id="gallery"></div>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-btn lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-btn lightbox-prev" id="lightbox-prev" aria-label="Previous photo">&#8249;</button>
+    <button class="lightbox-btn lightbox-next" id="lightbox-next" aria-label="Next photo">&#8250;</button>
+    <figure class="lightbox-figure">
+      <img class="lightbox-image" id="lightbox-image" src="" alt="">
+      <figcaption class="lightbox-caption" id="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-year></span> Ian Fleming</p>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+  <script src="/js/best-rolls.js" defer></script>
+</body>
+</html>
